@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import android.util.Patterns
-import com.example.rpgstatmanager.model.LoginRepository
-import com.example.rpgstatmanager.model.Result
+import com.example.rpgstatmanager.model.login.LoginRepository
+import com.example.rpgstatmanager.model.login.Result
 
 import com.example.rpgstatmanager.R
 

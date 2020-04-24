@@ -1,4 +1,4 @@
-package com.example.rpgstatmanager.model
+package com.example.rpgstatmanager.model.login
 
 /**
  * A generic class that holds a value with its loading status.

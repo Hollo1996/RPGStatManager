@@ -1,4 +1,4 @@
-package com.example.rpgstatmanager.model
+package com.example.rpgstatmanager.model.login
 
 /**
  * Class that requests authentication and user information from the remote data source and

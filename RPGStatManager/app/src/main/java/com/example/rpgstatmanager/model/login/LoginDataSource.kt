@@ -1,4 +1,4 @@
-package com.example.rpgstatmanager.model
+package com.example.rpgstatmanager.model.login
 
 import java.io.IOException
 import java.util.*

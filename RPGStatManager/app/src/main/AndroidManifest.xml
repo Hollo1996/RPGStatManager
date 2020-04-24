@@ -12,11 +12,11 @@
         <activity android:name=".view.login.ForgottenPasswordActivity"></activity>
         <activity android:name=".view.AdventureCreatorActivity" />
         <activity android:name=".view.character.AllMovesActivity" />
-        <activity android:name=".view.character.EmotionActivity" />
-        <activity android:name=".view.character.MoveBaseActivity" />
+        <activity android:name=".view.character.EmotionModifierActivity" />
+        <activity android:name=".view.character.MoveTypeActivity" />
         <activity android:name=".view.CharacterChooserActivity" />
         <activity android:name=".view.character.RaceActivity" />
-        <activity android:name=".view.character.PersionalityActivity" />
+        <activity android:name=".view.character.PersonalityTypeActivity" />
         <activity android:name=".view.character.ToolActivity" />
         <activity android:name=".view.character.WeaponActivity" />
         <activity android:name=".view.character.StatActivity" />

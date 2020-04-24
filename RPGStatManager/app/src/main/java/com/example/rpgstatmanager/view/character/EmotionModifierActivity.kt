@@ -3,16 +3,15 @@ package com.example.rpgstatmanager.view.character
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.rpgstatmanager.R
-import com.example.rpgstatmanager.presenter.AdventureChooserPresenter
-import com.example.rpgstatmanager.presenter.character.PersionalityPresenter
-import com.example.rpgstatmanager.screen.character.PersionalityScreen
+import com.example.rpgstatmanager.presenter.character.EmotionModifierPresenter
+import com.example.rpgstatmanager.screen.character.EmotionModifierScreen
 
-class PersionalityActivity : AppCompatActivity(), PersionalityScreen {
-    val  presenter = PersionalityPresenter
+class EmotionModifierActivity : AppCompatActivity(), EmotionModifierScreen {
+    val  presenter = EmotionModifierPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_persionality)
+        setContentView(R.layout.activity_emotion)
     }
 
     override fun onStart() {

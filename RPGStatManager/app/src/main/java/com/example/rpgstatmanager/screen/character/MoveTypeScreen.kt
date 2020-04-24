@@ -1,4 +1,4 @@
 package com.example.rpgstatmanager.screen.character
 
-interface MoveBaseScreen {
+interface MoveTypeScreen {
 }

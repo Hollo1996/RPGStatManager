@@ -3,16 +3,15 @@ package com.example.rpgstatmanager.view.character
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.rpgstatmanager.R
-import com.example.rpgstatmanager.presenter.AdventureChooserPresenter
-import com.example.rpgstatmanager.presenter.character.MoveBasePresenter
-import com.example.rpgstatmanager.screen.character.MoveBaseScreen
+import com.example.rpgstatmanager.presenter.character.PersonalityTypePresenter
+import com.example.rpgstatmanager.screen.character.PersonalityTypeScreen
 
-class MoveBaseActivity : AppCompatActivity(), MoveBaseScreen {
-    val  presenter = MoveBasePresenter
+class PersonalityTypeActivity : AppCompatActivity(), PersonalityTypeScreen {
+    val  presenter = PersonalityTypePresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_move_base)
+        setContentView(R.layout.activity_persionality)
     }
 
     override fun onStart() {
