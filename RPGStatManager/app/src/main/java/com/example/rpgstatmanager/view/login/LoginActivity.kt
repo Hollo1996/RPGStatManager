@@ -14,8 +14,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
-
-import com.example.rpgstatmanager.view.R
+import com.example.rpgstatmanager.R
 
 class LoginActivity : AppCompatActivity() {
 

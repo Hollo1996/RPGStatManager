@@ -7,7 +7,7 @@ import android.util.Patterns
 import com.example.rpgstatmanager.model.LoginRepository
 import com.example.rpgstatmanager.model.Result
 
-import com.example.rpgstatmanager.view.R
+import com.example.rpgstatmanager.R
 
 class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
 
