@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.character.AllMovesActivity"></activity>
+        <activity android:name=".view.login.ForgottenPasswordActivity"></activity>
+        <activity android:name=".view.AdventureCreatorActivity" />
+        <activity android:name=".view.character.AllMovesActivity" />
         <activity android:name=".view.character.EmotionActivity" />
         <activity android:name=".view.character.MoveBaseActivity" />
-        <activity android:name=".view.character.CharacterChooserActivity" />
+        <activity android:name=".view.CharacterChooserActivity" />
         <activity android:name=".view.character.RaceActivity" />
         <activity android:name=".view.character.PersionalityActivity" />
         <activity android:name=".view.character.ToolActivity" />

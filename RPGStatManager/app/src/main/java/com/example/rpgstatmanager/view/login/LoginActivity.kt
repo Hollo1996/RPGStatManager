@@ -15,10 +15,14 @@ import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.rpgstatmanager.R
+import com.example.rpgstatmanager.presenter.AdventureChooserPresenter
+import com.example.rpgstatmanager.presenter.login.LoginPresenter
+import com.example.rpgstatmanager.screen.login.LoginScreen
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity(), LoginScreen {
 
     private lateinit var loginViewModel: LoginViewModel
+    val  presenter = LoginPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -96,6 +100,15 @@ class LoginActivity : AppCompatActivity() {
                 loginViewModel.login(username.text.toString(), password.text.toString())
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        presenter.attachScreen(this)
+    }
+    override fun onStop() {
+        super.onStop()
+        presenter.detachScreen()
     }
 
     private fun updateUiWithUser(model: LoggedInUserView) {

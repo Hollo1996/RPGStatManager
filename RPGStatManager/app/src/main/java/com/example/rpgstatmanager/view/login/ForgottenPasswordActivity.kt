@@ -1,18 +1,20 @@
-package com.example.rpgstatmanager.view.character
+package com.example.rpgstatmanager.view.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.presenter.AdventureChooserPresenter
-import com.example.rpgstatmanager.presenter.character.MoveBasePresenter
-import com.example.rpgstatmanager.screen.character.MoveBaseScreen
+import com.example.rpgstatmanager.presenter.login.ForgottenPasswordPresenter
+import com.example.rpgstatmanager.screen.AdventureChooserScreen
+import com.example.rpgstatmanager.screen.login.ForgottenPasswordScreen
 
-class MoveBaseActivity : AppCompatActivity(), MoveBaseScreen {
-    val  presenter = MoveBasePresenter
+class ForgottenPasswordActivity : AppCompatActivity(), ForgottenPasswordScreen {
+
+    val  presenter = ForgottenPasswordPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_move_base)
+        setContentView(R.layout.activity_forgotten_password)
     }
 
     override fun onStart() {

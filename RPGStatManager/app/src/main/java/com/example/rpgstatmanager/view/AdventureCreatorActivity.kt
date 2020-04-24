@@ -1,18 +1,17 @@
-package com.example.rpgstatmanager.view.character
+package com.example.rpgstatmanager.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.rpgstatmanager.R
-import com.example.rpgstatmanager.presenter.AdventureChooserPresenter
-import com.example.rpgstatmanager.presenter.character.ToolPresenter
-import com.example.rpgstatmanager.screen.character.ToolScreen
+import com.example.rpgstatmanager.presenter.AdventureCreatorPresenter
+import com.example.rpgstatmanager.screen.AdventureCreatorScreen
 
-class ToolActivity : AppCompatActivity(), ToolScreen {
-    val  presenter = ToolPresenter
+class AdventureCreatorActivity : AppCompatActivity(), AdventureCreatorScreen {
+    val  presenter = AdventureCreatorPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tool)
+        setContentView(R.layout.activity_adventure_creator)
     }
 
     override fun onStart() {
