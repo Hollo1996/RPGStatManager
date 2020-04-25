@@ -16,7 +16,7 @@ object EmotionModifierInteractor: A_TableInteractor<EmotionModifier>() {
         TODO("Not yet implemented")
     }
 
-    override fun getWhen(pattern: String): EmotionModifier {
+    override fun getWhen(filter: (EmotionModifier) -> Boolean): EmotionModifier {
         TODO("Not yet implemented")
     }
 
@@ -24,7 +24,7 @@ object EmotionModifierInteractor: A_TableInteractor<EmotionModifier>() {
         TODO("Not yet implemented")
     }
 
-    override fun listWhen(pattern: String): List<EmotionModifier> {
+    override fun listWhen(pattern: (EmotionModifier) -> Boolean): List<EmotionModifier> {
         TODO("Not yet implemented")
     }
 }

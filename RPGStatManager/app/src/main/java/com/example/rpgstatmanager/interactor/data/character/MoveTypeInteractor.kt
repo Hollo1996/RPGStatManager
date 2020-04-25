@@ -3,7 +3,7 @@ package com.example.rpgstatmanager.interactor.data.character
 import com.example.rpgstatmanager.interactor.A_TableInteractor
 import com.example.rpgstatmanager.model.character.MoveType
 
-object MoveTypeinteractor: A_TableInteractor<MoveType>() {
+object MoveTypeInteractor: A_TableInteractor<MoveType>() {
     override fun save(d: MoveType) {
         TODO("Not yet implemented")
     }
@@ -16,7 +16,7 @@ object MoveTypeinteractor: A_TableInteractor<MoveType>() {
         TODO("Not yet implemented")
     }
 
-    override fun getWhen(pattern: String): MoveType {
+    override fun getWhen(filter: (MoveType) -> Boolean): MoveType {
         TODO("Not yet implemented")
     }
 
@@ -24,7 +24,7 @@ object MoveTypeinteractor: A_TableInteractor<MoveType>() {
         TODO("Not yet implemented")
     }
 
-    override fun listWhen(pattern: String): List<MoveType> {
+    override fun listWhen(pattern: (MoveType) -> Boolean): List<MoveType> {
         TODO("Not yet implemented")
     }
 }

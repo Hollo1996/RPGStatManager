@@ -3,7 +3,7 @@ package com.example.rpgstatmanager.interactor.data.character
 import com.example.rpgstatmanager.interactor.A_TableInteractor
 import com.example.rpgstatmanager.model.character.PersonalityType
 
-object PersionalityTypeInteractor: A_TableInteractor<PersonalityType>() {
+object PersonalityTypeInteractor: A_TableInteractor<PersonalityType>() {
     override fun save(d: PersonalityType) {
         TODO("Not yet implemented")
     }
@@ -16,7 +16,7 @@ object PersionalityTypeInteractor: A_TableInteractor<PersonalityType>() {
         TODO("Not yet implemented")
     }
 
-    override fun getWhen(pattern: String): PersonalityType {
+    override fun getWhen(filter: (PersonalityType) -> Boolean): PersonalityType {
         TODO("Not yet implemented")
     }
 
@@ -24,7 +24,7 @@ object PersionalityTypeInteractor: A_TableInteractor<PersonalityType>() {
         TODO("Not yet implemented")
     }
 
-    override fun listWhen(pattern: String): List<PersonalityType> {
+    override fun listWhen(pattern: (PersonalityType) -> Boolean): List<PersonalityType> {
         TODO("Not yet implemented")
     }
 }

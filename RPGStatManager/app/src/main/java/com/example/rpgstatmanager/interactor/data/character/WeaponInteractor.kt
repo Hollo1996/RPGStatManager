@@ -16,7 +16,7 @@ object WeaponInteractor: A_TableInteractor<Weapon>() {
         TODO("Not yet implemented")
     }
 
-    override fun getWhen(pattern: String): Weapon {
+    override fun getWhen(filter: (Weapon) -> Boolean): Weapon {
         TODO("Not yet implemented")
     }
 
@@ -24,7 +24,7 @@ object WeaponInteractor: A_TableInteractor<Weapon>() {
         TODO("Not yet implemented")
     }
 
-    override fun listWhen(pattern: String): List<Weapon> {
+    override fun listWhen(pattern: (Weapon) -> Boolean): List<Weapon> {
         TODO("Not yet implemented")
     }
 }

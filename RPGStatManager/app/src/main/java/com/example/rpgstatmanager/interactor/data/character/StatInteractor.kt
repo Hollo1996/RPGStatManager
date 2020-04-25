@@ -16,7 +16,7 @@ object StatInteractor: A_TableInteractor<Stat>() {
         TODO("Not yet implemented")
     }
 
-    override fun getWhen(pattern: String): Stat {
+    override fun getWhen(filter: (Stat) -> Boolean): Stat {
         TODO("Not yet implemented")
     }
 
@@ -24,7 +24,7 @@ object StatInteractor: A_TableInteractor<Stat>() {
         TODO("Not yet implemented")
     }
 
-    override fun listWhen(pattern: String): List<Stat> {
+    override fun listWhen(pattern: (Stat) -> Boolean): List<Stat> {
         TODO("Not yet implemented")
     }
 }

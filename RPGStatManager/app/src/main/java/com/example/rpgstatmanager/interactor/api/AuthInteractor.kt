@@ -10,4 +10,7 @@ object AuthInteractor {
     fun getUserID(name:String,password:String):String{
         TODO("Not yet implemented")
     }
+    fun sendPasswordReset(name:String):Boolean{
+        TODO("Not yet implemented")
+    }
 }

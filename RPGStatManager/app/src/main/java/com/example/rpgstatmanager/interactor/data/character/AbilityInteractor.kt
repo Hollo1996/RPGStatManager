@@ -16,7 +16,7 @@ object AbilityInteractor: A_TableInteractor<Ability>() {
         TODO("Not yet implemented")
     }
 
-    override fun getWhen(pattern: String): Ability {
+    override fun getWhen(filter: (Ability) -> Boolean): Ability {
         TODO("Not yet implemented")
     }
 
@@ -24,7 +24,7 @@ object AbilityInteractor: A_TableInteractor<Ability>() {
         TODO("Not yet implemented")
     }
 
-    override fun listWhen(pattern: String): List<Ability> {
+    override fun listWhen(pattern: (Ability) -> Boolean): List<Ability> {
         TODO("Not yet implemented")
     }
 }

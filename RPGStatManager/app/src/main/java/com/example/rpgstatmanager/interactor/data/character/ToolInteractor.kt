@@ -16,7 +16,7 @@ object ToolInteractor: A_TableInteractor<Tool>() {
         TODO("Not yet implemented")
     }
 
-    override fun getWhen(pattern: String): Tool {
+    override fun getWhen(filter: (Tool) -> Boolean): Tool {
         TODO("Not yet implemented")
     }
 
@@ -24,7 +24,7 @@ object ToolInteractor: A_TableInteractor<Tool>() {
         TODO("Not yet implemented")
     }
 
-    override fun listWhen(pattern: String): List<Tool> {
+    override fun listWhen(pattern: (Tool) -> Boolean): List<Tool> {
         TODO("Not yet implemented")
     }
 }

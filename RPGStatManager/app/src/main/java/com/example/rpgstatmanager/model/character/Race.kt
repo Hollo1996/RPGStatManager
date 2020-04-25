@@ -1,6 +1,7 @@
 package com.example.rpgstatmanager.model.character
 
 data class Race (
+    val id:String,
     val cathegoryName:String,
     val familyName:String,
     val raceName:String,

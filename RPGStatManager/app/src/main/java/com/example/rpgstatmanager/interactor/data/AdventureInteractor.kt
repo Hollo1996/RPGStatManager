@@ -16,7 +16,7 @@ object AdventureInteractor: A_TableInteractor<Adventure>() {
         TODO("Not yet implemented")
     }
 
-    override fun getWhen(pattern: String): Adventure {
+    override fun getWhen(filter: (Adventure) -> Boolean): Adventure {
         TODO("Not yet implemented")
     }
 
@@ -24,7 +24,7 @@ object AdventureInteractor: A_TableInteractor<Adventure>() {
         TODO("Not yet implemented")
     }
 
-    override fun listWhen(pattern: String): List<Adventure> {
+    override fun listWhen(pattern: (Adventure) -> Boolean): List<Adventure> {
         TODO("Not yet implemented")
     }
 }

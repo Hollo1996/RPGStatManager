@@ -16,7 +16,7 @@ object MoveInteractor: A_TableInteractor<Move>() {
         TODO("Not yet implemented")
     }
 
-    override fun getWhen(pattern: String): Move {
+    override fun getWhen(filter: (Move) -> Boolean): Move {
         TODO("Not yet implemented")
     }
 
@@ -24,8 +24,7 @@ object MoveInteractor: A_TableInteractor<Move>() {
         TODO("Not yet implemented")
     }
 
-    override fun listWhen(pattern: String): List<Move> {
+    override fun listWhen(pattern: (Move) -> Boolean): List<Move> {
         TODO("Not yet implemented")
     }
-
 }

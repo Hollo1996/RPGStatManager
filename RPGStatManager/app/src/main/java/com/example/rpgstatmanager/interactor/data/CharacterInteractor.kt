@@ -3,6 +3,7 @@ package com.example.rpgstatmanager.interactor.data
 import com.example.rpgstatmanager.interactor.A_TableInteractor
 
 object CharacterInteractor: A_TableInteractor<Character>() {
+
     override fun save(d: Character) {
         TODO("Not yet implemented")
     }
@@ -15,7 +16,7 @@ object CharacterInteractor: A_TableInteractor<Character>() {
         TODO("Not yet implemented")
     }
 
-    override fun getWhen(pattern: String): Character {
+    override fun getWhen(filter: (Character) -> Boolean): Character {
         TODO("Not yet implemented")
     }
 
@@ -23,7 +24,7 @@ object CharacterInteractor: A_TableInteractor<Character>() {
         TODO("Not yet implemented")
     }
 
-    override fun listWhen(pattern: String): List<Character> {
+    override fun listWhen(pattern: (Character) -> Boolean): List<Character> {
         TODO("Not yet implemented")
     }
 

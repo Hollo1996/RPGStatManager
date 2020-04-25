@@ -1,6 +1,7 @@
 package com.example.rpgstatmanager.model.character
 
 data class PersonalityType(
+    val id:String,
     val introvert : Int,
     val extrovert : Int,
     val observent : Int,

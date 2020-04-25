@@ -16,7 +16,7 @@ object RaceInteractor: A_TableInteractor<Race>() {
         TODO("Not yet implemented")
     }
 
-    override fun getWhen(pattern: String): Race {
+    override fun getWhen(filter: (Race) -> Boolean): Race {
         TODO("Not yet implemented")
     }
 
@@ -24,7 +24,7 @@ object RaceInteractor: A_TableInteractor<Race>() {
         TODO("Not yet implemented")
     }
 
-    override fun listWhen(pattern: String): List<Race> {
+    override fun listWhen(pattern: (Race) -> Boolean): List<Race> {
         TODO("Not yet implemented")
     }
 }

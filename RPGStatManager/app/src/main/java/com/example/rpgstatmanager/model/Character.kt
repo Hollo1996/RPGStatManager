@@ -3,6 +3,7 @@ package com.example.rpgstatmanager.model
 import com.example.rpgstatmanager.model.character.*
 
 data class Character (
+    val id:String,
     val race: Race,
     val emotions: List<EmotionModifier>,
     val moveTypes: List<MoveType>,
