@@ -21,7 +21,7 @@ env:
 sudo: required
 
 before_install:
- - yes | sdkmanager "platforms;android-29"
+ - yes | sdkmanager "platforms;android-28"
 
 before_script:
  - echo no | android create avd --force -n test -t android-21 --abi armeabi-v7a -s "768x1280"
