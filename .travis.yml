@@ -1,7 +1,7 @@
 language: android
 android:
  components:
- - build-tools-29.0.3
+ - build-tools-28.0.3
  - android-29
  - android-21
  - add-on
@@ -11,7 +11,7 @@ android:
  - extra-google-googleplayservices
  - extra-google-m2repository
  - extra-android-m2repository
- - addon-google_apis-google-29
+ - addon-google_apis-google-28
  - sys-img-armeabi-v7a-android-21
 
 env:
@@ -29,12 +29,12 @@ before_script:
  - adb wait-for-device
  - adb shell input keyevent 82 &
 
-script: ./RPGStatManager/gradlew :app:build 
+script: ./gradlew :app:build 
 
 deploy:
  provider: releases
  apikey: $GITHUB_KEY
- file: RPGStatManager/app/build/outputs/apk/release/app-release.apk
+ file: app/build/outputs/apk/release/app-release.apk
  skip_cleanup: true
  on:
  tags: true
