@@ -6,9 +6,12 @@ import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.presenter.AdventureChooserPresenter
 import com.example.rpgstatmanager.presenter.character.ToolPresenter
 import com.example.rpgstatmanager.screen.character.ToolScreen
+import javax.inject.Inject
 
 class ToolActivity : AppCompatActivity(), ToolScreen {
-    val  presenter = ToolPresenter
+
+    @Inject
+    lateinit var presenter : ToolPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

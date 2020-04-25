@@ -6,9 +6,12 @@ import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.presenter.AdventureChooserPresenter
 import com.example.rpgstatmanager.presenter.character.StatPresenter
 import com.example.rpgstatmanager.screen.character.StatScreen
+import javax.inject.Inject
 
 class StatActivity : AppCompatActivity(), StatScreen {
-    val  presenter = StatPresenter
+
+    @Inject
+    lateinit var presenter : StatPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

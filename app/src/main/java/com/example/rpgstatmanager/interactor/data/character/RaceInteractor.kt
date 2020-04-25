@@ -3,7 +3,7 @@ package com.example.rpgstatmanager.interactor.data.character
 import com.example.rpgstatmanager.interactor.A_TableInteractor
 import com.example.rpgstatmanager.model.character.Race
 
-object RaceInteractor: A_TableInteractor<Race>() {
+class RaceInteractor: A_TableInteractor<Race>() {
     override fun save(d: Race) {
         TODO("Not yet implemented")
     }

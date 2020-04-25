@@ -5,9 +5,12 @@ import android.os.Bundle
 import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.presenter.character.PersonalityTypePresenter
 import com.example.rpgstatmanager.screen.character.PersonalityTypeScreen
+import javax.inject.Inject
 
 class PersonalityTypeActivity : AppCompatActivity(), PersonalityTypeScreen {
-    val  presenter = PersonalityTypePresenter
+
+    @Inject
+    lateinit var presenter : PersonalityTypePresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

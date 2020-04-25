@@ -5,9 +5,12 @@ import android.os.Bundle
 import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.presenter.character.EmotionModifierPresenter
 import com.example.rpgstatmanager.screen.character.EmotionModifierScreen
+import javax.inject.Inject
 
 class EmotionModifierActivity : AppCompatActivity(), EmotionModifierScreen {
-    val  presenter = EmotionModifierPresenter
+
+    @Inject
+    lateinit var presenter : EmotionModifierPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

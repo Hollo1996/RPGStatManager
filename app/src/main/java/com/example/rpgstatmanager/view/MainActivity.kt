@@ -6,10 +6,13 @@ import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.presenter.AdventureChooserPresenter
 import com.example.rpgstatmanager.presenter.MainPresenter
 import com.example.rpgstatmanager.screen.MainScreen
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), MainScreen {
 
-    val  presenter = MainPresenter
+
+    @Inject
+    lateinit var presenter : MainPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

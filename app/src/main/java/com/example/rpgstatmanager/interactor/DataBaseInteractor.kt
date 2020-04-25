@@ -1,5 +1,5 @@
 package com.example.rpgstatmanager.interactor
 
-object DataBaseInteractor{
+class DataBaseInteractor{
     var userID : String? =null
 }

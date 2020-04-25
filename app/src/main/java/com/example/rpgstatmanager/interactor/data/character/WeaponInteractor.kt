@@ -3,7 +3,7 @@ package com.example.rpgstatmanager.interactor.data.character
 import com.example.rpgstatmanager.interactor.A_TableInteractor
 import com.example.rpgstatmanager.model.character.Weapon
 
-object WeaponInteractor: A_TableInteractor<Weapon>() {
+class WeaponInteractor: A_TableInteractor<Weapon>() {
     override fun save(d: Weapon) {
         TODO("Not yet implemented")
     }

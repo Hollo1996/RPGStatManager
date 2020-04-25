@@ -18,11 +18,14 @@ import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.presenter.AdventureChooserPresenter
 import com.example.rpgstatmanager.presenter.login.LoginPresenter
 import com.example.rpgstatmanager.screen.login.LoginScreen
+import javax.inject.Inject
 
 class LoginActivity : AppCompatActivity(), LoginScreen {
 
     private lateinit var loginViewModel: LoginViewModel
-    val  presenter = LoginPresenter
+
+    @Inject
+    lateinit var presenter : LoginPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

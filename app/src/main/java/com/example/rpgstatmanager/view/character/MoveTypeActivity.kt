@@ -5,9 +5,12 @@ import android.os.Bundle
 import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.presenter.character.MoveTypePresenter
 import com.example.rpgstatmanager.screen.character.MoveTypeScreen
+import javax.inject.Inject
 
 class MoveTypeActivity : AppCompatActivity(), MoveTypeScreen {
-    val  presenter = MoveTypePresenter
+
+    @Inject
+    lateinit var presenter : MoveTypePresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

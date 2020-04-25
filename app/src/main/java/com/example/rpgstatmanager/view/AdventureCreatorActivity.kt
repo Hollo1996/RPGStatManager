@@ -5,9 +5,12 @@ import android.os.Bundle
 import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.presenter.AdventureCreatorPresenter
 import com.example.rpgstatmanager.screen.AdventureCreatorScreen
+import javax.inject.Inject
 
 class AdventureCreatorActivity : AppCompatActivity(), AdventureCreatorScreen {
-    val  presenter = AdventureCreatorPresenter
+
+    @Inject
+    lateinit var presenter : AdventureCreatorPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

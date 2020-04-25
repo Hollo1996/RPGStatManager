@@ -1,6 +1,6 @@
 package com.example.rpgstatmanager.interactor.api
 
-object AuthInteractor {
+class AuthInteractor {
     fun isValid(name:String,password:String):Boolean{
         TODO("Not yet implemented")
     }
