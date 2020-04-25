@@ -3,6 +3,7 @@ package com.example.rpgstatmanager.view.login
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.rpgstatmanager.R
+import com.example.rpgstatmanager.module.injector
 import com.example.rpgstatmanager.presenter.AdventureChooserPresenter
 import com.example.rpgstatmanager.presenter.login.ForgottenPasswordPresenter
 import com.example.rpgstatmanager.presenter.login.LoginPresenter
@@ -17,6 +18,7 @@ class ForgottenPasswordActivity : AppCompatActivity(), ForgottenPasswordScreen {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        injector.inject(this)
         setContentView(R.layout.activity_forgotten_password)
     }
 

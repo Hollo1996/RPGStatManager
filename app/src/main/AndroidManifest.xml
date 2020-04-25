@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".module.RPGStatManagerApplication">
+        android:name=".RPGStatManagerApplication">
         <activity android:name=".view.login.ForgottenPasswordActivity" />
         <activity android:name=".view.AdventureCreatorActivity" />
         <activity android:name=".view.character.AllMovesActivity" />

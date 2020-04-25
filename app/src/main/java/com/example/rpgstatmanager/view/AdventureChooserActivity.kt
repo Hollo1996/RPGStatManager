@@ -3,6 +3,7 @@ package com.example.rpgstatmanager.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.rpgstatmanager.R
+import com.example.rpgstatmanager.module.injector
 import com.example.rpgstatmanager.presenter.AdventureChooserPresenter
 import com.example.rpgstatmanager.screen.AdventureChooserScreen
 import javax.inject.Inject
@@ -15,6 +16,7 @@ class AdventureChooserActivity : AppCompatActivity(), AdventureChooserScreen {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        injector.inject(this)
         setContentView(R.layout.activity_adventure_chooser)
     }
 

@@ -15,6 +15,7 @@ import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.rpgstatmanager.R
+import com.example.rpgstatmanager.module.injector
 import com.example.rpgstatmanager.presenter.AdventureChooserPresenter
 import com.example.rpgstatmanager.presenter.login.LoginPresenter
 import com.example.rpgstatmanager.screen.login.LoginScreen
@@ -29,6 +30,8 @@ class LoginActivity : AppCompatActivity(), LoginScreen {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        injector.inject(this)
 
         setContentView(R.layout.activity_login)
 
