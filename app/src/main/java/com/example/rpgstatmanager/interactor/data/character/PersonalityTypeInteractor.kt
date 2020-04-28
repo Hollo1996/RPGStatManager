@@ -4,6 +4,7 @@ import com.example.rpgstatmanager.interactor.A_TableInteractor
 import com.example.rpgstatmanager.model.character.PersonalityType
 
 class PersonalityTypeInteractor: A_TableInteractor<PersonalityType>() {
+
     override fun save(d: PersonalityType) {
         TODO("Not yet implemented")
     }

@@ -14,8 +14,7 @@ import javax.inject.Singleton
 class InteractorModule(private val context: Context) {
     @Provides
     @Singleton
-    fun provideDataBaseInteractor() =
-        DataBaseInteractor()
+    fun provideDataBaseInteractor() = DataBaseInteractor()
     @Provides
     @Singleton
     fun provideAdventureInteractor() = AdventureInteractor()
