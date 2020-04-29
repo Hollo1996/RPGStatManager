@@ -14,17 +14,15 @@ package com.example.rpgstatmanager.swagger.client.models
 /**
  * 
  * @param id 
- * @param character_id 
  * @param name 
  * @param trigger 
  * @param values 
  */
 data class EmotionModifier (
-    val id: String? = null,
-    val character_id: String? = null,
-    val name: String? = null,
-    val trigger: String? = null,
-    val values: Array<KeyValue>? = null
+    val id: kotlin.String? = null,
+    val name: kotlin.String? = null,
+    val trigger: kotlin.String? = null,
+    val values: kotlin.Array<KeyValue>? = null
 ) {
 
 }

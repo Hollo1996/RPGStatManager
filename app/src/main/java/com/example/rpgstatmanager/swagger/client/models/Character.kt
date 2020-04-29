@@ -15,15 +15,13 @@ package com.example.rpgstatmanager.swagger.client.models
 /**
  * 
  * @param id 
- * @param adventure_id 
  * @param name 
  * @param is_npc 
  */
 data class Character (
-    val id: String? = null,
-    val adventure_id: String? = null,
-    val name: String? = null,
-    val is_npc: Boolean? = null
+    val id: kotlin.String? = null,
+    val name: kotlin.String? = null,
+    val is_npc: kotlin.Boolean? = null
 ) {
 
 }

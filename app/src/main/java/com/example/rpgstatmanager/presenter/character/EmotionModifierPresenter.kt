@@ -2,7 +2,7 @@ package com.example.rpgstatmanager.presenter.character
 
 import com.example.rpgstatmanager.interactor.data.character.EmotionModifierInteractor
 import com.example.rpgstatmanager.interactor.data.character.MoveTypeInteractor
-import com.example.rpgstatmanager.model.character.MoveType
+import com.example.rpgstatmanager.model.character.D_MoveType
 import com.example.rpgstatmanager.presenter.A_Presenter
 import com.example.rpgstatmanager.screen.character.EmotionModifierScreen
 import javax.inject.Inject
@@ -20,12 +20,12 @@ class EmotionModifierPresenter
 
         val moveTypes = moveTypeInteractor.list()
         for (moveType in moveTypes){
-            val newValue = MoveType(moveType.id, moveType.name, moveType.half, moveType.line, moveType.stat1, moveType.stat2,
+            val newValue = D_MoveType(moveType.id, moveType.half, moveType.line, moveType.stat1, moveType.stat2,
                 moveType.value
                         + ( modifier.modifiers[moveType.stat1] ?:throw Error("No stat modifier found by the given stat name") )
                         + ( modifier.modifiers[moveType.stat2] ?:throw Error("No stat modifier found by the given stat name") )
             )
-            moveTypeInteractor.save(moveType)
+            moveTypeInteractor.save(moveType,true)
         }
     }
     fun turnOff(emotion:String){
@@ -34,12 +34,12 @@ class EmotionModifierPresenter
 
         val moveTypes = moveTypeInteractor.list()
         for (moveType in moveTypes){
-            val newValue = MoveType(moveType.id, moveType.name, moveType.half, moveType.line, moveType.stat1, moveType.stat2,
+            val newValue = D_MoveType(moveType.id, moveType.half, moveType.line, moveType.stat1, moveType.stat2,
                 moveType.value
                         - ( modifier.modifiers[moveType.stat1] ?:throw Error("No stat modifier found by the given stat name") )
                         - ( modifier.modifiers[moveType.stat2] ?:throw Error("No stat modifier found by the given stat name") )
             )
-            moveTypeInteractor.save(moveType)
+            moveTypeInteractor.save(moveType,true)
         }
     }
 }

@@ -14,7 +14,7 @@ package com.example.rpgstatmanager.swagger.client.apis
 
 import com.example.rpgstatmanager.swagger.client.infrastructure.*
 
-class TokenApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(basePath) {
+class TokenApi(basePath: kotlin.String = "https://rpgmanager.data.io/v2") : ApiClient(basePath) {
 
     /**
     * request new password
@@ -22,19 +22,19 @@ class TokenApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(b
     * @param name Name of the user 
     * @return void
     */
-    fun getNewPassword(name: String) : Unit {
-        val localVariableBody: Any? = null
+    fun getNewPassword(name: kotlin.String) : Unit {
+        val localVariableBody: kotlin.Any? = null
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.GET,
-            "/token/{name}".replace("{"+"name"+"}", name),
+            "/token/{name}".replace("{"+"name"+"}", "$name"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -49,7 +49,7 @@ class TokenApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(b
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
@@ -58,37 +58,37 @@ class TokenApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(b
     * We us e a weak and simple method.  The client sends the name and the password. If the pair is in the database, the server returned a randomgenerated number. On later requests only the number has tob be sent. On new login every code associated with the username gets deleted.
     * @param name Name of the user 
     * @param password Name of the user 
-    * @return Long
+    * @return kotlin.String
     */
     @Suppress("UNCHECKED_CAST")
-    fun getToken(name: String, password: String) : Long {
-        val localVariableBody: Any? = null
+    fun getToken(name: kotlin.String, password: kotlin.String) : kotlin.String {
+        val localVariableBody: kotlin.Any? = null
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.GET,
-            "/token/{name},{password}".replace("{"+"name"+"}", name).replace("{"+"password"+"}", "$password"),
+            "/token/{name},{password}".replace("{"+"name"+"}", "$name").replace("{"+"password"+"}", "$password"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
-        val response = request<Long>(
+        val response = request<kotlin.String>(
             localVariableConfig,
             localVariableBody
         )
 
         return when (response.responseType) {
-            ResponseType.Success -> (response as Success<*>).data as Long
+            ResponseType.Success -> (response as Success<*>).data as kotlin.String
             ResponseType.Informational -> TODO()
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 

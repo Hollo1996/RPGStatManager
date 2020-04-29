@@ -1,7 +1,7 @@
 package com.example.rpgstatmanager.presenter.character
 
 import com.example.rpgstatmanager.interactor.data.character.WeaponInteractor
-import com.example.rpgstatmanager.model.character.Weapon
+import com.example.rpgstatmanager.model.character.D_Weapon
 import com.example.rpgstatmanager.presenter.A_Presenter
 import com.example.rpgstatmanager.screen.character.WeaponScreen
 import javax.inject.Inject
@@ -12,6 +12,6 @@ class WeaponPresenter
 )
     : A_Presenter<WeaponScreen>() {
     fun list() = weaponInteractor.list()
-    fun remove(weapon:Weapon) = weaponInteractor.delete(weapon)
-    fun add(weapon: Weapon) = weaponInteractor.save(weapon)
+    fun remove(DWeapon:D_Weapon) = weaponInteractor.delete(DWeapon)
+    fun add(DWeapon: D_Weapon) = weaponInteractor.save(DWeapon,false)
 }

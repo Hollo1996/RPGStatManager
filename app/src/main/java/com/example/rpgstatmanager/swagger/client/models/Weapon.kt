@@ -1,6 +1,6 @@
 /**
 * RPG Stat Manager Central Server
-* This is the server for the data access of the RPG Users
+* This is the server for the data accass of the RPG Users
 *
 * OpenAPI spec version: 1.0.0
 * Contact: holloszaboakos.1996@gmail.com
@@ -11,17 +11,18 @@
 */
 package com.example.rpgstatmanager.swagger.client.models
 
+import com.example.rpgstatmanager.swagger.client.models.Move
 
 /**
  * 
  * @param id 
- * @param character_id 
  * @param name 
+ * @param moves 
  */
 data class Weapon (
-    val id: String? = null,
-    val character_id: String? = null,
-    val name: String? = null
+    val id: kotlin.String? = null,
+    val name: kotlin.String? = null,
+    val moves: kotlin.Array<Move>? = null
 ) {
 
 }

@@ -13,11 +13,6 @@ class LoginPresenter
 )
     : A_Presenter<LoginScreen>()  {
     fun validate(name:String,password:String):Boolean{
-        if(authInteractor.isValid(name,password)){
-            val id = authInteractor.getUserID(name,password)
-            adventureInteractor.ownerId=id
-            return true
-        }
-        return false
+        return authInteractor.logIn(name,password)
     }
 }

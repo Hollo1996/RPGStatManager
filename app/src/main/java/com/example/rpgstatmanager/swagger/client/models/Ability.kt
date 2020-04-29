@@ -11,25 +11,24 @@
 */
 package com.example.rpgstatmanager.swagger.client.models
 
-
 /**
  * 
  * @param id 
- * @param character_id 
  * @param race_id 
  * @param name 
  * @param positive 
- * @param description
+ * @param description 
  * @param effect 
+ * @param moves 
  */
 data class Ability (
-    val id: String? = null,
-    val character_id: String? = null,
-    val race_id: String? = null,
-    val name: String? = null,
-    val positive: Boolean? = null,
-    val description: String? = null,
-    val effect: String? = null
+    val id: kotlin.String? = null,
+    val race_id: kotlin.String? = null,
+    val name: kotlin.String? = null,
+    val positive: kotlin.Boolean? = null,
+    val description: kotlin.String? = null,
+    val effect: kotlin.String? = null,
+    val moves: kotlin.Array<Move>? = null
 ) {
 
 }

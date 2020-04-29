@@ -15,17 +15,15 @@ package com.example.rpgstatmanager.swagger.client.models
 /**
  * 
  * @param id 
- * @param character_id 
  * @param half 
  * @param line 
  * @param value 
  */
 data class Stat (
-    val id: String? = null,
-    val character_id: String? = null,
-    val half: String? = null,
-    val line: String? = null,
-    val value: Long? = null
+    val id: kotlin.String? = null,
+    val half: kotlin.String? = null,
+    val line: kotlin.String? = null,
+    val value: kotlin.Long? = null
 ) {
 
 }

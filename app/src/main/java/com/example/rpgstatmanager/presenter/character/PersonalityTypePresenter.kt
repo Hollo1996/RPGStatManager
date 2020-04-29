@@ -2,8 +2,8 @@ package com.example.rpgstatmanager.presenter.character
 
 import com.example.rpgstatmanager.interactor.data.character.EmotionModifierInteractor
 import com.example.rpgstatmanager.interactor.data.character.PersonalityTypeInteractor
-import com.example.rpgstatmanager.model.character.EmotionModifier
-import com.example.rpgstatmanager.model.character.PersonalityType
+import com.example.rpgstatmanager.model.character.D_EmotionModifier
+import com.example.rpgstatmanager.model.character.D_PersonalityType
 import com.example.rpgstatmanager.presenter.A_Presenter
 import com.example.rpgstatmanager.screen.character.PersonalityTypeScreen
 import javax.inject.Inject
@@ -27,8 +27,8 @@ class PersonalityTypePresenter
         )
 
     fun get() = personalityTypeInteractor.get()
-    fun set(persionality:PersonalityType){
-        personalityTypeInteractor.save(persionality)
+    fun set(persionality:D_PersonalityType){
+        personalityTypeInteractor.save(persionality,true)
         val eml = emotionModifierInteractor.list()
 
         for(emotion in emotionModifierBase.keys){
@@ -44,7 +44,7 @@ class PersonalityTypePresenter
                 }
             } ?: throw Error("No emotion with given name")
             emotionModifierInteractor.save(
-                EmotionModifier( emotionLine.id,emotionLine.name, newValues,emotionLine.trigger )
+                D_EmotionModifier( emotionLine.id,emotionLine.name, newValues,emotionLine.trigger ), true
             )
         }
     }

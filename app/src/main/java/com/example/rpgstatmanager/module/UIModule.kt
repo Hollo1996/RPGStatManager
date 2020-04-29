@@ -1,7 +1,6 @@
 package com.example.rpgstatmanager.module
 
 import android.content.Context
-import com.example.rpgstatmanager.interactor.DataBaseInteractor
 import com.example.rpgstatmanager.interactor.api.AuthInteractor
 import com.example.rpgstatmanager.interactor.data.AdventureInteractor
 import com.example.rpgstatmanager.interactor.data.CharacterInteractor

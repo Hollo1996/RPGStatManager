@@ -2,10 +2,10 @@ package com.example.rpgstatmanager.interactor
 
 abstract class A_TableInteractor<D> {
     var ownerId:String?=null
-    abstract fun save(d: D)
+    abstract fun save(d: D, exists: Boolean)
     abstract fun delete(d: D)
-    abstract fun get(): D
-    abstract fun getWhen(filter: (D)->Boolean ): D
+    fun get() = list().first()
+    fun getWhen(filter: (D)->Boolean ) = list().first(filter)
     abstract fun list(): List<D>
-    abstract fun listWhen(pattern: (D)->Boolean ): List<D>
+    fun listWhen(filter: (D)->Boolean ) = list().filter(filter)
 }

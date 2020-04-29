@@ -18,8 +18,8 @@ package com.example.rpgstatmanager.swagger.client.models
  * @param value 
  */
 data class KeyValue (
-    val key: String? = null,
-    val value: Long? = null
+    val key: kotlin.String? = null,
+    val value: kotlin.Long? = null
 ) {
 
 }

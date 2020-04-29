@@ -15,19 +15,17 @@ package com.example.rpgstatmanager.swagger.client.models
 /**
  * 
  * @param id 
- * @param character_id 
- * @param categoryName
+ * @param categoryName 
  * @param familyName 
  * @param raceName 
  * @param subraceName 
  */
 data class Race (
-    val id: String? = null,
-    val character_id: String? = null,
-    val categoryName: String? = null,
-    val familyName: String? = null,
-    val raceName: String? = null,
-    val subraceName: String? = null
+    val id: kotlin.String? = null,
+    val categoryName: kotlin.String? = null,
+    val familyName: kotlin.String? = null,
+    val raceName: kotlin.String? = null,
+    val subraceName: kotlin.String? = null
 ) {
 
 }

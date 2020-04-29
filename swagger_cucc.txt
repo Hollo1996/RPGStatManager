@@ -1,0 +1,1613 @@
+swagger: "2.0"
+info:
+  description: "This is the server for the data accass of the RPG Users"
+  version: "1.0.0"
+  title: "RPG Stat Manager Central Server"
+  contact:
+    email: "holloszaboakos.1996@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "rpgmanager.data.io"
+basePath: "/v2"
+
+
+tags:
+- name: "token"
+  description: "Basic authentication"
+    
+- name: "data"
+  description: "Access and manipulate data"
+    
+schemes:
+- "https"
+- "http"
+
+paths:
+  /token/{name},{password}:
+    get:
+      tags:
+      - "token"
+      summary: "ask for a new token"
+      description: "We us e a weak and simple method. 
+                    The client sends the name and the password.
+                    If the pair is in the database,
+                    the server returned a randomgenerated number.
+                    On later requests only the number has tob be sent.
+                    On new login every code associated with the username gets deleted."
+      operationId: "getToken"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "name"
+        description: "Name of the user"
+        required: true
+        type: "string"
+      - in: "path"
+        name: "password"
+        description: "Name of the user"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "string"
+        "400":
+          description: "Invalid name password pair"
+  
+  /token/{name}:
+  #ADVENTURE
+    get:
+      tags:
+      - "token"
+      summary: "request new password"
+      description: "You can ask for a new password.
+                    The requests will be checked manually.
+                    The administrator will contect you in email."
+      operationId: "getNewPassword"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "name"
+        description: "Name of the user"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown name"
+          
+  /data/adventure/{token}:
+  #ADVENTURE
+    get:
+      tags:
+      - "data"
+      summary: "Get all adventures."
+      description: "Returnes all adventures of the loged in user."
+      operationId: "listAdventures"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Owner object"
+        required: true
+        schema: 
+          $ref: "#/definitions/Adventure"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items: 
+              $ref: "#/definitions/Adventure"
+    post:
+      tags:
+      - "data"
+      summary: "add new adventure"
+      description: "Uploades a newly created adventure"
+      operationId: "createAdventure"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the uploaded adventure"
+        required: true
+        schema:
+          $ref: "#/definitions/Adventure"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Invalid adventure"
+    put:
+      tags:
+      - "data"
+      summary: "update existing adventure"
+      description: "Updates a newly created adventure"
+      operationId: "updateAdventure"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the adventure with updated parameters"
+        required: true
+        schema: 
+          $ref: "#/definitions/Adventure"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown adventure"
+    delete:
+      tags:
+      - "data"
+      summary: "delete existing adventure"
+      description: "Deletes an adventure given by id"
+      operationId: "deleteAdventure"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the id of the adventure to delete"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown adventure"
+  /data/character/{token}:
+  #CHARACTER
+    get:
+      tags:
+      - "data"
+      summary: "Get all characters."
+      description: "Returnes all characters of the loged in user."
+      operationId: "listCharacters"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Owner object"
+        required: true
+        schema: 
+          $ref: "#/definitions/Adventure"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items: 
+              $ref: "#/definitions/Character"
+    post:
+      tags:
+      - "data"
+      summary: "add new character"
+      description: "Uploads a newly created character"
+      operationId: "createCharacter"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the uploaded character"
+        required: true
+        schema:
+          $ref: "#/definitions/Character"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Invalid character"
+    put:
+      tags:
+      - "data"
+      summary: "update existing character"
+      description: "Updates a newly created character"
+      operationId: "updateCharacter"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the character with updated parameters"
+        required: true
+        schema: 
+          $ref: "#/definitions/Character"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown character"
+    delete:
+      tags:
+      - "data"
+      summary: "delete existing character"
+      description: "Deletes an character given by id"
+      operationId: "deleteCharacter"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the id of the character to delete"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown character"
+  /data/ability/{token}:
+  #ABILITY
+    get:
+      tags:
+      - "data"
+      summary: "Get all abilities."
+      description: "Returnes all abilities of the loged in user."
+      operationId: "listAbilities"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Owner object"
+        required: true
+        schema: 
+          $ref: "#/definitions/Race"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items: 
+              $ref: "#/definitions/Ability"
+    post:
+      tags:
+      - "data"
+      summary: "add new ability"
+      description: "Uploads a newly created ability"
+      operationId: "createAbility"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the uploaded ability"
+        required: true
+        schema:
+          $ref: "#/definitions/Ability"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Invalid ability"
+    put:
+      tags:
+      - "data"
+      summary: "update existing ability"
+      description: "Updates a newly created ability"
+      operationId: "updateAbility"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the ability with updated parameters"
+        required: true
+        schema: 
+          $ref: "#/definitions/Ability"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown ability"
+    delete:
+      tags:
+      - "data"
+      summary: "delete existing ability"
+      description: "Deletes an ability given by id"
+      operationId: "deleteAbility"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the id of the ability to delete"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown ability"
+  /data/emotionModifier/{token}:
+  #EMOTION MODIFIER
+    get:
+      tags:
+      - "data"
+      summary: "Get all emotion modifier."
+      description: "Returnes all emotion modifier of the loged in user."
+      operationId: "listEmotionModifiers"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Owner object"
+        required: true
+        schema: 
+          $ref: "#/definitions/Character"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items: 
+              $ref: "#/definitions/EmotionModifier"
+    post:
+      tags:
+      - "data"
+      summary: "add new emotion modifier"
+      description: "Uploads a newly created emotion modifier"
+      operationId: "createEmotionModifier"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the uploaded emotion modifier"
+        required: true
+        schema:
+          $ref: "#/definitions/EmotionModifier"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Invalid emotion modifier"
+    put:
+      tags:
+      - "data"
+      summary: "update existing emotion modifier"
+      description: "Updates a newly created emotion modifier"
+      operationId: "updateEmotionModifier"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the emotion modifier with updated parameters"
+        required: true
+        schema: 
+          $ref: "#/definitions/EmotionModifier"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown emotion modifier"
+    delete:
+      tags:
+      - "data"
+      summary: "delete existing emotion modifier"
+      description: "Deletes an emotion modifier given by id"
+      operationId: "deleteEmotionModifier"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the id of the emotion modifier to delete"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown emotion modifier"
+  /data/move/{token}:
+  #MOVE
+    get:
+      tags:
+      - "data"
+      summary: "Get all moves."
+      description: "Returnes all moves of the loged in user."
+      operationId: "listMoves"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Owner object"
+        required: true
+        schema: 
+          $ref: "#/definitions/Character"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items: 
+              $ref: "#/definitions/Move"
+    post:
+      tags:
+      - "data"
+      summary: "add new move"
+      description: "Uploads a newly created move"
+      operationId: "createMove"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the uploaded move"
+        required: true
+        schema:
+          $ref: "#/definitions/Move"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Invalid move"
+    put:
+      tags:
+      - "data"
+      summary: "update existing move"
+      description: "Updates a newly created move"
+      operationId: "updateMove"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the move with updated parameters"
+        required: true
+        schema: 
+          $ref: "#/definitions/Move"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown move"
+    delete:
+      tags:
+      - "data"
+      summary: "delete existing move"
+      description: "Deletes an move given by id"
+      operationId: "deleteMove"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the id of the move to delete"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown move"
+  /data/moveType/{token}:
+  #MOVE TYPE
+    get:
+      tags:
+      - "data"
+      summary: "Get all move type."
+      description: "Returnes all all move type of the loged in user."
+      operationId: "listMoveTypes"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Owner object"
+        required: true
+        schema: 
+          $ref: "#/definitions/Character"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items: 
+              $ref: "#/definitions/MoveType"
+    post:
+      tags:
+      - "data"
+      summary: "add new all move type"
+      description: "Uploads a newly created move type"
+      operationId: "createMoveType"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the uploaded move type"
+        required: true
+        schema:
+          $ref: "#/definitions/MoveType"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Invalid move type"
+    put:
+      tags:
+      - "data"
+      summary: "update existing move type"
+      description: "Updates a newly created move type"
+      operationId: "updateMoveType"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the move type with updated parameters"
+        required: true
+        schema: 
+          $ref: "#/definitions/MoveType"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown move type"
+    delete:
+      tags:
+      - "data"
+      summary: "delete existing move type"
+      description: "Deletes an move type given by id"
+      operationId: "deleteMoveType"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the id of the move type to delete"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown move type"
+  /data/personalityType/{token}:
+  #PERSONALITY TYPE
+    get:
+      tags:
+      - "data"
+      summary: "Get all personality type."
+      description: "Returnes all personality type of the loged in user."
+      operationId: "listPersonalityType"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Owner object"
+        required: true
+        schema: 
+          $ref: "#/definitions/Character"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items: 
+              $ref: "#/definitions/PersonalityType"
+    post:
+      tags:
+      - "data"
+      summary: "add new personality type"
+      description: "Uploads a newly created personality type"
+      operationId: "createPersonalityType"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the uploaded personality type"
+        required: true
+        schema:
+          $ref: "#/definitions/PersonalityType"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Invalid personality type"
+    put:
+      tags:
+      - "data"
+      summary: "update existing personality type"
+      description: "Updates a newly created personality type"
+      operationId: "updatePersonalityType"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the personality type with updated parameters"
+        required: true
+        schema: 
+          $ref: "#/definitions/PersonalityType"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown personality type"
+    delete:
+      tags:
+      - "data"
+      summary: "delete existing personality type"
+      description: "Deletes an personality type given by id"
+      operationId: "deletePersonalityType"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the id of the personality type to delete"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown adventure"
+  /data/race/{token}:
+  #RACE
+    get:
+      tags:
+      - "data"
+      summary: "Get all race."
+      description: "Returnes all race of the loged in user."
+      operationId: "listRaces"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Owner object"
+        required: true
+        schema: 
+          $ref: "#/definitions/Character"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items: 
+              $ref: "#/definitions/Race"
+    post:
+      tags:
+      - "data"
+      summary: "add new race"
+      description: "Uploads a newly created race"
+      operationId: "createRace"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the uploaded race"
+        required: true
+        schema:
+          $ref: "#/definitions/Race"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Invalid race"
+    put:
+      tags:
+      - "data"
+      summary: "update existing race"
+      description: "Updates a newly created race"
+      operationId: "updateRace"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the race with updated parameters"
+        required: true
+        schema: 
+          $ref: "#/definitions/Race"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown race"
+    delete:
+      tags:
+      - "data"
+      summary: "delete existing race"
+      description: "Deletes an race given by id"
+      operationId: "deleteRace"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the id of the race to delete"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown race"
+  /data/stat/{token}:
+  #STAT
+    get:
+      tags:
+      - "data"
+      summary: "Get all stat."
+      description: "Returnes all stat of the loged in user."
+      operationId: "listStat"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Owner object"
+        required: true
+        schema: 
+          $ref: "#/definitions/Character"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items: 
+              $ref: "#/definitions/Stat"
+    post:
+      tags:
+      - "data"
+      summary: "add new stat"
+      description: "Uploads a newly created stat"
+      operationId: "createStat"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the uploaded stat"
+        required: true
+        schema:
+          $ref: "#/definitions/Stat"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Invalid stat"
+    put:
+      tags:
+      - "data"
+      summary: "update existing stat"
+      description: "Updates a newly created stat"
+      operationId: "updateStat"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the stat with updated parameters"
+        required: true
+        schema: 
+          $ref: "#/definitions/Stat"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown stat"
+    delete:
+      tags:
+      - "data"
+      summary: "delete existing stat"
+      description: "Deletes an stat given by id"
+      operationId: "deleteStat"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the id of the stat to delete"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown stat"
+  /data/tool/{token}:
+  #TOOL
+    get:
+      tags:
+      - "data"
+      summary: "Get all tool."
+      description: "Returnes all tool of the loged in user."
+      operationId: "listTool"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Owner object"
+        required: true
+        schema: 
+          $ref: "#/definitions/Character"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items: 
+              $ref: "#/definitions/Tool"
+    post:
+      tags:
+      - "data"
+      summary: "add new tool"
+      description: "Uploads a newly created tool"
+      operationId: "createTool"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the uploaded tool"
+        required: true
+        schema:
+          $ref: "#/definitions/Tool"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Invalid tool"
+    put:
+      tags:
+      - "data"
+      summary: "update existing tool"
+      description: "Updates a newly created tool"
+      operationId: "updateTool"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the tool with updated parameters"
+        required: true
+        schema: 
+          $ref: "#/definitions/Tool"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown adventure"
+    delete:
+      tags:
+      - "data"
+      summary: "delete tool"
+      description: "Deletes an tool given by id"
+      operationId: "deleteTool"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the id of the tool to delete"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown tool"
+  /data/weapon/{token}:
+  #WEAPON
+    get:
+      tags:
+      - "data"
+      summary: "Get all weapon."
+      description: "Returnes all weapon of the loged in user."
+      operationId: "listWeapon"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Owner object"
+        required: true
+        schema: 
+          $ref: "#/definitions/Character"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items: 
+              $ref: "#/definitions/Weapon"
+    post:
+      tags:
+      - "data"
+      summary: "add new weapon"
+      description: "Uploads a newly created weapon"
+      operationId: "createWeapon"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the uploaded weapon"
+        required: true
+        schema:
+          $ref: "#/definitions/Weapon"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Invalid weapon"
+    put:
+      tags:
+      - "data"
+      summary: "updateWeapon"
+      description: "Updates a newly created weapon"
+      operationId: "updateWeapon"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the weapon with updated parameters"
+        required: true
+        schema: 
+          $ref: "#/definitions/Weapon"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown weapon"
+    delete:
+      tags:
+      - "data"
+      summary: "delete existing weapon"
+      description: "Deletes an weapon given by id"
+      operationId: "deleteWeapon"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "token"
+        description: "Authentication number"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "the id of the weapon to delete"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+        "400":
+          description: "Unknown weapon"
+  
+          
+#securityDefinitions:
+#  petstore_auth:
+#type: "oauth2"
+#    authorizationUrl: "http://petstore.swagger.io/oauth/dialog"
+#    flow: "implicit"
+#    scopes:
+#      write:pets: "modify pets in your account"
+#      read:pets: "read your pets"
+#  api_key:
+#    type: "apiKey"
+#    name: "api_key"
+#    in: "header"
+    
+definitions:
+      
+  Adventure:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      is_gm:
+        type: "boolean"
+      icon:
+        type: "string"
+  
+  Character:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      is_npc:
+        type: "boolean"
+  
+  Ability:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      race_id:
+        type: "string"
+      name:
+        type: "string"
+      positive:
+        type: "boolean"
+      description:
+        type: "string"
+      effect:
+        type: "string"
+      moves:
+        type: "array"
+        items: 
+          $ref: "#/definitions/Move"
+      
+  
+  EmotionModifier:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      trigger:
+        type: "string"
+      values:
+        type: "array"
+        items: 
+          $ref: "#/definitions/KeyValue"
+              
+  KeyValue:
+    type: "object"
+    properties:
+      key:
+        type: "string"
+      value:
+        type: "integer"
+        format: "int64"
+  
+  Move:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      move_type_id:
+        type: "string"
+      name:
+        type: "string"
+      cardRestriction:
+        type: "string"
+      description:
+        type: "string"
+      effect:
+        type: "string"
+  
+  MoveType:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      half:
+        type: "string"
+      line:
+        type: "string"
+      stat1:
+        type: "string"
+      stat2:
+        type: "string"
+      value:
+        type: "integer"
+        format: "int64"
+  
+  PersonalityType:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      introvert:
+        type: "integer"
+        format: "int64"
+      extrovert:
+        type: "integer"
+        format: "int64"
+      observant:
+        type: "integer"
+        format: "int64"
+      intuitive:
+        type: "integer"
+        format: "int64"
+      thinking:
+        type: "integer"
+        format: "int64"
+      feeling:
+        type: "integer"
+        format: "int64"
+      judging:
+        type: "integer"
+        format: "int64"
+      prospecting:
+        type: "integer"
+        format: "int64"
+      assertive:
+        type: "integer"
+        format: "int64"
+      turbulent:
+        type: "integer"
+        format: "int64"
+  
+  Race:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      categoryName:
+        type: "string"
+      familyName:
+        type: "string"
+      raceName:
+        type: "string"
+      subraceName:
+        type: "string"
+  
+  Stat:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      half:
+        type: "string"
+      line:
+        type: "string"
+      value:
+        type: "integer"
+        format: "int64"
+  
+  Tool:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      moves:
+        type: "array"
+        items: 
+          $ref: "#/definitions/Move"
+  
+  Weapon:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+      moves:
+        type: "array"
+        items: 
+          $ref: "#/definitions/Move"

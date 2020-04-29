@@ -20,10 +20,10 @@ package com.example.rpgstatmanager.swagger.client.models
  * @param icon 
  */
 data class Adventure (
-    val id: String? = null,
-    val name: String? = null,
-    val is_gm: Boolean? = null,
-    val icon: String? = null
+    val id: kotlin.String? = null,
+    val name: kotlin.String? = null,
+    val is_gm: kotlin.Boolean? = null,
+    val icon: kotlin.String? = null
 ) {
 
 }

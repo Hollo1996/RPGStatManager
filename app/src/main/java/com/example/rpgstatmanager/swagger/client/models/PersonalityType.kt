@@ -15,10 +15,9 @@ package com.example.rpgstatmanager.swagger.client.models
 /**
  * 
  * @param id 
- * @param character_id 
  * @param introvert 
  * @param extrovert 
- * @param observent
+ * @param observant 
  * @param intuitive 
  * @param thinking 
  * @param feeling 
@@ -28,18 +27,17 @@ package com.example.rpgstatmanager.swagger.client.models
  * @param turbulent 
  */
 data class PersonalityType (
-    val id: String? = null,
-    val character_id: String? = null,
-    val introvert: Long? = null,
-    val extrovert: Long? = null,
-    val observent: Long? = null,
-    val intuitive: Long? = null,
-    val thinking: Long? = null,
-    val feeling: Long? = null,
-    val judging: Long? = null,
-    val prospecting: Long? = null,
-    val assertive: Long? = null,
-    val turbulent: Long? = null
+    val id: kotlin.String? = null,
+    val introvert: kotlin.Long? = null,
+    val extrovert: kotlin.Long? = null,
+    val observant: kotlin.Long? = null,
+    val intuitive: kotlin.Long? = null,
+    val thinking: kotlin.Long? = null,
+    val feeling: kotlin.Long? = null,
+    val judging: kotlin.Long? = null,
+    val prospecting: kotlin.Long? = null,
+    val assertive: kotlin.Long? = null,
+    val turbulent: kotlin.Long? = null
 ) {
 
 }

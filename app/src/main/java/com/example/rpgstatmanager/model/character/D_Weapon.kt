@@ -1,7 +1,7 @@
 package com.example.rpgstatmanager.model.character
 
-data class Weapon (
+data class D_Weapon (
     val id:String,
     val name: String,
-    val moves:List<Move>
+    val DMoves:List<D_Move>
 )

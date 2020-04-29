@@ -1,7 +1,8 @@
 package com.example.rpgstatmanager.model.character
 
-data class Tool (
+data class D_EmotionModifier (
     val id:String,
     val name: String,
-    val moves:List<Move>
+    val modifiers: Map<String,Int>,
+    val trigger: String
 )

@@ -24,28 +24,28 @@ import com.example.rpgstatmanager.swagger.client.models.Stat
 import com.example.rpgstatmanager.swagger.client.models.Tool
 import com.example.rpgstatmanager.swagger.client.models.Weapon
 
-class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(basePath) {
+class DataApi(basePath: kotlin.String = "https://rpgmanager.data.io/v2") : ApiClient(basePath) {
 
     /**
     * add new ability
-    * Uplodes a newly created ability
-    * @param token Autentication number 
-    * @param body the uploded ability 
+    * Uploads a newly created ability
+    * @param token Authentication number 
+    * @param body the uploaded ability 
     * @return void
     */
-    fun createAbility(token: String, body: Ability) : Unit {
-        val localVariableBody: Any? = body
+    fun createAbility(token: kotlin.String, body: Ability) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.POST,
-            "/data/ability/{token}".replace("{"+"token"+"}", token),
+            "/data/ability/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -60,30 +60,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * add new adventure
-    * Uplodes a newly created adventure
-    * @param token Autentication number 
-    * @param body the uploded adventure 
+    * Uploades a newly created adventure
+    * @param token Authentication number 
+    * @param body the uploaded adventure 
     * @return void
     */
-    fun createAdventure(token: String, body: Adventure) : Unit {
-        val localVariableBody: Any? = body
+    fun createAdventure(token: kotlin.String, body: Adventure) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.POST,
-            "/data/adventure/{token}".replace("{"+"token"+"}", token),
+            "/data/adventure/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -98,30 +98,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * add new character
-    * Uplodes a newly created character
-    * @param token Autentication number 
-    * @param body the uploded character 
+    * Uploads a newly created character
+    * @param token Authentication number 
+    * @param body the uploaded character 
     * @return void
     */
-    fun createCharacter(token: String, body: Character) : Unit {
-        val localVariableBody: Any? = body
+    fun createCharacter(token: kotlin.String, body: Character) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.POST,
-            "/data/character/{token}".replace("{"+"token"+"}", token),
+            "/data/character/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -136,30 +136,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * add new emotion modifier
-    * Uplodes a newly created emotion modifier
-    * @param token Autentication number 
-    * @param body the uploded emotion modifier 
+    * Uploads a newly created emotion modifier
+    * @param token Authentication number 
+    * @param body the uploaded emotion modifier 
     * @return void
     */
-    fun createEmotionModifier(token: String, body: EmotionModifier) : Unit {
-        val localVariableBody: Any? = body
+    fun createEmotionModifier(token: kotlin.String, body: EmotionModifier) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.POST,
-            "/data/emotionModifier/{token}".replace("{"+"token"+"}", token),
+            "/data/emotionModifier/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -174,30 +174,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * add new move
-    * Uplodes a newly created move
-    * @param token Autentication number 
-    * @param body the uploded move 
+    * Uploads a newly created move
+    * @param token Authentication number 
+    * @param body the uploaded move 
     * @return void
     */
-    fun createMove(token: String, body: Move) : Unit {
-        val localVariableBody: Any? = body
+    fun createMove(token: kotlin.String, body: Move) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.POST,
-            "/data/move/{token}".replace("{"+"token"+"}", token),
+            "/data/move/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -212,30 +212,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * add new all move type
-    * Uplodes a newly created move type
-    * @param token Autentication number 
-    * @param body the uploded move type 
+    * Uploads a newly created move type
+    * @param token Authentication number 
+    * @param body the uploaded move type 
     * @return void
     */
-    fun createMoveType(token: String, body: MoveType) : Unit {
-        val localVariableBody: Any? = body
+    fun createMoveType(token: kotlin.String, body: MoveType) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.POST,
-            "/data/moveType/{token}".replace("{"+"token"+"}", token),
+            "/data/moveType/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -250,30 +250,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * add new personality type
-    * Uplodes a newly created personality type
-    * @param token Autentication number 
-    * @param body the uploded personality type 
+    * Uploads a newly created personality type
+    * @param token Authentication number 
+    * @param body the uploaded personality type 
     * @return void
     */
-    fun createPersonalityType(token: String, body: PersonalityType) : Unit {
-        val localVariableBody: Any? = body
+    fun createPersonalityType(token: kotlin.String, body: PersonalityType) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.POST,
-            "/data/personalityType/{token}".replace("{"+"token"+"}", token),
+            "/data/personalityType/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -288,30 +288,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * add new race
-    * Uplodes a newly created race
-    * @param token Autentication number 
-    * @param body the uploded race 
+    * Uploads a newly created race
+    * @param token Authentication number 
+    * @param body the uploaded race 
     * @return void
     */
-    fun createRace(token: String, body: Race) : Unit {
-        val localVariableBody: Any? = body
+    fun createRace(token: kotlin.String, body: Race) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.POST,
-            "/data/race/{token}".replace("{"+"token"+"}", token),
+            "/data/race/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -326,30 +326,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * add new stat
-    * Uplodes a newly created stat
-    * @param token Autentication number 
-    * @param body the uploded stat 
+    * Uploads a newly created stat
+    * @param token Authentication number 
+    * @param body the uploaded stat 
     * @return void
     */
-    fun createStat(token: String, body: Stat) : Unit {
-        val localVariableBody: Any? = body
+    fun createStat(token: kotlin.String, body: Stat) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.POST,
-            "/data/stat/{token}".replace("{"+"token"+"}", token),
+            "/data/stat/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -364,30 +364,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * add new tool
-    * Uplodes a newly created tool
-    * @param token Autentication number 
-    * @param body the uploded tool 
+    * Uploads a newly created tool
+    * @param token Authentication number 
+    * @param body the uploaded tool 
     * @return void
     */
-    fun createTool(token: String, body: Tool) : Unit {
-        val localVariableBody: Any? = body
+    fun createTool(token: kotlin.String, body: Tool) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.POST,
-            "/data/tool/{token}".replace("{"+"token"+"}", token),
+            "/data/tool/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -402,30 +402,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * add new weapon
-    * Uplodes a newly created weapon
-    * @param token Autentication number 
-    * @param body the uploded weapon 
+    * Uploads a newly created weapon
+    * @param token Authentication number 
+    * @param body the uploaded weapon 
     * @return void
     */
-    fun createWeapon(token: String, body: Weapon) : Unit {
-        val localVariableBody: Any? = body
+    fun createWeapon(token: kotlin.String, body: Weapon) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.POST,
-            "/data/weapon/{token}".replace("{"+"token"+"}", token),
+            "/data/weapon/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -440,30 +440,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * delete existing ability
     * Deletes an ability given by id
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the id of the ability to delete 
     * @return void
     */
-    fun deleteAbility(token: String, body: String) : Unit {
-        val localVariableBody: Any? = body
+    fun deleteAbility(token: kotlin.String, body: kotlin.String) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.DELETE,
-            "/data/ability/{token}".replace("{"+"token"+"}", token),
+            "/data/ability/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -478,30 +478,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * delete existing adventure
     * Deletes an adventure given by id
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the id of the adventure to delete 
     * @return void
     */
-    fun deleteAdventure(token: String, body: String) : Unit {
-        val localVariableBody: Any? = body
+    fun deleteAdventure(token: kotlin.String, body: kotlin.String) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.DELETE,
-            "/data/adventure/{token}".replace("{"+"token"+"}", token),
+            "/data/adventure/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -516,30 +516,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * delete existing character
     * Deletes an character given by id
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the id of the character to delete 
     * @return void
     */
-    fun deleteCharacter(token: String, body: String) : Unit {
-        val localVariableBody: Any? = body
+    fun deleteCharacter(token: kotlin.String, body: kotlin.String) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.DELETE,
-            "/data/character/{token}".replace("{"+"token"+"}", token),
+            "/data/character/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -554,30 +554,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * delete existing emotion modifier
     * Deletes an emotion modifier given by id
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the id of the emotion modifier to delete 
     * @return void
     */
-    fun deleteEmotionModifier(token: String, body: String) : Unit {
-        val localVariableBody: Any? = body
+    fun deleteEmotionModifier(token: kotlin.String, body: kotlin.String) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.DELETE,
-            "/data/emotionModifier/{token}".replace("{"+"token"+"}", token),
+            "/data/emotionModifier/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -592,30 +592,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * delete existing move
     * Deletes an move given by id
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the id of the move to delete 
     * @return void
     */
-    fun deleteMove(token: String, body: String) : Unit {
-        val localVariableBody: Any? = body
+    fun deleteMove(token: kotlin.String, body: kotlin.String) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.DELETE,
-            "/data/move/{token}".replace("{"+"token"+"}", token),
+            "/data/move/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -630,30 +630,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * delete existing move type
     * Deletes an move type given by id
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the id of the move type to delete 
     * @return void
     */
-    fun deleteMoveType(token: String, body: String) : Unit {
-        val localVariableBody: Any? = body
+    fun deleteMoveType(token: kotlin.String, body: kotlin.String) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.DELETE,
-            "/data/moveType/{token}".replace("{"+"token"+"}", token),
+            "/data/moveType/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -668,30 +668,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * delete existing personality type
     * Deletes an personality type given by id
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the id of the personality type to delete 
     * @return void
     */
-    fun deletePersonalityType(token: String, body: String) : Unit {
-        val localVariableBody: Any? = body
+    fun deletePersonalityType(token: kotlin.String, body: kotlin.String) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.DELETE,
-            "/data/personalityType/{token}".replace("{"+"token"+"}", token),
+            "/data/personalityType/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -706,30 +706,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * delete existing race
     * Deletes an race given by id
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the id of the race to delete 
     * @return void
     */
-    fun deleteRace(token: String, body: String) : Unit {
-        val localVariableBody: Any? = body
+    fun deleteRace(token: kotlin.String, body: kotlin.String) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.DELETE,
-            "/data/race/{token}".replace("{"+"token"+"}", token),
+            "/data/race/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -744,30 +744,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * delete existing stat
     * Deletes an stat given by id
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the id of the stat to delete 
     * @return void
     */
-    fun deleteStat(token: String, body: String) : Unit {
-        val localVariableBody: Any? = body
+    fun deleteStat(token: kotlin.String, body: kotlin.String) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.DELETE,
-            "/data/stat/{token}".replace("{"+"token"+"}", token),
+            "/data/stat/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -782,30 +782,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * delete tool
     * Deletes an tool given by id
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the id of the tool to delete 
     * @return void
     */
-    fun deleteTool(token: String, body: String) : Unit {
-        val localVariableBody: Any? = body
+    fun deleteTool(token: kotlin.String, body: kotlin.String) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.DELETE,
-            "/data/tool/{token}".replace("{"+"token"+"}", token),
+            "/data/tool/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -820,30 +820,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * delete existing weapon
     * Deletes an weapon given by id
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the id of the weapon to delete 
     * @return void
     */
-    fun deleteWeapon(token: String, body: String) : Unit {
-        val localVariableBody: Any? = body
+    fun deleteWeapon(token: kotlin.String, body: kotlin.String) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.DELETE,
-            "/data/weapon/{token}".replace("{"+"token"+"}", token),
+            "/data/weapon/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -858,448 +858,459 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * Get all abilities.
     * Returnes all abilities of the loged in user.
-    * @param token Autentication number 
-    * @return Array<Ability>
+    * @param token Authentication number 
+    * @param body Owner object 
+    * @return kotlin.Array<Ability>
     */
     @Suppress("UNCHECKED_CAST")
-    fun listAbilities(token: String) : Array<Ability> {
-        val localVariableBody: Any? = null
+    fun listAbilities(token: kotlin.String, body: Race) : kotlin.Array<Ability> {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.GET,
-            "/data/ability/{token}".replace("{"+"token"+"}", token),
+            "/data/ability/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
-        val response = request<Array<Ability>>(
+        val response = request<kotlin.Array<Ability>>(
             localVariableConfig,
             localVariableBody
         )
 
         return when (response.responseType) {
-            ResponseType.Success -> (response as Success<*>).data as Array<Ability>
+            ResponseType.Success -> (response as Success<*>).data as kotlin.Array<Ability>
             ResponseType.Informational -> TODO()
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * Get all adventures.
     * Returnes all adventures of the loged in user.
-    * @param token Autentication number 
-    * @return Array<Adventure>
+    * @param token Authentication number 
+    * @param body Owner object 
+    * @return kotlin.Array<Adventure>
     */
     @Suppress("UNCHECKED_CAST")
-    fun listAdventures(token: String) : Array<Adventure> {
-        val localVariableBody: Any? = null
+    fun listAdventures(token: kotlin.String, body: Adventure) : kotlin.Array<Adventure> {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.GET,
-            "/data/adventure/{token}".replace("{"+"token"+"}", token),
+            "/data/adventure/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
-        val response = request<Array<Adventure>>(
+        val response = request<kotlin.Array<Adventure>>(
             localVariableConfig,
             localVariableBody
         )
 
         return when (response.responseType) {
-            ResponseType.Success -> (response as Success<*>).data as Array<Adventure>
+            ResponseType.Success -> (response as Success<*>).data as kotlin.Array<Adventure>
             ResponseType.Informational -> TODO()
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * Get all characters.
     * Returnes all characters of the loged in user.
-    * @param token Autentication number 
-    * @return Array<Character>
+    * @param token Authentication number 
+    * @param body Owner object 
+    * @return kotlin.Array<Character>
     */
     @Suppress("UNCHECKED_CAST")
-    fun listCharacters(token: String) : Array<Character> {
-        val localVariableBody: Any? = null
+    fun listCharacters(token: kotlin.String, body: Adventure) : kotlin.Array<Character> {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.GET,
-            "/data/character/{token}".replace("{"+"token"+"}", token),
+            "/data/character/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
-        val response = request<Array<Character>>(
+        val response = request<kotlin.Array<Character>>(
             localVariableConfig,
             localVariableBody
         )
 
         return when (response.responseType) {
-            ResponseType.Success -> (response as Success<*>).data as Array<Character>
+            ResponseType.Success -> (response as Success<*>).data as kotlin.Array<Character>
             ResponseType.Informational -> TODO()
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * Get all emotion modifier.
     * Returnes all emotion modifier of the loged in user.
-    * @param token Autentication number 
-    * @return Array<EmotionModifier>
+    * @param token Authentication number 
+    * @param body Owner object 
+    * @return kotlin.Array<EmotionModifier>
     */
     @Suppress("UNCHECKED_CAST")
-    fun listEmotionModifiers(token: String) : Array<EmotionModifier> {
-        val localVariableBody: Any? = null
+    fun listEmotionModifiers(token: kotlin.String, body: Character) : kotlin.Array<EmotionModifier> {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.GET,
-            "/data/emotionModifier/{token}".replace("{"+"token"+"}", token),
+            "/data/emotionModifier/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
-        val response = request<Array<EmotionModifier>>(
+        val response = request<kotlin.Array<EmotionModifier>>(
             localVariableConfig,
             localVariableBody
         )
 
         return when (response.responseType) {
-            ResponseType.Success -> (response as Success<*>).data as Array<EmotionModifier>
+            ResponseType.Success -> (response as Success<*>).data as kotlin.Array<EmotionModifier>
             ResponseType.Informational -> TODO()
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * Get all move type.
     * Returnes all all move type of the loged in user.
-    * @param token Autentication number 
-    * @return Array<MoveType>
+    * @param token Authentication number 
+    * @param body Owner object 
+    * @return kotlin.Array<MoveType>
     */
     @Suppress("UNCHECKED_CAST")
-    fun listMoveTypes(token: String) : Array<MoveType> {
-        val localVariableBody: Any? = null
+    fun listMoveTypes(token: kotlin.String, body: Character) : kotlin.Array<MoveType> {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.GET,
-            "/data/moveType/{token}".replace("{"+"token"+"}", token),
+            "/data/moveType/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
-        val response = request<Array<MoveType>>(
+        val response = request<kotlin.Array<MoveType>>(
             localVariableConfig,
             localVariableBody
         )
 
         return when (response.responseType) {
-            ResponseType.Success -> (response as Success<*>).data as Array<MoveType>
+            ResponseType.Success -> (response as Success<*>).data as kotlin.Array<MoveType>
             ResponseType.Informational -> TODO()
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * Get all moves.
     * Returnes all moves of the loged in user.
-    * @param token Autentication number 
-    * @return Array<Adventure>
+    * @param token Authentication number 
+    * @param body Owner object 
+    * @return kotlin.Array<Move>
     */
     @Suppress("UNCHECKED_CAST")
-    fun listMoves(token: String) : Array<Adventure> {
-        val localVariableBody: Any? = null
+    fun listMoves(token: kotlin.String, body: Character) : kotlin.Array<Move> {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.GET,
-            "/data/move/{token}".replace("{"+"token"+"}", token),
+            "/data/move/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
-        val response = request<Array<Adventure>>(
+        val response = request<kotlin.Array<Move>>(
             localVariableConfig,
             localVariableBody
         )
 
         return when (response.responseType) {
-            ResponseType.Success -> (response as Success<*>).data as Array<Adventure>
+            ResponseType.Success -> (response as Success<*>).data as kotlin.Array<Move>
             ResponseType.Informational -> TODO()
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * Get all personality type.
     * Returnes all personality type of the loged in user.
-    * @param token Autentication number 
-    * @return Array<PersonalityType>
+    * @param token Authentication number 
+    * @param body Owner object 
+    * @return kotlin.Array<PersonalityType>
     */
     @Suppress("UNCHECKED_CAST")
-    fun listPersonalityType(token: String) : Array<PersonalityType> {
-        val localVariableBody: Any? = null
+    fun listPersonalityType(token: kotlin.String, body: Character) : kotlin.Array<PersonalityType> {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.GET,
-            "/data/personalityType/{token}".replace("{"+"token"+"}", token),
+            "/data/personalityType/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
-        val response = request<Array<PersonalityType>>(
+        val response = request<kotlin.Array<PersonalityType>>(
             localVariableConfig,
             localVariableBody
         )
 
         return when (response.responseType) {
-            ResponseType.Success -> (response as Success<*>).data as Array<PersonalityType>
+            ResponseType.Success -> (response as Success<*>).data as kotlin.Array<PersonalityType>
             ResponseType.Informational -> TODO()
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * Get all race.
     * Returnes all race of the loged in user.
-    * @param token Autentication number 
-    * @return Array<Race>
+    * @param token Authentication number 
+    * @param body Owner object 
+    * @return kotlin.Array<Race>
     */
     @Suppress("UNCHECKED_CAST")
-    fun listRaces(token: String) : Array<Race> {
-        val localVariableBody: Any? = null
+    fun listRaces(token: kotlin.String, body: Character) : kotlin.Array<Race> {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.GET,
-            "/data/race/{token}".replace("{"+"token"+"}", token),
+            "/data/race/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
-        val response = request<Array<Race>>(
+        val response = request<kotlin.Array<Race>>(
             localVariableConfig,
             localVariableBody
         )
 
         return when (response.responseType) {
-            ResponseType.Success -> (response as Success<*>).data as Array<Race>
+            ResponseType.Success -> (response as Success<*>).data as kotlin.Array<Race>
             ResponseType.Informational -> TODO()
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * Get all stat.
     * Returnes all stat of the loged in user.
-    * @param token Autentication number 
-    * @return Array<Stat>
+    * @param token Authentication number 
+    * @param body Owner object 
+    * @return kotlin.Array<Stat>
     */
     @Suppress("UNCHECKED_CAST")
-    fun listStat(token: String) : Array<Stat> {
-        val localVariableBody: Any? = null
+    fun listStat(token: kotlin.String, body: Character) : kotlin.Array<Stat> {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.GET,
-            "/data/stat/{token}".replace("{"+"token"+"}", token),
+            "/data/stat/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
-        val response = request<Array<Stat>>(
+        val response = request<kotlin.Array<Stat>>(
             localVariableConfig,
             localVariableBody
         )
 
         return when (response.responseType) {
-            ResponseType.Success -> (response as Success<*>).data as Array<Stat>
+            ResponseType.Success -> (response as Success<*>).data as kotlin.Array<Stat>
             ResponseType.Informational -> TODO()
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * Get all tool.
     * Returnes all tool of the loged in user.
-    * @param token Autentication number 
-    * @return Array<Tool>
+    * @param token Authentication number 
+    * @param body Owner object 
+    * @return kotlin.Array<Tool>
     */
     @Suppress("UNCHECKED_CAST")
-    fun listTool(token: String) : Array<Tool> {
-        val localVariableBody: Any? = null
+    fun listTool(token: kotlin.String, body: Character) : kotlin.Array<Tool> {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.GET,
-            "/data/tool/{token}".replace("{"+"token"+"}", token),
+            "/data/tool/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
-        val response = request<Array<Tool>>(
+        val response = request<kotlin.Array<Tool>>(
             localVariableConfig,
             localVariableBody
         )
 
         return when (response.responseType) {
-            ResponseType.Success -> (response as Success<*>).data as Array<Tool>
+            ResponseType.Success -> (response as Success<*>).data as kotlin.Array<Tool>
             ResponseType.Informational -> TODO()
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * Get all weapon.
     * Returnes all weapon of the loged in user.
-    * @param token Autentication number 
-    * @return Array<Weapon>
+    * @param token Authentication number 
+    * @param body Owner object 
+    * @return kotlin.Array<Weapon>
     */
     @Suppress("UNCHECKED_CAST")
-    fun listWeapon(token: String) : Array<Weapon> {
-        val localVariableBody: Any? = null
+    fun listWeapon(token: kotlin.String, body: Character) : kotlin.Array<Weapon> {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.GET,
-            "/data/weapon/{token}".replace("{"+"token"+"}", token),
+            "/data/weapon/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
-        val response = request<Array<Weapon>>(
+        val response = request<kotlin.Array<Weapon>>(
             localVariableConfig,
             localVariableBody
         )
 
         return when (response.responseType) {
-            ResponseType.Success -> (response as Success<*>).data as Array<Weapon>
+            ResponseType.Success -> (response as Success<*>).data as kotlin.Array<Weapon>
             ResponseType.Informational -> TODO()
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * update existing ability
     * Updates a newly created ability
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the ability with updated parameters 
     * @return void
     */
-    fun updateAbility(token: String, body: Ability) : Unit {
-        val localVariableBody: Any? = body
+    fun updateAbility(token: kotlin.String, body: Ability) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.PUT,
-            "/data/ability/{token}".replace("{"+"token"+"}", token),
+            "/data/ability/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -1314,30 +1325,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * update existing adventure
     * Updates a newly created adventure
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the adventure with updated parameters 
     * @return void
     */
-    fun updateAdventure(token: String, body: Adventure) : Unit {
-        val localVariableBody: Any? = body
+    fun updateAdventure(token: kotlin.String, body: Adventure) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.PUT,
-            "/data/adventure/{token}".replace("{"+"token"+"}", token),
+            "/data/adventure/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -1352,30 +1363,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * update existing character
     * Updates a newly created character
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the character with updated parameters 
     * @return void
     */
-    fun updateCharacter(token: String, body: Character) : Unit {
-        val localVariableBody: Any? = body
+    fun updateCharacter(token: kotlin.String, body: Character) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.PUT,
-            "/data/character/{token}".replace("{"+"token"+"}", token),
+            "/data/character/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -1390,30 +1401,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * update existing emotion modifier
     * Updates a newly created emotion modifier
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the emotion modifier with updated parameters 
     * @return void
     */
-    fun updateEmotionModifier(token: String, body: EmotionModifier) : Unit {
-        val localVariableBody: Any? = body
+    fun updateEmotionModifier(token: kotlin.String, body: EmotionModifier) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.PUT,
-            "/data/emotionModifier/{token}".replace("{"+"token"+"}", token),
+            "/data/emotionModifier/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -1428,30 +1439,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * update existing move
     * Updates a newly created move
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the move with updated parameters 
     * @return void
     */
-    fun updateMove(token: String, body: Adventure) : Unit {
-        val localVariableBody: Any? = body
+    fun updateMove(token: kotlin.String, body: Move) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.PUT,
-            "/data/move/{token}".replace("{"+"token"+"}", token),
+            "/data/move/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -1466,30 +1477,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * update existing move type
     * Updates a newly created move type
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the move type with updated parameters 
     * @return void
     */
-    fun updateMoveType(token: String, body: MoveType) : Unit {
-        val localVariableBody: Any? = body
+    fun updateMoveType(token: kotlin.String, body: MoveType) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.PUT,
-            "/data/moveType/{token}".replace("{"+"token"+"}", token),
+            "/data/moveType/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -1504,30 +1515,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * update existing personality type
     * Updates a newly created personality type
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the personality type with updated parameters 
     * @return void
     */
-    fun updatePersonalityType(token: String, body: PersonalityType) : Unit {
-        val localVariableBody: Any? = body
+    fun updatePersonalityType(token: kotlin.String, body: PersonalityType) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.PUT,
-            "/data/personalityType/{token}".replace("{"+"token"+"}", token),
+            "/data/personalityType/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -1542,30 +1553,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * update existing race
     * Updates a newly created race
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the race with updated parameters 
     * @return void
     */
-    fun updateRace(token: String, body: Race) : Unit {
-        val localVariableBody: Any? = body
+    fun updateRace(token: kotlin.String, body: Race) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.PUT,
-            "/data/race/{token}".replace("{"+"token"+"}", token),
+            "/data/race/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -1580,30 +1591,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * update existing stat
     * Updates a newly created stat
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the stat with updated parameters 
     * @return void
     */
-    fun updateStat(token: String, body: Stat) : Unit {
-        val localVariableBody: Any? = body
+    fun updateStat(token: kotlin.String, body: Stat) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.PUT,
-            "/data/stat/{token}".replace("{"+"token"+"}", token),
+            "/data/stat/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -1618,30 +1629,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * update existing tool
     * Updates a newly created tool
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the tool with updated parameters 
     * @return void
     */
-    fun updateTool(token: String, body: Tool) : Unit {
-        val localVariableBody: Any? = body
+    fun updateTool(token: kotlin.String, body: Tool) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.PUT,
-            "/data/tool/{token}".replace("{"+"token"+"}", token),
+            "/data/tool/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -1656,30 +1667,30 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 
     /**
     * updateWeapon
     * Updates a newly created weapon
-    * @param token Autentication number 
+    * @param token Authentication number 
     * @param body the weapon with updated parameters 
     * @return void
     */
-    fun updateWeapon(token: String, body: Weapon) : Unit {
-        val localVariableBody: Any? = body
+    fun updateWeapon(token: kotlin.String, body: Weapon) : Unit {
+        val localVariableBody: kotlin.Any? = body
         val localVariableQuery: MultiValueMap = mapOf()
         
-        val contentHeaders: Map<String,String> = mapOf()
-        val acceptsHeaders: Map<String,String> = mapOf("Accept" to "application/xml, application/json")
-        val localVariableHeaders: MutableMap<String,String> = mutableMapOf()
+        val contentHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf()
+        val acceptsHeaders: kotlin.collections.Map<kotlin.String,kotlin.String> = mapOf("Accept" to "application/xml, application/json")
+        val localVariableHeaders: kotlin.collections.MutableMap<kotlin.String,kotlin.String> = mutableMapOf()
         localVariableHeaders.putAll(contentHeaders)
         localVariableHeaders.putAll(acceptsHeaders)
         
         val localVariableConfig = RequestConfig(
             RequestMethod.PUT,
-            "/data/weapon/{token}".replace("{"+"token"+"}", token),
+            "/data/weapon/{token}".replace("{"+"token"+"}", "$token"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -1694,7 +1705,7 @@ class DataApi(basePath: String = "https://rpgmanager.data.io/v2") : ApiClient(ba
             ResponseType.Redirection -> TODO()
             ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
             ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
-            else -> throw IllegalStateException("Undefined ResponseType.")
+            else -> throw kotlin.IllegalStateException("Undefined ResponseType.")
         }
     }
 

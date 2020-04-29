@@ -1,10 +1,10 @@
 package com.example.rpgstatmanager.model.character
 
-data class Move (
+data class D_Move (
     val id:String,
+    val moveTypeId: String,
     val name: String,
-    val type: MoveType,
     val cardRestriction: String,
-    val discription: String,
+    val description: String,
     val effect: String
 )

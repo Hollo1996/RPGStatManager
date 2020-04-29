@@ -1,11 +1,12 @@
 package com.example.rpgstatmanager.module
 
 import android.content.Context
-import com.example.rpgstatmanager.interactor.DataBaseInteractor
 import com.example.rpgstatmanager.interactor.api.AuthInteractor
 import com.example.rpgstatmanager.interactor.data.AdventureInteractor
 import com.example.rpgstatmanager.interactor.data.CharacterInteractor
 import com.example.rpgstatmanager.interactor.data.character.*
+import com.example.rpgstatmanager.swagger.client.apis.DataApi
+import com.example.rpgstatmanager.swagger.client.apis.TokenApi
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -14,43 +15,52 @@ import javax.inject.Singleton
 class InteractorModule(private val context: Context) {
     @Provides
     @Singleton
-    fun provideDataBaseInteractor() = DataBaseInteractor()
+    fun provideAdventureInteractor(dataApi:DataApi,tokenApi: TokenApi)
+            = AdventureInteractor(dataApi,tokenApi)
     @Provides
     @Singleton
-    fun provideAdventureInteractor() = AdventureInteractor()
-    @Provides
-    @Singleton
-    fun provideCharacterInteractor() = CharacterInteractor()
+    fun provideCharacterInteractor(dataApi:DataApi,tokenApi: TokenApi)
+            = CharacterInteractor(dataApi,tokenApi)
 
     @Provides
     @Singleton
-    fun provideAbilityInteractor() = AbilityInteractor()
+    fun provideAbilityInteractor(dataApi:DataApi,tokenApi: TokenApi)
+            = AbilityInteractor(dataApi,tokenApi)
     @Provides
     @Singleton
-    fun provideEmotionModifierInteractor() = EmotionModifierInteractor()
+    fun provideEmotionModifierInteractor(dataApi:DataApi,tokenApi: TokenApi)
+            = EmotionModifierInteractor(dataApi,tokenApi)
     @Provides
     @Singleton
-    fun provideMoveInteractor() = MoveInteractor()
+    fun provideMoveInteractor(dataApi:DataApi,tokenApi: TokenApi)
+            = MoveInteractor(dataApi,tokenApi)
     @Provides
     @Singleton
-    fun provideMoveTypeInteractor() = MoveTypeInteractor()
+    fun provideMoveTypeInteractor(dataApi:DataApi,tokenApi: TokenApi)
+            = MoveTypeInteractor(dataApi,tokenApi)
     @Provides
     @Singleton
-    fun providePersonalityTypeInteractor() = PersonalityTypeInteractor()
+    fun providePersonalityTypeInteractor(dataApi:DataApi,tokenApi: TokenApi)
+            = PersonalityTypeInteractor(dataApi,tokenApi)
     @Provides
     @Singleton
-    fun provideRaceInteractor() = RaceInteractor()
+    fun provideRaceInteractor(dataApi:DataApi,tokenApi: TokenApi)
+            = RaceInteractor(dataApi,tokenApi)
     @Provides
     @Singleton
-    fun provideStatInteractor() = StatInteractor()
+    fun provideStatInteractor(dataApi:DataApi,tokenApi: TokenApi)
+            = StatInteractor(dataApi,tokenApi)
     @Provides
     @Singleton
-    fun provideToolInteractor() = ToolInteractor()
+    fun provideToolInteractor(dataApi:DataApi,tokenApi: TokenApi)
+            = ToolInteractor(dataApi,tokenApi)
     @Provides
     @Singleton
-    fun provideWeaponInteractor() = WeaponInteractor()
+    fun provideWeaponInteractor(dataApi:DataApi,tokenApi: TokenApi)
+            = WeaponInteractor(dataApi,tokenApi)
 
     @Provides
     @Singleton
-    fun provideAuthInteractor() = AuthInteractor()
+    fun provideAuthInteractor(tokenApi: TokenApi)
+            = AuthInteractor(tokenApi)
 }

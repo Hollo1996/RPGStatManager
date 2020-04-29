@@ -15,19 +15,19 @@ package com.example.rpgstatmanager.swagger.client.models
 /**
  * 
  * @param id 
- * @param character_id 
  * @param move_type_id 
+ * @param name 
  * @param cardRestriction 
- * @param description
+ * @param description 
  * @param effect 
  */
 data class Move (
-    val id: String? = null,
-    val character_id: String? = null,
-    val move_type_id: String? = null,
-    val cardRestriction: String? = null,
-    val description: String? = null,
-    val effect: String? = null
+    val id: kotlin.String? = null,
+    val move_type_id: kotlin.String? = null,
+    val name: kotlin.String? = null,
+    val cardRestriction: kotlin.String? = null,
+    val description: kotlin.String? = null,
+    val effect: kotlin.String? = null
 ) {
 
 }

@@ -1,8 +1,7 @@
 package com.example.rpgstatmanager.model.character
 
-data class Stat(
+data class D_Stat(
     val id:String,
-    val name: String,
     val half: String,
     val line: String,
     val value: Int

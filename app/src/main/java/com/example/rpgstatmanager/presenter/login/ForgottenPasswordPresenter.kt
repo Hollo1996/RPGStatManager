@@ -9,10 +9,6 @@ class ForgottenPasswordPresenter
 @Inject constructor(private val authInteractor: AuthInteractor)
     : A_Presenter<ForgottenPasswordScreen>()  {
     fun sendReset(name:String):Boolean{
-        if(authInteractor.isValid(name)){
-            authInteractor.sendPasswordReset(name)
-            return true
-        }
-        return false
+        return authInteractor.requestPassword(name)
     }
 }

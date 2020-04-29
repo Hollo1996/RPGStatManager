@@ -15,7 +15,6 @@ package com.example.rpgstatmanager.swagger.client.models
 /**
  * 
  * @param id 
- * @param character_id 
  * @param half 
  * @param line 
  * @param stat1 
@@ -23,13 +22,12 @@ package com.example.rpgstatmanager.swagger.client.models
  * @param value 
  */
 data class MoveType (
-    val id: String? = null,
-    val character_id: String? = null,
-    val half: String? = null,
-    val line: String? = null,
-    val stat1: String? = null,
-    val stat2: String? = null,
-    val value: Long? = null
+    val id: kotlin.String? = null,
+    val half: kotlin.String? = null,
+    val line: kotlin.String? = null,
+    val stat1: kotlin.String? = null,
+    val stat2: kotlin.String? = null,
+    val value: kotlin.Long? = null
 ) {
 
 }
