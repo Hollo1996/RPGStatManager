@@ -1,6 +1,5 @@
 package com.example.rpgstatmanager.swagger.client.infrastructure
 
-import io.swagger.client.infrastructure.*
 import okhttp3.*
 import java.io.File
 import java.io.IOException

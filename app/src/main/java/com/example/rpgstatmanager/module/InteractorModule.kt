@@ -15,49 +15,49 @@ import javax.inject.Singleton
 class InteractorModule(private val context: Context) {
     @Provides
     @Singleton
-    fun provideAdventureInteractor(dataApi:DataApi,tokenApi: TokenApi)
-            = AdventureInteractor(dataApi,tokenApi)
+    fun provideAdventureInteractor(dataApi:DataApi)
+            = AdventureInteractor(dataApi)
     @Provides
     @Singleton
-    fun provideCharacterInteractor(dataApi:DataApi,tokenApi: TokenApi)
-            = CharacterInteractor(dataApi,tokenApi)
+    fun provideCharacterInteractor(dataApi:DataApi)
+            = CharacterInteractor(dataApi)
 
     @Provides
     @Singleton
-    fun provideAbilityInteractor(dataApi:DataApi,tokenApi: TokenApi)
-            = AbilityInteractor(dataApi,tokenApi)
+    fun provideAbilityInteractor(dataApi:DataApi)
+            = AbilityInteractor(dataApi)
     @Provides
     @Singleton
-    fun provideEmotionModifierInteractor(dataApi:DataApi,tokenApi: TokenApi)
-            = EmotionModifierInteractor(dataApi,tokenApi)
+    fun provideEmotionModifierInteractor(dataApi:DataApi)
+            = EmotionModifierInteractor(dataApi)
     @Provides
     @Singleton
-    fun provideMoveInteractor(dataApi:DataApi,tokenApi: TokenApi)
-            = MoveInteractor(dataApi,tokenApi)
+    fun provideMoveInteractor(dataApi:DataApi)
+            = MoveInteractor(dataApi)
     @Provides
     @Singleton
-    fun provideMoveTypeInteractor(dataApi:DataApi,tokenApi: TokenApi)
-            = MoveTypeInteractor(dataApi,tokenApi)
+    fun provideMoveTypeInteractor(dataApi:DataApi)
+            = MoveTypeInteractor(dataApi)
     @Provides
     @Singleton
-    fun providePersonalityTypeInteractor(dataApi:DataApi,tokenApi: TokenApi)
-            = PersonalityTypeInteractor(dataApi,tokenApi)
+    fun providePersonalityTypeInteractor(dataApi:DataApi)
+            = PersonalityTypeInteractor(dataApi)
     @Provides
     @Singleton
-    fun provideRaceInteractor(dataApi:DataApi,tokenApi: TokenApi)
-            = RaceInteractor(dataApi,tokenApi)
+    fun provideRaceInteractor(dataApi:DataApi)
+            = RaceInteractor(dataApi)
     @Provides
     @Singleton
-    fun provideStatInteractor(dataApi:DataApi,tokenApi: TokenApi)
-            = StatInteractor(dataApi,tokenApi)
+    fun provideStatInteractor(dataApi:DataApi)
+            = StatInteractor(dataApi)
     @Provides
     @Singleton
-    fun provideToolInteractor(dataApi:DataApi,tokenApi: TokenApi)
-            = ToolInteractor(dataApi,tokenApi)
+    fun provideToolInteractor(dataApi:DataApi)
+            = ToolInteractor(dataApi)
     @Provides
     @Singleton
-    fun provideWeaponInteractor(dataApi:DataApi,tokenApi: TokenApi)
-            = WeaponInteractor(dataApi,tokenApi)
+    fun provideWeaponInteractor(dataApi:DataApi)
+            = WeaponInteractor(dataApi)
 
     @Provides
     @Singleton
