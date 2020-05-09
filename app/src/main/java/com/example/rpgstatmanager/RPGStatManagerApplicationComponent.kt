@@ -3,13 +3,13 @@ package com.example.rpgstatmanager
 import com.example.rpgstatmanager.module.InteractorModule
 import com.example.rpgstatmanager.module.NetworkModule
 import com.example.rpgstatmanager.module.UIModule
-import com.example.rpgstatmanager.view.AdventureChooserActivity
-import com.example.rpgstatmanager.view.AdventureCreatorActivity
-import com.example.rpgstatmanager.view.CharacterChooserActivity
-import com.example.rpgstatmanager.view.MainActivity
-import com.example.rpgstatmanager.view.character.*
-import com.example.rpgstatmanager.view.login.ForgottenPasswordActivity
-import com.example.rpgstatmanager.view.login.LoginActivity
+import com.example.rpgstatmanager.view.activity.AdventureChooserActivity
+import com.example.rpgstatmanager.view.activity.AdventureCreatorActivity
+import com.example.rpgstatmanager.view.activity.CharacterChooserActivity
+import com.example.rpgstatmanager.view.activity.MainActivity
+import com.example.rpgstatmanager.view.activity.character.*
+import com.example.rpgstatmanager.view.activity.login.ForgottenPasswordActivity
+import com.example.rpgstatmanager.view.activity.login.LoginActivity
 import dagger.Component
 import javax.inject.Singleton
 

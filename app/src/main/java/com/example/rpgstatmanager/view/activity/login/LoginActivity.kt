@@ -1,4 +1,4 @@
-package com.example.rpgstatmanager.view.login
+package com.example.rpgstatmanager.view.activity.login
 
 import android.app.Activity
 import androidx.lifecycle.Observer

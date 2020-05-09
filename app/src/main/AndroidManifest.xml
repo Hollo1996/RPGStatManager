@@ -10,22 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".RPGStatManagerApplication">
-        <activity android:name=".view.login.ForgottenPasswordActivity" />
-        <activity android:name=".view.AdventureCreatorActivity" />
-        <activity android:name=".view.character.AllMovesActivity" />
-        <activity android:name=".view.character.EmotionModifierActivity" />
-        <activity android:name=".view.character.MoveTypeActivity" />
-        <activity android:name=".view.CharacterChooserActivity" />
-        <activity android:name=".view.character.RaceActivity" />
-        <activity android:name=".view.character.PersonalityTypeActivity" />
-        <activity android:name=".view.character.ToolActivity" />
-        <activity android:name=".view.character.WeaponActivity" />
-        <activity android:name=".view.character.StatActivity" />
-        <activity android:name=".view.AdventureChooserActivity" />
+        <activity android:name="com.example.rpgstatmanager.view.activity.login.ForgottenPasswordActivity" />
+        <activity android:name=".view.activity.AdventureCreatorActivity" />
+        <activity android:name="com.example.rpgstatmanager.view.activity.character.AllMovesActivity" />
+        <activity android:name="com.example.rpgstatmanager.view.activity.character.EmotionModifierActivity" />
+        <activity android:name="com.example.rpgstatmanager.view.activity.character.MoveTypeActivity" />
+        <activity android:name=".view.activity.CharacterChooserActivity" />
+        <activity android:name="com.example.rpgstatmanager.view.activity.character.RaceActivity" />
+        <activity android:name="com.example.rpgstatmanager.view.activity.character.PersonalityTypeActivity" />
+        <activity android:name="com.example.rpgstatmanager.view.activity.character.ToolActivity" />
+        <activity android:name="com.example.rpgstatmanager.view.activity.character.WeaponActivity" />
+        <activity android:name="com.example.rpgstatmanager.view.activity.character.StatActivity" />
+        <activity android:name=".view.activity.AdventureChooserActivity" />
         <activity
-            android:name=".view.login.LoginActivity"
+            android:name="com.example.rpgstatmanager.view.activity.login.LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".view.MainActivity">
+        <activity android:name=".view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

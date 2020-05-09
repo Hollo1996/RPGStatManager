@@ -1,22 +1,22 @@
-package com.example.rpgstatmanager.view.character
+package com.example.rpgstatmanager.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.module.injector
-import com.example.rpgstatmanager.presenter.character.PersonalityTypePresenter
-import com.example.rpgstatmanager.screen.character.PersonalityTypeScreen
+import com.example.rpgstatmanager.presenter.AdventureCreatorPresenter
+import com.example.rpgstatmanager.screen.AdventureCreatorScreen
 import javax.inject.Inject
 
-class PersonalityTypeActivity : AppCompatActivity(), PersonalityTypeScreen {
+class AdventureCreatorActivity : AppCompatActivity(), AdventureCreatorScreen {
 
     @Inject
-    lateinit var presenter : PersonalityTypePresenter
+    lateinit var presenter : AdventureCreatorPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         injector.inject(this)
-        setContentView(R.layout.activity_persionality)
+        setContentView(R.layout.activity_adventure_creator)
     }
 
     override fun onStart() {

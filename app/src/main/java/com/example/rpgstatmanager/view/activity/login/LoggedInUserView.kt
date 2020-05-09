@@ -1,4 +1,4 @@
-package com.example.rpgstatmanager.view.login
+package com.example.rpgstatmanager.view.activity.login
 
 /**
  * User details post authentication that is exposed to the UI

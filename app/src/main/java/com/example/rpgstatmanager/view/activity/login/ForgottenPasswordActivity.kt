@@ -1,13 +1,10 @@
-package com.example.rpgstatmanager.view.login
+package com.example.rpgstatmanager.view.activity.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.module.injector
-import com.example.rpgstatmanager.presenter.AdventureChooserPresenter
 import com.example.rpgstatmanager.presenter.login.ForgottenPasswordPresenter
-import com.example.rpgstatmanager.presenter.login.LoginPresenter
-import com.example.rpgstatmanager.screen.AdventureChooserScreen
 import com.example.rpgstatmanager.screen.login.ForgottenPasswordScreen
 import javax.inject.Inject
 

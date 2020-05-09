@@ -1,22 +1,24 @@
-package com.example.rpgstatmanager.view.character
+package com.example.rpgstatmanager.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.module.injector
-import com.example.rpgstatmanager.presenter.character.EmotionModifierPresenter
-import com.example.rpgstatmanager.screen.character.EmotionModifierScreen
+import com.example.rpgstatmanager.presenter.AdventureChooserPresenter
+import com.example.rpgstatmanager.presenter.MainPresenter
+import com.example.rpgstatmanager.screen.MainScreen
 import javax.inject.Inject
 
-class EmotionModifierActivity : AppCompatActivity(), EmotionModifierScreen {
+class MainActivity : AppCompatActivity(), MainScreen {
+
 
     @Inject
-    lateinit var presenter : EmotionModifierPresenter
+    lateinit var presenter : MainPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         injector.inject(this)
-        setContentView(R.layout.activity_emotion)
+        setContentView(R.layout.activity_main)
     }
 
     override fun onStart() {

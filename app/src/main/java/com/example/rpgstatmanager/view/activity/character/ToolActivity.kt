@@ -1,23 +1,22 @@
-package com.example.rpgstatmanager.view
+package com.example.rpgstatmanager.view.activity.character
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.module.injector
-import com.example.rpgstatmanager.presenter.AdventureChooserPresenter
-import com.example.rpgstatmanager.screen.AdventureChooserScreen
+import com.example.rpgstatmanager.presenter.character.ToolPresenter
+import com.example.rpgstatmanager.screen.character.ToolScreen
 import javax.inject.Inject
 
-class AdventureChooserActivity : AppCompatActivity(), AdventureChooserScreen {
-
+class ToolActivity : AppCompatActivity(), ToolScreen {
 
     @Inject
-    lateinit var presenter : AdventureChooserPresenter
+    lateinit var presenter : ToolPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         injector.inject(this)
-        setContentView(R.layout.activity_adventure_chooser)
+        setContentView(R.layout.activity_tool)
     }
 
     override fun onStart() {

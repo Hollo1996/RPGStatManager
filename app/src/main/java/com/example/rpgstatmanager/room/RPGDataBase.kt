@@ -26,7 +26,7 @@ import com.example.rpgstatmanager.room.data.*
         E_WeaponMoveConnector::class
     ], version = 1
 )
-abstract class RPGDatabase : RoomDatabase() {
+abstract class RPGDataBase : RoomDatabase() {
 
     abstract fun abilityDao(): DAO_Ability
     abstract fun abilityMoveConnectorDao(): DAO_AbilityMoveConnector
@@ -45,12 +45,12 @@ abstract class RPGDatabase : RoomDatabase() {
     abstract fun weaponMoveConnectorDao(): DAO_WeaponMoveConnector
 
     companion object {
-        private var INSTANCE: RPGDatabase? = null
-        fun getInstance(context: Context): RPGDatabase {
+        private var INSTANCE: RPGDataBase? = null
+        fun getInstance(context: Context): RPGDataBase {
             if (INSTANCE == null) {
                 INSTANCE = Room.databaseBuilder(
                     context.applicationContext,
-                    RPGDatabase::class.java,
+                    RPGDataBase::class.java,
                     "rpg.db"
                 ).build()
             }

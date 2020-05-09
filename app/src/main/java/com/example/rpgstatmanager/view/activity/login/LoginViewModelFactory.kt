@@ -1,4 +1,4 @@
-package com.example.rpgstatmanager.view.login
+package com.example.rpgstatmanager.view.activity.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

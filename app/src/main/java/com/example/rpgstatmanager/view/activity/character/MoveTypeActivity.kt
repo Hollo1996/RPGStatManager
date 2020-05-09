@@ -1,23 +1,22 @@
-package com.example.rpgstatmanager.view.character
+package com.example.rpgstatmanager.view.activity.character
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.module.injector
-import com.example.rpgstatmanager.presenter.AdventureChooserPresenter
-import com.example.rpgstatmanager.presenter.character.RacePresenter
-import com.example.rpgstatmanager.screen.character.RaceScreen
+import com.example.rpgstatmanager.presenter.character.MoveTypePresenter
+import com.example.rpgstatmanager.screen.character.MoveTypeScreen
 import javax.inject.Inject
 
-class RaceActivity : AppCompatActivity(), RaceScreen {
+class MoveTypeActivity : AppCompatActivity(), MoveTypeScreen {
 
     @Inject
-    lateinit var presenter : RacePresenter
+    lateinit var presenter : MoveTypePresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         injector.inject(this)
-        setContentView(R.layout.activity_race)
+        setContentView(R.layout.activity_move_base)
     }
 
     override fun onStart() {

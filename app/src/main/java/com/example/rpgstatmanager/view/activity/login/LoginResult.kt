@@ -1,4 +1,4 @@
-package com.example.rpgstatmanager.view.login
+package com.example.rpgstatmanager.view.activity.login
 
 /**
  * Authentication result : success (user details) or error message.

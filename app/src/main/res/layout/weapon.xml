@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <EditText
+        android:id="@+id/nameOfWeapon"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name_of_weapon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <fragment
+        android:id="@+id/move1OfWeapon"
+        android:name="com.example.rpgstatmanager.view.fragment.F_Move"
+
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameOfWeapon"
+        />
+
+    <fragment
+        android:id="@+id/move2OfWeapon"
+        android:name="com.example.rpgstatmanager.view.fragment.F_Move"
+
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/move1OfWeapon"
+        />
+
+    <fragment
+        android:id="@+id/move3OfWeapon"
+        android:name="com.example.rpgstatmanager.view.fragment.F_Move"
+
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/move2OfWeapon"
+        />
+
+    <fragment
+        android:id="@+id/move4OfWeapon"
+        android:name="com.example.rpgstatmanager.view.fragment.F_Move"
+
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/move3OfWeapon"
+        />
+
+    <fragment
+        android:id="@+id/move5OfWeapon"
+        android:name="com.example.rpgstatmanager.view.fragment.F_Move"
+
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/move4OfWeapon"
+        />
+
+    <fragment
+        android:id="@+id/move6OfWeapon"
+        android:name="com.example.rpgstatmanager.view.fragment.F_Move"
+
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/move5OfWeapon"
+        />
+
+    <fragment
+        android:id="@+id/move7OfWeapon"
+        android:name="com.example.rpgstatmanager.view.fragment.F_Move"
+
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/move6OfWeapon"
+        />
+
+    <fragment
+        android:id="@+id/move8OfWeapon"
+        android:name="com.example.rpgstatmanager.view.fragment.F_Move"
+
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/move7OfWeapon"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

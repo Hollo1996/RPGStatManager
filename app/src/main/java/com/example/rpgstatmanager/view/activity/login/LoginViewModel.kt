@@ -1,4 +1,4 @@
-package com.example.rpgstatmanager.view.login
+package com.example.rpgstatmanager.view.activity.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
