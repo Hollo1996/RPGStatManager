@@ -8,14 +8,14 @@ import androidx.room.PrimaryKey
 @Entity(tableName= "abilityMoveConnector",
     foreignKeys = [ForeignKey(
         entity = E_Ability::class,
-        parentColumns = arrayOf("uid"),
+        parentColumns = arrayOf("id"),
         childColumns = arrayOf("abilityId"),
         onDelete = ForeignKey.CASCADE
     ),ForeignKey(
         entity = E_Move::class,
-        parentColumns = arrayOf("uid"),
+        parentColumns = arrayOf("id"),
         childColumns = arrayOf("moveId"),
-        onDelete = ForeignKey.CASCADE
+        onDelete = ForeignKey.NO_ACTION
     )])
 data class E_AbilityMoveConnector (
     @PrimaryKey(autoGenerate= true)

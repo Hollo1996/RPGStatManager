@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName= "move",
     foreignKeys = [ForeignKey(
         entity = E_MoveType::class,
-        parentColumns = arrayOf("uid"),
+        parentColumns = arrayOf("id"),
         childColumns = arrayOf("moveTypeId"),
         onDelete = ForeignKey.CASCADE
     )

@@ -9,14 +9,14 @@ import androidx.room.PrimaryKey
     tableName = "weaponMoveConnector",
     foreignKeys = [ForeignKey(
         entity = E_Weapon::class,
-        parentColumns = arrayOf("uid"),
+        parentColumns = arrayOf("id"),
         childColumns = arrayOf("weaponId"),
         onDelete = ForeignKey.CASCADE
     ), ForeignKey(
         entity = E_Move::class,
-        parentColumns = arrayOf("uid"),
+        parentColumns = arrayOf("id"),
         childColumns = arrayOf("moveId"),
-        onDelete = ForeignKey.CASCADE
+        onDelete = ForeignKey.NO_ACTION
     )]
 )
 data class E_WeaponMoveConnector(

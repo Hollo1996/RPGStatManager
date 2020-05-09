@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName= "keyValue",
     foreignKeys = [ForeignKey(
         entity = E_EmotionModifier::class,
-        parentColumns = arrayOf("uid"),
+        parentColumns = arrayOf("id"),
         childColumns = arrayOf("emotionModifierId"),
         onDelete = ForeignKey.CASCADE
     )

@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey
     tableName = "character",
     foreignKeys = [ForeignKey(
         entity = E_Adventure::class,
-        parentColumns = arrayOf("uid"),
+        parentColumns = arrayOf("id"),
         childColumns = arrayOf("adventureId"),
         onDelete = ForeignKey.CASCADE
     )

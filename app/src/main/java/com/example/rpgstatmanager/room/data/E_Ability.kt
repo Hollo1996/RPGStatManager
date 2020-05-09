@@ -7,7 +7,7 @@ import java.util.*
     tableName = "ability",
     foreignKeys = [ForeignKey(
         entity = E_Race::class,
-        parentColumns = arrayOf("uid"),
+        parentColumns = arrayOf("id"),
         childColumns = arrayOf("raceId"),
         onDelete = ForeignKey.CASCADE
     )]
