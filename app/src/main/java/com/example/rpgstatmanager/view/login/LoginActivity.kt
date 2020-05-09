@@ -16,7 +16,6 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.module.injector
-import com.example.rpgstatmanager.presenter.AdventureChooserPresenter
 import com.example.rpgstatmanager.presenter.login.LoginPresenter
 import com.example.rpgstatmanager.screen.login.LoginScreen
 import javax.inject.Inject
