@@ -28,6 +28,10 @@ android {
         exclude 'META-INF/DEPENDENCIES'
     }
 
+    lintOptions {
+        warning 'InvalidPackage'
+    }
+
 }
 
 configurations {

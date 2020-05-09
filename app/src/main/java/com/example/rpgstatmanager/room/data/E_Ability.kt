@@ -1,13 +1,19 @@
 package com.example.rpgstatmanager.room.data
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.room.*
 import java.util.*
 
-@Entity(tableName= "ability")
-data class E_Ability (
-    @PrimaryKey(autoGenerate= true)
+@Entity(
+    tableName = "ability",
+    foreignKeys = [ForeignKey(
+        entity = E_Race::class,
+        parentColumns = arrayOf("uid"),
+        childColumns = arrayOf("raceId"),
+        onDelete = ForeignKey.CASCADE
+    )]
+)
+data class E_Ability(
+    @PrimaryKey(autoGenerate = true)
     var id: String?,
     @ColumnInfo(name = "raceId")
     var raceId: String,
