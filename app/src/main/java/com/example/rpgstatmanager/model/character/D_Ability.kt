@@ -1,7 +1,5 @@
 package com.example.rpgstatmanager.model.character
 
-import com.example.rpgstatmanager.interactor.PathTracker
-import com.example.rpgstatmanager.swagger.client.models.Ability
 
 
 data class D_Ability(

@@ -1,8 +1,9 @@
 package com.example.rpgstatmanager.interactor
 
-import com.example.rpgstatmanager.swagger.client.models.Adventure
-import com.example.rpgstatmanager.swagger.client.models.Character
-import com.example.rpgstatmanager.swagger.client.models.Race
+import com.example.rpgstatmanager.swagger.client.model.Adventure
+import com.example.rpgstatmanager.swagger.client.model.Race
+import com.example.rpgstatmanager.swagger.client.model.Character
+
 
 object PathTracker{
     lateinit var adventure : Adventure

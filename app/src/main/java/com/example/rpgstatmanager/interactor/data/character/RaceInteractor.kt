@@ -1,23 +1,21 @@
 package com.example.rpgstatmanager.interactor.data.character
 
+import android.util.Log
 import com.example.rpgstatmanager.interactor.A_TableInteractor
 import com.example.rpgstatmanager.interactor.PathTracker
 import com.example.rpgstatmanager.interactor.api.AuthInteractor
-import com.example.rpgstatmanager.model.character.D_Ability
-import com.example.rpgstatmanager.model.character.D_Move
 import com.example.rpgstatmanager.model.character.D_Race
-import com.example.rpgstatmanager.swagger.client.apis.DataApi
-import com.example.rpgstatmanager.swagger.client.apis.TokenApi
-import com.example.rpgstatmanager.swagger.client.models.Race
-import com.example.rpgstatmanager.swagger.client.models.Stat
+import com.example.rpgstatmanager.swagger.client.api.DataApi
+import com.example.rpgstatmanager.swagger.client.model.Race
 import javax.inject.Inject
 
 class RaceInteractor @Inject constructor(
-    private val dataApi: DataApi
+    private val dataApi: DataApi,
+    private val abilityInteractor: AbilityInteractor
 ) :
     A_TableInteractor<D_Race>() {
-    override fun save(d: D_Race, exists: Boolean)  =
-        if(exists){
+    override fun save(d: D_Race, exists: Boolean) {
+        if (exists) {
             dataApi.updateRace(
                 AuthInteractor.actualToken,
                 Race(
@@ -26,10 +24,9 @@ class RaceInteractor @Inject constructor(
                     d.familyName,
                     d.raceName,
                     d.subRaceName
-                    )
-            )
-        }
-        else{
+                )
+            ).execute()
+        } else {
             dataApi.createRace(
                 AuthInteractor.actualToken,
                 Race(
@@ -39,41 +36,33 @@ class RaceInteractor @Inject constructor(
                     d.raceName,
                     d.subRaceName
                 )
+            ).execute()
+        }
+    }
+
+    override fun delete(d: D_Race) {
+        dataApi.deleteRace(AuthInteractor.actualToken, d.id).execute()
+    }
+
+    override fun list(): List<D_Race> {
+        val data: List<Race>
+        val call = dataApi.listRaces(AuthInteractor.actualToken, PathTracker.character)
+        val response = call.execute()
+        Log.d("Reponse", response.body().toString())
+        if (response.code() != 200) {
+            throw Exception("Result code is not 200")
+        }
+        data = response.body()
+
+        return data.map { race ->
+            D_Race(
+                race.id ?: throw Error(""),
+                race.categoryName ?: throw Error(""),
+                race.familyName ?: throw Error(""),
+                race.raceName ?: throw Error(""),
+                race.subraceName ?: throw Error(""),
+                abilityInteractor.list()
             )
         }
-
-    override fun delete(d: D_Race) = dataApi.deleteRace(AuthInteractor.actualToken, d.id)
-
-    override fun list() =
-        dataApi.listRaces(AuthInteractor.actualToken, PathTracker.character)
-            .map { race ->
-                D_Race(
-                    race.id ?: throw Error(""),
-                    race.categoryName ?: throw Error(""),
-                    race.familyName ?: throw Error(""),
-                    race.raceName ?: throw Error(""),
-                    race.subraceName ?: throw Error(""),
-                    dataApi.listAbilities(AuthInteractor.actualToken, race)
-                        .map { ability ->
-                            D_Ability(
-                                ability.id ?: throw Error(""),
-                                ability.name ?: throw Error(""),
-                                ability.positive ?: throw Error(""),
-                                ability.description ?: throw Error(""),
-                                ability.effect ?: throw Error(""),
-                                ability.moves
-                                    ?.map { move ->
-                                        D_Move(
-                                            move.id ?: throw Error(""),
-                                            move.name ?: throw Error(""),
-                                            move.move_type_id ?: throw Error(""),
-                                            move.cardRestriction ?: throw Error(""),
-                                            move.description ?: throw Error(""),
-                                            move.effect ?: throw Error("")
-                                        )
-                                    } ?: throw Error("")
-                            )
-                        }
-                )
-            }
+    }
 }
