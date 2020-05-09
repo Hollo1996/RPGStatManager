@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty
 import java.util.*
 
 @ApiModel(description = "")
-data class PersonalityType (
+data class S_PersonalityType (
     /**
      */
     @get:ApiModelProperty(value = "")
@@ -74,14 +74,14 @@ data class PersonalityType (
     var turbulent: Long? = null
 ){
 
-    override fun equals(o: Any?): Boolean {
-        if (this === o) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) {
             return true
         }
-        if (o == null || javaClass != o.javaClass) {
+        if (other == null || javaClass != other.javaClass) {
             return false
         }
-        val personalityType = o as PersonalityType
+        val personalityType = other as S_PersonalityType
         return id == personalityType.id &&
                 introvert == personalityType.introvert &&
                 extrovert == personalityType.extrovert &&

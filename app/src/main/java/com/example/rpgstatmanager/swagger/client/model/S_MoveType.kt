@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty
 import java.util.*
 
 @ApiModel(description = "")
-data class Stat (
+data class S_MoveType (
     /**
      */
     @get:ApiModelProperty(value = "")
@@ -28,33 +28,49 @@ data class Stat (
     /**
      */
     @get:ApiModelProperty(value = "")
+    @SerializedName("stat1")
+    var stat1: String? = null,
+
+    /**
+     */
+    @get:ApiModelProperty(value = "")
+    @SerializedName("stat2")
+    var stat2: String? = null,
+
+    /**
+     */
+    @get:ApiModelProperty(value = "")
     @SerializedName("value")
     var value: Long? = null
 ){
-    override fun equals(o: Any?): Boolean {
-        if (this === o) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) {
             return true
         }
-        if (o == null || javaClass != o.javaClass) {
+        if (other == null || javaClass != other.javaClass) {
             return false
         }
-        val stat = o as Stat
-        return id == stat.id &&
-                half == stat.half &&
-                line == stat.line &&
-                value == stat.value
+        val moveType = other as S_MoveType
+        return id == moveType.id &&
+                half == moveType.half &&
+                line == moveType.line &&
+                stat1 == moveType.stat1 &&
+                stat2 == moveType.stat2 &&
+                value == moveType.value
     }
 
     override fun hashCode(): Int {
-        return Objects.hash(id, half, line, value)
+        return Objects.hash(id, half, line, stat1, stat2, value)
     }
 
     override fun toString(): String {
         val sb = StringBuilder()
-        sb.append("class Stat {\n")
+        sb.append("class MoveType {\n")
         sb.append("    id: ").append(toIndentedString(id)).append("\n")
         sb.append("    half: ").append(toIndentedString(half)).append("\n")
         sb.append("    line: ").append(toIndentedString(line)).append("\n")
+        sb.append("    stat1: ").append(toIndentedString(stat1)).append("\n")
+        sb.append("    stat2: ").append(toIndentedString(stat2)).append("\n")
         sb.append("    value: ").append(toIndentedString(value)).append("\n")
         sb.append("}")
         return sb.toString()

@@ -6,8 +6,8 @@ import com.example.rpgstatmanager.interactor.PathTracker
 import com.example.rpgstatmanager.interactor.api.AuthInteractor
 import com.example.rpgstatmanager.model.character.D_EmotionModifier
 import com.example.rpgstatmanager.swagger.client.api.DataApi
-import com.example.rpgstatmanager.swagger.client.model.EmotionModifier
-import com.example.rpgstatmanager.swagger.client.model.KeyValue
+import com.example.rpgstatmanager.swagger.client.model.S_EmotionModifier
+import com.example.rpgstatmanager.swagger.client.model.S_KeyValue
 import javax.inject.Inject
 
 class EmotionModifierInteractor @Inject constructor(
@@ -18,10 +18,10 @@ class EmotionModifierInteractor @Inject constructor(
         if (exists) {
             dataApi.updateEmotionModifier(
                 AuthInteractor.actualToken,
-                EmotionModifier(
+                S_EmotionModifier(
                     d.id, d.name, d.trigger,
                     List(6) {
-                        KeyValue(
+                        S_KeyValue(
                             d.modifiers.keys.toList()[it],
                             d.modifiers.values.toList()[it].toLong()
                         )
@@ -31,10 +31,10 @@ class EmotionModifierInteractor @Inject constructor(
         } else {
             dataApi.createEmotionModifier(
                 AuthInteractor.actualToken,
-                EmotionModifier(
+                S_EmotionModifier(
                     d.id, d.name, d.trigger,
                     List(6) {
-                        KeyValue(
+                        S_KeyValue(
                             d.modifiers.keys.toList()[it],
                             d.modifiers.values.toList()[it].toLong()
                         )
@@ -49,7 +49,7 @@ class EmotionModifierInteractor @Inject constructor(
     }
 
     override fun list(): List<D_EmotionModifier> {
-        val data: List<EmotionModifier>
+        val data: List<S_EmotionModifier>
         val call = dataApi.listEmotionModifiers(AuthInteractor.actualToken, PathTracker.character)
         val response = call.execute()
         Log.d("Reponse", response.body().toString())
@@ -62,7 +62,7 @@ class EmotionModifierInteractor @Inject constructor(
             D_EmotionModifier(
                 emotionModifier.id ?: throw Error(),
                 emotionModifier.name ?: throw Error(),
-                emotionModifier.values?.let { values ->
+                emotionModifier.values.let { values ->
                     mapOf(
                         Pair(
                             values[0].key ?: throw Error(""),
@@ -89,7 +89,7 @@ class EmotionModifierInteractor @Inject constructor(
                             values[5].value?.toInt() ?: throw Error("")
                         )
                     )
-                } ?: throw Error("")
+                }
                 ,
                 emotionModifier.trigger ?: throw Error()
             )

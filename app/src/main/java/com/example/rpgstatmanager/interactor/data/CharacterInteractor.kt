@@ -7,7 +7,7 @@ import com.example.rpgstatmanager.interactor.api.AuthInteractor
 import com.example.rpgstatmanager.interactor.data.character.*
 import com.example.rpgstatmanager.model.D_Character
 import com.example.rpgstatmanager.swagger.client.api.DataApi
-import com.example.rpgstatmanager.swagger.client.model.Character
+import com.example.rpgstatmanager.swagger.client.model.S_Character
 import javax.inject.Inject
 
 class CharacterInteractor @Inject constructor(
@@ -25,12 +25,12 @@ class CharacterInteractor @Inject constructor(
         if (exists) {
             dataApi.updateCharacter(
                 AuthInteractor.actualToken,
-                Character(d.id, d.name, false)
+                S_Character(d.id, d.name, false)
             ).execute()
         } else {
             dataApi.createCharacter(
                 AuthInteractor.actualToken,
-                Character(d.id, d.name, d.is_npc)
+                S_Character(d.id, d.name, d.is_npc)
             ).execute()
         }
     }
@@ -40,7 +40,7 @@ class CharacterInteractor @Inject constructor(
     }
 
     override fun list(): List<D_Character> {
-        val data: List<Character>
+        val data: List<S_Character>
         val call = dataApi.listCharacters(AuthInteractor.actualToken, PathTracker.adventure)
         val response = call.execute()
         Log.d("Reponse", response.body().toString())
@@ -50,7 +50,6 @@ class CharacterInteractor @Inject constructor(
         data = response.body()
 
         return data.map {
-            val token = AuthInteractor.actualToken
             D_Character(
                 it.id ?: throw Error("Id must not be null"),
                 it.name ?: throw Error("Id must not be null"),

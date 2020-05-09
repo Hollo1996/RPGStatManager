@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty
 import java.util.*
 
 @ApiModel(description = "")
-data class EmotionModifier (
+data class S_Character (
     /**
      */
     @get:ApiModelProperty(value = "")
@@ -22,41 +22,33 @@ data class EmotionModifier (
     /**
      */
     @get:ApiModelProperty(value = "")
-    @SerializedName("trigger")
-    var trigger: String? = null,
+    @SerializedName("is_npc")
+    var isNpc: Boolean? = null){
 
-    /**
-     */
-    @get:ApiModelProperty(value = "")
-    @SerializedName("values")
-    var values: List<KeyValue> =
-        ArrayList()
-){
-    override fun equals(o: Any?): Boolean {
-        if (this === o) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) {
             return true
         }
-        if (o == null || javaClass != o.javaClass) {
+        if (other == null || javaClass != other.javaClass) {
             return false
         }
-        val emotionModifier = o as EmotionModifier
-        return id == emotionModifier.id &&
-                name == emotionModifier.name &&
-                trigger == emotionModifier.trigger &&
-                values == emotionModifier.values
+        val character =
+            other as S_Character
+        return id == character.id &&
+                name == character.name &&
+                isNpc == character.isNpc
     }
 
     override fun hashCode(): Int {
-        return Objects.hash(id, name, trigger, values)
+        return Objects.hash(id, name, isNpc)
     }
 
     override fun toString(): String {
         val sb = StringBuilder()
-        sb.append("class EmotionModifier {\n")
+        sb.append("class Character {\n")
         sb.append("    id: ").append(toIndentedString(id)).append("\n")
         sb.append("    name: ").append(toIndentedString(name)).append("\n")
-        sb.append("    trigger: ").append(toIndentedString(trigger)).append("\n")
-        sb.append("    values: ").append(toIndentedString(values)).append("\n")
+        sb.append("    isNpc: ").append(toIndentedString(isNpc)).append("\n")
         sb.append("}")
         return sb.toString()
     }

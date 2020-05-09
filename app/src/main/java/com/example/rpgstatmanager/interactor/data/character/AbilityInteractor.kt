@@ -7,8 +7,8 @@ import com.example.rpgstatmanager.interactor.api.AuthInteractor
 import com.example.rpgstatmanager.model.character.D_Ability
 import com.example.rpgstatmanager.model.character.D_Move
 import com.example.rpgstatmanager.swagger.client.api.DataApi
-import com.example.rpgstatmanager.swagger.client.model.Ability
-import com.example.rpgstatmanager.swagger.client.model.Move
+import com.example.rpgstatmanager.swagger.client.model.S_Ability
+import com.example.rpgstatmanager.swagger.client.model.S_Move
 import javax.inject.Inject
 
 
@@ -19,7 +19,7 @@ class AbilityInteractor @Inject constructor(
         if (exists) {
             dataApi.updateAbility(
                 AuthInteractor.actualToken,
-                Ability(
+                S_Ability(
                     d.id,
                     PathTracker.race.id,
                     d.name,
@@ -27,7 +27,7 @@ class AbilityInteractor @Inject constructor(
                     d.description,
                     d.effect,
                     d.moves.map { move ->
-                        Move(
+                        S_Move(
                             move.id,
                             move.moveTypeId,
                             move.name,
@@ -41,7 +41,7 @@ class AbilityInteractor @Inject constructor(
         } else {
             dataApi.createAbility(
                 AuthInteractor.actualToken,
-                Ability(
+                S_Ability(
                     d.id,
                     PathTracker.race.id,
                     d.name,
@@ -49,7 +49,7 @@ class AbilityInteractor @Inject constructor(
                     d.description,
                     d.effect,
                     d.moves.map { move ->
-                        Move(
+                        S_Move(
                             move.id,
                             move.moveTypeId,
                             move.name,
@@ -67,7 +67,7 @@ class AbilityInteractor @Inject constructor(
         dataApi.deleteAbility(AuthInteractor.actualToken, d.id).execute()}
 
     override fun list(): List<D_Ability> {
-        val data: List<Ability>
+        val data: List<S_Ability>
         val call = dataApi.listAbilities(AuthInteractor.actualToken, PathTracker.race)
         val response = call.execute()
         Log.d("Reponse", response.body().toString())
@@ -84,7 +84,7 @@ class AbilityInteractor @Inject constructor(
                 ability.description ?: throw Error(""),
                 ability.effect ?: throw Error(""),
                 ability.moves
-                    ?.map { move ->
+                    .map { move ->
                         D_Move(
                             move.id ?: throw Error(""),
                             move.moveTypeId ?: throw Error(""),
@@ -93,7 +93,7 @@ class AbilityInteractor @Inject constructor(
                             move.description ?: throw Error(""),
                             move.effect ?: throw Error("")
                         )
-                    } ?: throw Error("")
+                    }
             )
         }
     }

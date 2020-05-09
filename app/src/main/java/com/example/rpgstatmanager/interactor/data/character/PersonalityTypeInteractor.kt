@@ -6,7 +6,7 @@ import com.example.rpgstatmanager.interactor.PathTracker
 import com.example.rpgstatmanager.interactor.api.AuthInteractor
 import com.example.rpgstatmanager.model.character.D_PersonalityType
 import com.example.rpgstatmanager.swagger.client.api.DataApi
-import com.example.rpgstatmanager.swagger.client.model.PersonalityType
+import com.example.rpgstatmanager.swagger.client.model.S_PersonalityType
 import javax.inject.Inject
 
 class PersonalityTypeInteractor @Inject constructor(
@@ -18,7 +18,7 @@ class PersonalityTypeInteractor @Inject constructor(
         if (exists) {
             dataApi.updatePersonalityType(
                 AuthInteractor.actualToken,
-                PersonalityType(
+                S_PersonalityType(
                     d.id,
                     d.introvert.toLong(),
                     d.extrovert.toLong(),
@@ -35,7 +35,7 @@ class PersonalityTypeInteractor @Inject constructor(
         } else {
             dataApi.createPersonalityType(
                 AuthInteractor.actualToken,
-                PersonalityType(
+                S_PersonalityType(
                     d.id,
                     d.introvert.toLong(),
                     d.extrovert.toLong(),
@@ -57,7 +57,7 @@ class PersonalityTypeInteractor @Inject constructor(
     }
 
     override fun list(): List<D_PersonalityType> {
-        val data: List<PersonalityType>
+        val data: List<S_PersonalityType>
         val call = dataApi.listPersonalityType(AuthInteractor.actualToken, PathTracker.character)
         val response = call.execute()
         Log.d("Reponse", response.body().toString())

@@ -34,7 +34,7 @@ ext {
     okhttp_version = "3.0.1"
     oltu_version = "1.0.0"
     retrofit_version = "2.0.0-beta3"
-    gson_version = "2.4"
+    gson_version = "2.8.6"
     swagger_annotations_version = "1.5.0"
     junit_version = "4.12"
 

@@ -6,7 +6,7 @@ import com.example.rpgstatmanager.interactor.PathTracker
 import com.example.rpgstatmanager.interactor.api.AuthInteractor
 import com.example.rpgstatmanager.model.D_Adventure
 import com.example.rpgstatmanager.swagger.client.api.DataApi
-import com.example.rpgstatmanager.swagger.client.model.Adventure
+import com.example.rpgstatmanager.swagger.client.model.S_Adventure
 import javax.inject.Inject
 
 class AdventureInteractor @Inject constructor(
@@ -18,13 +18,13 @@ class AdventureInteractor @Inject constructor(
         if(exists){
             dataApi.updateAdventure(
                 AuthInteractor.actualToken,
-                Adventure(d.id, d.name, d.is_gm,d.icon)
+                S_Adventure(d.id, d.name, d.is_gm,d.icon)
             ).execute()
         }
         else{
             dataApi.createAdventure(
                 AuthInteractor.actualToken,
-                Adventure(d.id, d.name, d.is_gm,d.icon)
+                S_Adventure(d.id, d.name, d.is_gm,d.icon)
             ).execute()
         }
     }
@@ -32,7 +32,7 @@ class AdventureInteractor @Inject constructor(
     override fun delete(d: D_Adventure) { dataApi.deleteAdventure(AuthInteractor.actualToken, d.id).execute()}
 
     override fun list(): List<D_Adventure> {
-        val data: List<Adventure>
+        val data: List<S_Adventure>
         val call = dataApi.listAdventures(AuthInteractor.actualToken, PathTracker.adventure)
         val response = call.execute()
         Log.d("Reponse", response.body().toString())
@@ -42,7 +42,6 @@ class AdventureInteractor @Inject constructor(
         data = response.body()
 
         return data.map { adventure ->
-            val token = AuthInteractor.actualToken
             D_Adventure(
                 adventure.id ?: throw Error(),
                 characterInteractor.list(),

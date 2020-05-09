@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty
 import java.util.*
 
 @ApiModel(description = "")
-data class Weapon (
+data class S_Adventure (
     /**
      */
     @get:ApiModelProperty(value = "")
@@ -22,32 +22,40 @@ data class Weapon (
     /**
      */
     @get:ApiModelProperty(value = "")
-    @SerializedName("moves")
-    var moves: List<Move> = ArrayList()
+    @SerializedName("is_gm")
+    var isGm: Boolean? = null,
+
+    /**
+     */
+    @get:ApiModelProperty(value = "")
+    @SerializedName("icon")
+    var icon: String? = null
 ){
-    override fun equals(o: Any?): Boolean {
-        if (this === o) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) {
             return true
         }
-        if (o == null || javaClass != o.javaClass) {
+        if (other == null || javaClass != other.javaClass) {
             return false
         }
-        val weapon = o as Weapon
-        return id == weapon.id &&
-                name == weapon.name &&
-                moves == weapon.moves
+        val adventure = other as S_Adventure
+        return id == adventure.id &&
+                name == adventure.name &&
+                isGm == adventure.isGm &&
+                icon == adventure.icon
     }
 
     override fun hashCode(): Int {
-        return Objects.hash(id, name, moves)
+        return Objects.hash(id, name, isGm, icon)
     }
 
     override fun toString(): String {
         val sb = StringBuilder()
-        sb.append("class Weapon {\n")
+        sb.append("class Adventure {\n")
         sb.append("    id: ").append(toIndentedString(id)).append("\n")
         sb.append("    name: ").append(toIndentedString(name)).append("\n")
-        sb.append("    moves: ").append(toIndentedString(moves)).append("\n")
+        sb.append("    isGm: ").append(toIndentedString(isGm)).append("\n")
+        sb.append("    icon: ").append(toIndentedString(icon)).append("\n")
         sb.append("}")
         return sb.toString()
     }

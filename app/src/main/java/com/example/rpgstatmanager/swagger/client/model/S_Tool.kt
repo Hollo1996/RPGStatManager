@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty
 import java.util.*
 
 @ApiModel(description = "")
-data class Character (
+data class S_Tool (
     /**
      */
     @get:ApiModelProperty(value = "")
@@ -22,33 +22,33 @@ data class Character (
     /**
      */
     @get:ApiModelProperty(value = "")
-    @SerializedName("is_npc")
-    var isNpc: Boolean? = null){
-
-    override fun equals(o: Any?): Boolean {
-        if (this === o) {
+    @SerializedName("moves")
+    var moves: List<S_Move> = ArrayList()
+){
+    override fun equals(other: Any?): Boolean {
+        if (this === other) {
             return true
         }
-        if (o == null || javaClass != o.javaClass) {
+        if (other == null || javaClass != other.javaClass) {
             return false
         }
-        val character =
-            o as Character
-        return id == character.id &&
-                name == character.name &&
-                isNpc == character.isNpc
+        val tool =
+            other as S_Tool
+        return id == tool.id &&
+                name == tool.name &&
+                moves == tool.moves
     }
 
     override fun hashCode(): Int {
-        return Objects.hash(id, name, isNpc)
+        return Objects.hash(id, name, moves)
     }
 
     override fun toString(): String {
         val sb = StringBuilder()
-        sb.append("class Character {\n")
+        sb.append("class Tool {\n")
         sb.append("    id: ").append(toIndentedString(id)).append("\n")
         sb.append("    name: ").append(toIndentedString(name)).append("\n")
-        sb.append("    isNpc: ").append(toIndentedString(isNpc)).append("\n")
+        sb.append("    moves: ").append(toIndentedString(moves)).append("\n")
         sb.append("}")
         return sb.toString()
     }

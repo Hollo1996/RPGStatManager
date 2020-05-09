@@ -6,7 +6,7 @@ import com.example.rpgstatmanager.interactor.PathTracker
 import com.example.rpgstatmanager.interactor.api.AuthInteractor
 import com.example.rpgstatmanager.model.character.D_Move
 import com.example.rpgstatmanager.swagger.client.api.DataApi
-import com.example.rpgstatmanager.swagger.client.model.Move
+import com.example.rpgstatmanager.swagger.client.model.S_Move
 import javax.inject.Inject
 
 class MoveInteractor @Inject constructor(
@@ -16,12 +16,12 @@ class MoveInteractor @Inject constructor(
         if (exists) {
             dataApi.updateMove(
                 AuthInteractor.actualToken,
-                Move(d.id, d.moveTypeId, d.name, d.cardRestriction, d.description, d.effect)
+                S_Move(d.id, d.moveTypeId, d.name, d.cardRestriction, d.description, d.effect)
             ).execute()
         } else {
             dataApi.createMove(
                 AuthInteractor.actualToken,
-                Move(d.id, d.moveTypeId, d.name, d.cardRestriction, d.description, d.effect)
+                S_Move(d.id, d.moveTypeId, d.name, d.cardRestriction, d.description, d.effect)
             ).execute()
         }
     }
@@ -31,7 +31,7 @@ class MoveInteractor @Inject constructor(
     }
 
     override fun list(): List<D_Move> {
-        val data: List<Move>
+        val data: List<S_Move>
         val call = dataApi.listMoves(AuthInteractor.actualToken, PathTracker.character)
         val response = call.execute()
         Log.d("Reponse", response.body().toString())

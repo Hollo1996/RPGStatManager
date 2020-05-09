@@ -6,7 +6,7 @@ import com.example.rpgstatmanager.interactor.PathTracker
 import com.example.rpgstatmanager.interactor.api.AuthInteractor
 import com.example.rpgstatmanager.model.character.D_Race
 import com.example.rpgstatmanager.swagger.client.api.DataApi
-import com.example.rpgstatmanager.swagger.client.model.Race
+import com.example.rpgstatmanager.swagger.client.model.S_Race
 import javax.inject.Inject
 
 class RaceInteractor @Inject constructor(
@@ -18,7 +18,7 @@ class RaceInteractor @Inject constructor(
         if (exists) {
             dataApi.updateRace(
                 AuthInteractor.actualToken,
-                Race(
+                S_Race(
                     d.id,
                     d.cathegoryName,
                     d.familyName,
@@ -29,7 +29,7 @@ class RaceInteractor @Inject constructor(
         } else {
             dataApi.createRace(
                 AuthInteractor.actualToken,
-                Race(
+                S_Race(
                     d.id,
                     d.cathegoryName,
                     d.familyName,
@@ -45,7 +45,7 @@ class RaceInteractor @Inject constructor(
     }
 
     override fun list(): List<D_Race> {
-        val data: List<Race>
+        val data: List<S_Race>
         val call = dataApi.listRaces(AuthInteractor.actualToken, PathTracker.character)
         val response = call.execute()
         Log.d("Reponse", response.body().toString())

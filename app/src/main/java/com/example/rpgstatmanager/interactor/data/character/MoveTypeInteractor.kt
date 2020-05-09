@@ -6,7 +6,7 @@ import com.example.rpgstatmanager.interactor.PathTracker
 import com.example.rpgstatmanager.interactor.api.AuthInteractor
 import com.example.rpgstatmanager.model.character.D_MoveType
 import com.example.rpgstatmanager.swagger.client.api.DataApi
-import com.example.rpgstatmanager.swagger.client.model.MoveType
+import com.example.rpgstatmanager.swagger.client.model.S_MoveType
 import javax.inject.Inject
 
 class MoveTypeInteractor @Inject constructor(
@@ -16,12 +16,12 @@ class MoveTypeInteractor @Inject constructor(
         if (exists) {
             dataApi.updateMoveType(
                 AuthInteractor.actualToken,
-                MoveType(d.id, d.half, d.line, d.stat1, d.stat2, d.value.toLong())
+                S_MoveType(d.id, d.half, d.line, d.stat1, d.stat2, d.value.toLong())
             ).execute()
         } else {
             dataApi.createMoveType(
                 AuthInteractor.actualToken,
-                MoveType(d.id, d.half, d.line, d.stat1, d.stat2, d.value.toLong())
+                S_MoveType(d.id, d.half, d.line, d.stat1, d.stat2, d.value.toLong())
             ).execute()
         }
     }
@@ -31,7 +31,7 @@ class MoveTypeInteractor @Inject constructor(
     }
 
     override fun list(): List<D_MoveType> {
-        val data: List<MoveType>
+        val data: List<S_MoveType>
         val call = dataApi.listMoveTypes(AuthInteractor.actualToken, PathTracker.character)
         val response = call.execute()
         Log.d("Reponse", response.body().toString())

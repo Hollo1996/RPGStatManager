@@ -14,8 +14,8 @@ interface DataApi {
     </Ability> */
     @GET("data/ability/{token}")
     fun listAbilities(
-        @Path("token") token: String?, @Body body: Race?
-    ): Call<List<Ability>>
+        @Path("token") token: String?, @Body body: S_Race?
+    ): Call<List<S_Ability>>
 
     /**
      * update existing ability
@@ -26,7 +26,7 @@ interface DataApi {
     </Void> */
     @PUT("data/ability/{token}")
     fun updateAbility(
-        @Path("token") token: String?, @Body body: Ability?
+        @Path("token") token: String?, @Body body: S_Ability?
     ): Call<Void>
 
     /**
@@ -38,7 +38,7 @@ interface DataApi {
     </Void> */
     @POST("data/ability/{token}")
     fun createAbility(
-        @Path("token") token: String?, @Body body: Ability?
+        @Path("token") token: String?, @Body body: S_Ability?
     ): Call<Void>
 
     /**
@@ -63,8 +63,8 @@ interface DataApi {
     </Adventure> */
     @GET("data/adventure/{token}")
     fun listAdventures(
-        @Path("token") token: String?, @Body body: Adventure?
-    ): Call<List<Adventure>>
+        @Path("token") token: String?, @Body body: S_Adventure?
+    ): Call<List<S_Adventure>>
 
     /**
      * update existing adventure
@@ -75,7 +75,7 @@ interface DataApi {
     </Void> */
     @PUT("data/adventure/{token}")
     fun updateAdventure(
-        @Path("token") token: String?, @Body body: Adventure?
+        @Path("token") token: String?, @Body body: S_Adventure?
     ): Call<Void>
 
     /**
@@ -87,7 +87,7 @@ interface DataApi {
     </Void> */
     @POST("data/adventure/{token}")
     fun createAdventure(
-        @Path("token") token: String?, @Body body: Adventure?
+        @Path("token") token: String?, @Body body: S_Adventure?
     ): Call<Void>
 
     /**
@@ -112,8 +112,8 @@ interface DataApi {
     </Character> */
     @GET("data/character/{token}")
     fun listCharacters(
-        @Path("token") token: String?, @Body body: Adventure?
-    ): Call<List<Character>>
+        @Path("token") token: String?, @Body body: S_Adventure?
+    ): Call<List<S_Character>>
 
     /**
      * update existing character
@@ -124,7 +124,7 @@ interface DataApi {
     </Void> */
     @PUT("data/character/{token}")
     fun updateCharacter(
-        @Path("token") token: String?, @Body body: Character?
+        @Path("token") token: String?, @Body body: S_Character?
     ): Call<Void>
 
     /**
@@ -136,7 +136,7 @@ interface DataApi {
     </Void> */
     @POST("data/character/{token}")
     fun createCharacter(
-        @Path("token") token: String?, @Body body: Character?
+        @Path("token") token: String?, @Body body: S_Character?
     ): Call<Void>
 
     /**
@@ -161,8 +161,8 @@ interface DataApi {
     </EmotionModifier> */
     @GET("data/emotionModifier/{token}")
     fun listEmotionModifiers(
-        @Path("token") token: String?, @Body body: Character?
-    ): Call<List<EmotionModifier>>
+        @Path("token") token: String?, @Body body: S_Character?
+    ): Call<List<S_EmotionModifier>>
 
     /**
      * update existing emotion modifier
@@ -174,7 +174,7 @@ interface DataApi {
     @PUT("data/emotionModifier/{token}")
     fun updateEmotionModifier(
         @Path("token") token: String?,
-        @Body body: EmotionModifier?
+        @Body body: S_EmotionModifier?
     ): Call<Void>
 
     /**
@@ -187,7 +187,7 @@ interface DataApi {
     @POST("data/emotionModifier/{token}")
     fun createEmotionModifier(
         @Path("token") token: String?,
-        @Body body: EmotionModifier?
+        @Body body: S_EmotionModifier?
     ): Call<Void>
 
     /**
@@ -212,8 +212,8 @@ interface DataApi {
     </Move> */
     @GET("data/move/{token}")
     fun listMoves(
-        @Path("token") token: String?, @Body body: Character?
-    ): Call<List<Move>>
+        @Path("token") token: String?, @Body body: S_Character?
+    ): Call<List<S_Move>>
 
     /**
      * update existing move
@@ -224,7 +224,7 @@ interface DataApi {
     </Void> */
     @PUT("data/move/{token}")
     fun updateMove(
-        @Path("token") token: String?, @Body body: Move?
+        @Path("token") token: String?, @Body body: S_Move?
     ): Call<Void>
 
     /**
@@ -236,7 +236,7 @@ interface DataApi {
     </Void> */
     @POST("data/move/{token}")
     fun createMove(
-        @Path("token") token: String?, @Body body: Move?
+        @Path("token") token: String?, @Body body: S_Move?
     ): Call<Void>
 
     /**
@@ -261,8 +261,8 @@ interface DataApi {
     </MoveType> */
     @GET("data/moveType/{token}")
     fun listMoveTypes(
-        @Path("token") token: String?, @Body body: Character?
-    ): Call<List<MoveType>>
+        @Path("token") token: String?, @Body body: S_Character?
+    ): Call<List<S_MoveType>>
 
     /**
      * update existing move type
@@ -273,7 +273,7 @@ interface DataApi {
     </Void> */
     @PUT("data/moveType/{token}")
     fun updateMoveType(
-        @Path("token") token: String?, @Body body: MoveType?
+        @Path("token") token: String?, @Body body: S_MoveType?
     ): Call<Void>
 
     /**
@@ -285,7 +285,7 @@ interface DataApi {
     </Void> */
     @POST("data/moveType/{token}")
     fun createMoveType(
-        @Path("token") token: String?, @Body body: MoveType?
+        @Path("token") token: String?, @Body body: S_MoveType?
     ): Call<Void>
 
     /**
@@ -310,8 +310,8 @@ interface DataApi {
     </PersonalityType> */
     @GET("data/personalityType/{token}")
     fun listPersonalityType(
-        @Path("token") token: String?, @Body body: Character?
-    ): Call<List<PersonalityType>>
+        @Path("token") token: String?, @Body body: S_Character?
+    ): Call<List<S_PersonalityType>>
 
     /**
      * update existing personality type
@@ -323,7 +323,7 @@ interface DataApi {
     @PUT("data/personalityType/{token}")
     fun updatePersonalityType(
         @Path("token") token: String?,
-        @Body body: PersonalityType?
+        @Body body: S_PersonalityType?
     ): Call<Void>
 
     /**
@@ -336,7 +336,7 @@ interface DataApi {
     @POST("data/personalityType/{token}")
     fun createPersonalityType(
         @Path("token") token: String?,
-        @Body body: PersonalityType?
+        @Body body: S_PersonalityType?
     ): Call<Void>
 
     /**
@@ -361,8 +361,8 @@ interface DataApi {
     </Race> */
     @GET("data/race/{token}")
     fun listRaces(
-        @Path("token") token: String?, @Body body: Character?
-    ): Call<List<Race>>
+        @Path("token") token: String?, @Body body: S_Character?
+    ): Call<List<S_Race>>
 
     /**
      * update existing race
@@ -373,7 +373,7 @@ interface DataApi {
     </Void> */
     @PUT("data/race/{token}")
     fun updateRace(
-        @Path("token") token: String?, @Body body: Race?
+        @Path("token") token: String?, @Body body: S_Race?
     ): Call<Void>
 
     /**
@@ -385,7 +385,7 @@ interface DataApi {
     </Void> */
     @POST("data/race/{token}")
     fun createRace(
-        @Path("token") token: String?, @Body body: Race?
+        @Path("token") token: String?, @Body body: S_Race?
     ): Call<Void>
 
     /**
@@ -410,8 +410,8 @@ interface DataApi {
     </Stat> */
     @GET("data/stat/{token}")
     fun listStat(
-        @Path("token") token: String?, @Body body: Character?
-    ): Call<List<Stat>>
+        @Path("token") token: String?, @Body body: S_Character?
+    ): Call<List<S_Stat>>
 
     /**
      * update existing stat
@@ -422,7 +422,7 @@ interface DataApi {
     </Void> */
     @PUT("data/stat/{token}")
     fun updateStat(
-        @Path("token") token: String?, @Body body: Stat?
+        @Path("token") token: String?, @Body body: S_Stat?
     ): Call<Void>
 
     /**
@@ -434,7 +434,7 @@ interface DataApi {
     </Void> */
     @POST("data/stat/{token}")
     fun createStat(
-        @Path("token") token: String?, @Body body: Stat?
+        @Path("token") token: String?, @Body body: S_Stat?
     ): Call<Void>
 
     /**
@@ -459,8 +459,8 @@ interface DataApi {
     </Tool> */
     @GET("data/tool/{token}")
     fun listTool(
-        @Path("token") token: String?, @Body body: Character?
-    ): Call<List<Tool>>
+        @Path("token") token: String?, @Body body: S_Character?
+    ): Call<List<S_Tool>>
 
     /**
      * update existing tool
@@ -471,7 +471,7 @@ interface DataApi {
     </Void> */
     @PUT("data/tool/{token}")
     fun updateTool(
-        @Path("token") token: String?, @Body body: Tool?
+        @Path("token") token: String?, @Body body: S_Tool?
     ): Call<Void>
 
     /**
@@ -483,7 +483,7 @@ interface DataApi {
     </Void> */
     @POST("data/tool/{token}")
     fun createTool(
-        @Path("token") token: String?, @Body body: Tool?
+        @Path("token") token: String?, @Body body: S_Tool?
     ): Call<Void>
 
     /**
@@ -508,8 +508,8 @@ interface DataApi {
     </Weapon> */
     @GET("data/weapon/{token}")
     fun listWeapon(
-        @Path("token") token: String?, @Body body: Character?
-    ): Call<List<Weapon>>
+        @Path("token") token: String?, @Body body: S_Character?
+    ): Call<List<S_Weapon>>
 
     /**
      * updateWeapon
@@ -520,7 +520,7 @@ interface DataApi {
     </Void> */
     @PUT("data/weapon/{token}")
     fun updateWeapon(
-        @Path("token") token: String?, @Body body: Weapon?
+        @Path("token") token: String?, @Body body: S_Weapon?
     ): Call<Void>
 
     /**
@@ -532,7 +532,7 @@ interface DataApi {
     </Void> */
     @POST("data/weapon/{token}")
     fun createWeapon(
-        @Path("token") token: String?, @Body body: Weapon?
+        @Path("token") token: String?, @Body body: S_Weapon?
     ): Call<Void>
 
     /**

@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty
 import java.util.*
 
 @ApiModel(description = "")
-data class Move (
+data class S_Move (
     /**
      */
     @get:ApiModelProperty(value = "")
@@ -50,7 +50,7 @@ data class Move (
         if (o == null || javaClass != o.javaClass) {
             return false
         }
-        val move = o as Move
+        val move = o as S_Move
         return id == move.id &&
                 moveTypeId == move.moveTypeId &&
                 name == move.name &&

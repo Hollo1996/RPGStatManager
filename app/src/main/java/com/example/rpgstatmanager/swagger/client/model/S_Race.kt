@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty
 import java.util.*
 
 @ApiModel(description = "")
-data class MoveType (
+data class S_Race (
     /**
      */
     @get:ApiModelProperty(value = "")
@@ -16,32 +16,26 @@ data class MoveType (
     /**
      */
     @get:ApiModelProperty(value = "")
-    @SerializedName("half")
-    var half: String? = null,
+    @SerializedName("categoryName")
+    var categoryName: String? = null,
 
     /**
      */
     @get:ApiModelProperty(value = "")
-    @SerializedName("line")
-    var line: String? = null,
+    @SerializedName("familyName")
+    var familyName: String? = null,
 
     /**
      */
     @get:ApiModelProperty(value = "")
-    @SerializedName("stat1")
-    var stat1: String? = null,
+    @SerializedName("raceName")
+    var raceName: String? = null,
 
     /**
      */
     @get:ApiModelProperty(value = "")
-    @SerializedName("stat2")
-    var stat2: String? = null,
-
-    /**
-     */
-    @get:ApiModelProperty(value = "")
-    @SerializedName("value")
-    var value: Long? = null
+    @SerializedName("subraceName")
+    var subraceName: String? = null
 ){
     override fun equals(o: Any?): Boolean {
         if (this === o) {
@@ -50,28 +44,26 @@ data class MoveType (
         if (o == null || javaClass != o.javaClass) {
             return false
         }
-        val moveType = o as MoveType
-        return id == moveType.id &&
-                half == moveType.half &&
-                line == moveType.line &&
-                stat1 == moveType.stat1 &&
-                stat2 == moveType.stat2 &&
-                value == moveType.value
+        val race = o as S_Race
+        return id == race.id &&
+                categoryName == race.categoryName &&
+                familyName == race.familyName &&
+                raceName == race.raceName &&
+                subraceName == race.subraceName
     }
 
     override fun hashCode(): Int {
-        return Objects.hash(id, half, line, stat1, stat2, value)
+        return Objects.hash(id, categoryName, familyName, raceName, subraceName)
     }
 
     override fun toString(): String {
         val sb = StringBuilder()
-        sb.append("class MoveType {\n")
+        sb.append("class Race {\n")
         sb.append("    id: ").append(toIndentedString(id)).append("\n")
-        sb.append("    half: ").append(toIndentedString(half)).append("\n")
-        sb.append("    line: ").append(toIndentedString(line)).append("\n")
-        sb.append("    stat1: ").append(toIndentedString(stat1)).append("\n")
-        sb.append("    stat2: ").append(toIndentedString(stat2)).append("\n")
-        sb.append("    value: ").append(toIndentedString(value)).append("\n")
+        sb.append("    categoryName: ").append(toIndentedString(categoryName)).append("\n")
+        sb.append("    familyName: ").append(toIndentedString(familyName)).append("\n")
+        sb.append("    raceName: ").append(toIndentedString(raceName)).append("\n")
+        sb.append("    subraceName: ").append(toIndentedString(subraceName)).append("\n")
         sb.append("}")
         return sb.toString()
     }

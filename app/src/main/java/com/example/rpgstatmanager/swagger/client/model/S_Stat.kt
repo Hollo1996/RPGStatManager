@@ -6,12 +6,24 @@ import io.swagger.annotations.ApiModelProperty
 import java.util.*
 
 @ApiModel(description = "")
-data class KeyValue (
+data class S_Stat (
     /**
      */
     @get:ApiModelProperty(value = "")
-    @SerializedName("key")
-    var key: String? = null,
+    @SerializedName("id")
+    var id: String? = null,
+
+    /**
+     */
+    @get:ApiModelProperty(value = "")
+    @SerializedName("half")
+    var half: String? = null,
+
+    /**
+     */
+    @get:ApiModelProperty(value = "")
+    @SerializedName("line")
+    var line: String? = null,
 
     /**
      */
@@ -19,27 +31,30 @@ data class KeyValue (
     @SerializedName("value")
     var value: Long? = null
 ){
-    override fun equals(o: Any?): Boolean {
-        if (this === o) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) {
             return true
         }
-        if (o == null || javaClass != o.javaClass) {
+        if (other == null || javaClass != other.javaClass) {
             return false
         }
-        val keyValue =
-            o as KeyValue
-        return key == keyValue.key &&
-                value == keyValue.value
+        val stat = other as S_Stat
+        return id == stat.id &&
+                half == stat.half &&
+                line == stat.line &&
+                value == stat.value
     }
 
     override fun hashCode(): Int {
-        return Objects.hash(key, value)
+        return Objects.hash(id, half, line, value)
     }
 
     override fun toString(): String {
         val sb = StringBuilder()
-        sb.append("class KeyValue {\n")
-        sb.append("    key: ").append(toIndentedString(key)).append("\n")
+        sb.append("class Stat {\n")
+        sb.append("    id: ").append(toIndentedString(id)).append("\n")
+        sb.append("    half: ").append(toIndentedString(half)).append("\n")
+        sb.append("    line: ").append(toIndentedString(line)).append("\n")
         sb.append("    value: ").append(toIndentedString(value)).append("\n")
         sb.append("}")
         return sb.toString()

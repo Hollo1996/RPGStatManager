@@ -3,11 +3,6 @@ package com.example.rpgstatmanager.room.data
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.rpgstatmanager.swagger.client.model.PersonalityType
-import com.google.gson.annotations.SerializedName
-import io.swagger.annotations.ApiModel
-import io.swagger.annotations.ApiModelProperty
-import java.util.*
 
 @Entity(tableName= "personalityType")
 data class E_PersonalityType (

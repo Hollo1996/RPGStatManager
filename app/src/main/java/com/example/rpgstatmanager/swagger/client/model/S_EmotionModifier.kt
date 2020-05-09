@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty
 import java.util.*
 
 @ApiModel(description = "")
-data class Tool (
+data class S_EmotionModifier (
     /**
      */
     @get:ApiModelProperty(value = "")
@@ -22,33 +22,41 @@ data class Tool (
     /**
      */
     @get:ApiModelProperty(value = "")
-    @SerializedName("moves")
-    var moves: List<Move> = ArrayList()
+    @SerializedName("trigger")
+    var trigger: String? = null,
+
+    /**
+     */
+    @get:ApiModelProperty(value = "")
+    @SerializedName("values")
+    var values: List<S_KeyValue> =
+        ArrayList()
 ){
-    override fun equals(o: Any?): Boolean {
-        if (this === o) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) {
             return true
         }
-        if (o == null || javaClass != o.javaClass) {
+        if (other == null || javaClass != other.javaClass) {
             return false
         }
-        val tool =
-            o as Tool
-        return id == tool.id &&
-                name == tool.name &&
-                moves == tool.moves
+        val emotionModifier = other as S_EmotionModifier
+        return id == emotionModifier.id &&
+                name == emotionModifier.name &&
+                trigger == emotionModifier.trigger &&
+                values == emotionModifier.values
     }
 
     override fun hashCode(): Int {
-        return Objects.hash(id, name, moves)
+        return Objects.hash(id, name, trigger, values)
     }
 
     override fun toString(): String {
         val sb = StringBuilder()
-        sb.append("class Tool {\n")
+        sb.append("class EmotionModifier {\n")
         sb.append("    id: ").append(toIndentedString(id)).append("\n")
         sb.append("    name: ").append(toIndentedString(name)).append("\n")
-        sb.append("    moves: ").append(toIndentedString(moves)).append("\n")
+        sb.append("    trigger: ").append(toIndentedString(trigger)).append("\n")
+        sb.append("    values: ").append(toIndentedString(values)).append("\n")
         sb.append("}")
         return sb.toString()
     }

@@ -7,8 +7,8 @@ import com.example.rpgstatmanager.interactor.api.AuthInteractor
 import com.example.rpgstatmanager.model.character.D_Move
 import com.example.rpgstatmanager.model.character.D_Tool
 import com.example.rpgstatmanager.swagger.client.api.DataApi
-import com.example.rpgstatmanager.swagger.client.model.Move
-import com.example.rpgstatmanager.swagger.client.model.Tool
+import com.example.rpgstatmanager.swagger.client.model.S_Move
+import com.example.rpgstatmanager.swagger.client.model.S_Tool
 import javax.inject.Inject
 
 class ToolInteractor @Inject constructor(
@@ -19,11 +19,11 @@ class ToolInteractor @Inject constructor(
         if (exists) {
             dataApi.updateTool(
                 AuthInteractor.actualToken,
-                Tool(
+                S_Tool(
                     d.id,
                     d.name,
                     d.DMoves.map { move ->
-                        Move(
+                        S_Move(
                             move.id,
                             move.moveTypeId,
                             move.name,
@@ -37,11 +37,11 @@ class ToolInteractor @Inject constructor(
         } else {
             dataApi.createTool(
                 AuthInteractor.actualToken,
-                Tool(
+                S_Tool(
                     d.id,
                     d.name,
                     d.DMoves.map { move ->
-                        Move(
+                        S_Move(
                             move.id,
                             move.moveTypeId,
                             move.name,
@@ -60,7 +60,7 @@ class ToolInteractor @Inject constructor(
     }
 
     override fun list(): List<D_Tool> {
-        val data: List<Tool>
+        val data: List<S_Tool>
         val call = dataApi.listTool(AuthInteractor.actualToken, PathTracker.character)
         val response = call.execute()
         Log.d("Reponse", response.body().toString())

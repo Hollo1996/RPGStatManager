@@ -6,7 +6,7 @@ import com.example.rpgstatmanager.interactor.PathTracker
 import com.example.rpgstatmanager.interactor.api.AuthInteractor
 import com.example.rpgstatmanager.model.character.D_Stat
 import com.example.rpgstatmanager.swagger.client.api.DataApi
-import com.example.rpgstatmanager.swagger.client.model.Stat
+import com.example.rpgstatmanager.swagger.client.model.S_Stat
 import javax.inject.Inject
 
 class StatInteractor @Inject constructor(
@@ -17,12 +17,12 @@ class StatInteractor @Inject constructor(
         if (exists) {
             dataApi.updateStat(
                 AuthInteractor.actualToken,
-                Stat(d.id, d.half, d.line, d.value.toLong())
+                S_Stat(d.id, d.half, d.line, d.value.toLong())
             ).execute()
         } else {
             dataApi.createStat(
                 AuthInteractor.actualToken,
-                Stat(d.id, d.half, d.line, d.value.toLong())
+                S_Stat(d.id, d.half, d.line, d.value.toLong())
             ).execute()
         }
     }
@@ -32,7 +32,7 @@ class StatInteractor @Inject constructor(
     }
 
     override fun list(): List<D_Stat> {
-        val data: List<Stat>
+        val data: List<S_Stat>
         val call = dataApi.listStat(AuthInteractor.actualToken, PathTracker.character)
         val response = call.execute()
         Log.d("Reponse", response.body().toString())

@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty
 import java.util.*
 
 @ApiModel(description = "")
-data class Ability (
+data class S_Ability (
     /**
      */
     @get:ApiModelProperty(value = "")
@@ -47,16 +47,16 @@ data class Ability (
      */
     @get:ApiModelProperty(value = "")
     @SerializedName("moves")
-    var moves: List<Move> = ArrayList()
+    var moves: List<S_Move> = ArrayList()
 ){
-    override fun equals(o: Any?): Boolean {
-        if (this === o) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) {
             return true
         }
-        if (o == null || javaClass != o.javaClass) {
+        if (other == null || javaClass != other.javaClass) {
             return false
         }
-        val ability = o as Ability
+        val ability = other as S_Ability
         return id == ability.id &&
                 raceId == ability.raceId &&
                 name == ability.name &&

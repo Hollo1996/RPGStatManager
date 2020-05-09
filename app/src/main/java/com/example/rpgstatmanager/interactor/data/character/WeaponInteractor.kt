@@ -7,8 +7,8 @@ import com.example.rpgstatmanager.interactor.api.AuthInteractor
 import com.example.rpgstatmanager.model.character.D_Move
 import com.example.rpgstatmanager.model.character.D_Weapon
 import com.example.rpgstatmanager.swagger.client.api.DataApi
-import com.example.rpgstatmanager.swagger.client.model.Move
-import com.example.rpgstatmanager.swagger.client.model.Weapon
+import com.example.rpgstatmanager.swagger.client.model.S_Move
+import com.example.rpgstatmanager.swagger.client.model.S_Weapon
 import javax.inject.Inject
 
 class WeaponInteractor @Inject constructor(
@@ -19,11 +19,11 @@ class WeaponInteractor @Inject constructor(
         if (exists) {
             dataApi.updateWeapon(
                 AuthInteractor.actualToken,
-                Weapon(
+                S_Weapon(
                     d.id,
                     d.name,
                     d.DMoves.map { move ->
-                        Move(
+                        S_Move(
                             move.id,
                             move.moveTypeId,
                             move.name,
@@ -37,11 +37,11 @@ class WeaponInteractor @Inject constructor(
         } else {
             dataApi.createWeapon(
                 AuthInteractor.actualToken,
-                Weapon(
+                S_Weapon(
                     d.id,
                     d.name,
                     d.DMoves.map { move ->
-                        Move(
+                        S_Move(
                             move.id,
                             move.moveTypeId,
                             move.name,
@@ -60,7 +60,7 @@ class WeaponInteractor @Inject constructor(
     }
 
     override fun list(): List<D_Weapon> {
-        val data: List<Weapon>
+        val data: List<S_Weapon>
         val call = dataApi.listWeapon(AuthInteractor.actualToken, PathTracker.character)
         val response = call.execute()
         Log.d("Reponse", response.body().toString())
@@ -83,7 +83,7 @@ class WeaponInteractor @Inject constructor(
                             move.description ?: throw Error(""),
                             move.effect ?: throw Error("")
                         )
-                    } ?: throw Error("")
+                    }
             )
         }
     }
