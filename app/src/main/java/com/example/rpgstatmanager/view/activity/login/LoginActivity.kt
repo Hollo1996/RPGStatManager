@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.rpgstatmanager.view.activity.login
 
 import android.app.Activity

@@ -17,11 +17,11 @@ class ToolAdapter(
 ) : RecyclerView.Adapter<ToolAdapter.ToolViewHolder>() {
 
     class ToolViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val listMove: List<F_Move> = listOf(
-            itemView.findViewById(R.id.move1OfWeapon),
-            itemView.findViewById(R.id.move2OfWeapon),
-            itemView.findViewById(R.id.move3OfWeapon),
-            itemView.findViewById(R.id.move4OfWeapon)
+        val listMove: List<MoveAdapter.MoveViewHolder> = listOf(
+            MoveAdapter.MoveViewHolder(itemView.findViewById(R.id.move1OfWeapon)),
+            MoveAdapter.MoveViewHolder(itemView.findViewById(R.id.move2OfWeapon)),
+            MoveAdapter.MoveViewHolder(itemView.findViewById(R.id.move3OfWeapon)),
+            MoveAdapter.MoveViewHolder(itemView.findViewById(R.id.move4OfWeapon))
         )
         val name: EditText = itemView.findViewById(R.id.nameOfMove)
 
@@ -37,11 +37,11 @@ class ToolAdapter(
 
     override fun onBindViewHolder(holder: ToolViewHolder, position: Int) {
         holder.name.setText(weapons[position].name)
-        for (i in holder.listMove.indices){
-            holder.listMove[i].nameOfMove.setText(weapons[position].DMoves[i].name)
-            holder.listMove[i].criteriaOfMove.setText(weapons[position].DMoves[i].cardRestriction)
-            holder.listMove[i].descriptionOfMove.setText(weapons[position].DMoves[i].description)
-            holder.listMove[i].effectOfMove.setText(weapons[position].DMoves[i].effect)
+        for (i in holder.listMove.indices) {
+            holder.listMove[i].name.setText(weapons[position].DMoves[i].name)
+            holder.listMove[i].criteria.setText(weapons[position].DMoves[i].cardRestriction)
+            holder.listMove[i].description.setText(weapons[position].DMoves[i].description)
+            holder.listMove[i].effect.setText(weapons[position].DMoves[i].effect)
         }
     }
 }

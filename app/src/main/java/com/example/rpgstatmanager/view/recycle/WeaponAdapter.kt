@@ -17,15 +17,15 @@ class WeaponAdapter(
 ) : RecyclerView.Adapter<WeaponAdapter.WeaponViewHolder>() {
 
     class WeaponViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val listMove: List<F_Move> = listOf(
-            itemView.findViewById(R.id.move1OfWeapon),
-            itemView.findViewById(R.id.move2OfWeapon),
-            itemView.findViewById(R.id.move3OfWeapon),
-            itemView.findViewById(R.id.move4OfWeapon),
-            itemView.findViewById(R.id.move5OfWeapon),
-            itemView.findViewById(R.id.move6OfWeapon),
-            itemView.findViewById(R.id.move7OfWeapon),
-            itemView.findViewById(R.id.move8OfWeapon)
+        val listMove: List<MoveAdapter.MoveViewHolder> = listOf(
+            MoveAdapter.MoveViewHolder(itemView.findViewById(R.id.move1OfWeapon)),
+            MoveAdapter.MoveViewHolder(itemView.findViewById(R.id.move2OfWeapon)),
+            MoveAdapter.MoveViewHolder(itemView.findViewById(R.id.move3OfWeapon)),
+            MoveAdapter.MoveViewHolder(itemView.findViewById(R.id.move4OfWeapon)),
+            MoveAdapter.MoveViewHolder(itemView.findViewById(R.id.move5OfWeapon)),
+            MoveAdapter.MoveViewHolder(itemView.findViewById(R.id.move6OfWeapon)),
+            MoveAdapter.MoveViewHolder(itemView.findViewById(R.id.move7OfWeapon)),
+            MoveAdapter.MoveViewHolder(itemView.findViewById(R.id.move8OfWeapon))
         )
         val name:EditText = itemView.findViewById(R.id.nameOfMove)
 
@@ -42,10 +42,10 @@ class WeaponAdapter(
     override fun onBindViewHolder(holder: WeaponViewHolder, position: Int) {
         holder.name.setText(weapons[position].name)
         for (i in holder.listMove.indices){
-            holder.listMove[i].nameOfMove.setText(weapons[position].DMoves[i].name)
-            holder.listMove[i].criteriaOfMove.setText(weapons[position].DMoves[i].cardRestriction)
-            holder.listMove[i].descriptionOfMove.setText(weapons[position].DMoves[i].description)
-            holder.listMove[i].effectOfMove.setText(weapons[position].DMoves[i].effect)
+            holder.listMove[i].name.setText(weapons[position].DMoves[i].name)
+            holder.listMove[i].criteria.setText(weapons[position].DMoves[i].cardRestriction)
+            holder.listMove[i].description.setText(weapons[position].DMoves[i].description)
+            holder.listMove[i].effect.setText(weapons[position].DMoves[i].effect)
         }
     }
 }
