@@ -6,4 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.character.RaceActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbAbility"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAbilityTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ability"
+        android:textColor="@color/lightpurpule"
+        android:textSize="@dimen/title_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/tbAbility"
+        app:layout_constraintEnd_toEndOf="@+id/tbAbility"
+        app:layout_constraintStart_toStartOf="@+id/tbAbility"
+        app:layout_constraintTop_toTopOf="@+id/tbAbility" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAbility"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbAbility" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

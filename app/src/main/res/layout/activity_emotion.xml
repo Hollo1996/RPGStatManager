@@ -6,4 +6,629 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.character.EmotionModifierActivity">
 
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbEmotion"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvEmotionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emotions"
+        android:textColor="@color/lightpurpule"
+        android:textSize="@dimen/title_text_size"
+        app:layout_constraintBottom_toBottomOf="@id/tbEmotion"
+        app:layout_constraintEnd_toEndOf="@id/tbEmotion"
+        app:layout_constraintStart_toStartOf="@+id/tbEmotion"
+        app:layout_constraintTop_toTopOf="@id/tbEmotion" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="205dp" />
+
+    <!-- Happy-->
+
+    <TextView
+        android:id="@+id/tvHappinessTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:text="Happiness"
+        android:textSize="@dimen/simple_title_size"
+        app:layout_constraintEnd_toStartOf="@+id/guideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbEmotion" />
+
+    <EditText
+        android:id="@+id/ethappyposit1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:editable="true"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etpositiv1"
+        app:layout_constraintEnd_toStartOf="@+id/etnegativ1"
+        app:layout_constraintTop_toTopOf="@+id/etpositiv1"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/etpositiv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:editable="false"
+        android:text="+"
+        app:layout_constraintEnd_toStartOf="@+id/ethappyposit1"
+        app:layout_constraintTop_toBottomOf="@+id/tvHappinessTitle" />
+
+    <EditText
+        android:id="@+id/ethappynegat2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etnegativ2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toTopOf="@+id/etnegativ2" />
+
+    <EditText
+        android:id="@+id/ethappyposit2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/etnegativ2"
+        app:layout_constraintTop_toTopOf="@+id/etpositiv2" />
+
+    <EditText
+        android:id="@+id/etnegativ1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:editable="false"
+        android:text="-"
+        app:layout_constraintEnd_toStartOf="@+id/ethappynegat1"
+
+        app:layout_constraintTop_toTopOf="@+id/etpositiv1" />
+
+    <EditText
+        android:id="@+id/ethappynegat1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etnegativ1"
+        app:layout_constraintEnd_toStartOf="@+id/etpositiv2"
+        app:layout_constraintTop_toTopOf="@+id/etnegativ1" />
+
+    <EditText
+        android:id="@+id/etpositiv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:editable="false"
+        android:text="+"
+        app:layout_constraintEnd_toStartOf="@+id/ethappyposit2"
+        app:layout_constraintTop_toTopOf="@+id/ethappynegat1" />
+
+    <EditText
+        android:id="@+id/etnegativ2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:text="-"
+        app:layout_constraintEnd_toStartOf="@id/ethappynegat2"
+        app:layout_constraintTop_toTopOf="@+id/etpositiv2" />
+
+
+    <!-- Fear-->
+    <TextView
+        android:id="@+id/tvFearTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fear"
+        android:textSize="@dimen/simple_title_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toTopOf="@+id/tvHappinessTitle" />
+
+    <EditText
+        android:id="@+id/etpositiv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:editable="false"
+        android:text="+"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/tvFearTitle" />
+
+    <EditText
+        android:id="@+id/etfearposit1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:editable="true"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etpositiv3"
+        app:layout_constraintStart_toEndOf="@+id/etpositiv3" />
+
+    <EditText
+        android:id="@+id/etnegativ3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:editable="false"
+        android:text="-"
+        app:layout_constraintStart_toEndOf="@+id/etfearposit1"
+        app:layout_constraintTop_toBottomOf="@+id/tvFearTitle" />
+
+    <EditText
+        android:id="@+id/etfearnegat1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:editable="true"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etpositiv3"
+        app:layout_constraintStart_toEndOf="@+id/etnegativ3" />
+
+    <EditText
+        android:id="@+id/etpositiv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:editable="false"
+        android:text="+"
+        app:layout_constraintStart_toEndOf="@+id/etfearnegat1"
+        app:layout_constraintTop_toBottomOf="@+id/tvFearTitle" />
+
+    <EditText
+        android:id="@+id/etfearposit2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:editable="true"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etpositiv3"
+        app:layout_constraintStart_toEndOf="@+id/etpositiv4" />
+
+    <EditText
+        android:id="@+id/etnegativ4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:editable="false"
+        android:text="-"
+        app:layout_constraintStart_toEndOf="@+id/etfearposit2"
+        app:layout_constraintTop_toBottomOf="@+id/tvFearTitle" />
+
+    <EditText
+        android:id="@+id/etfearnegat2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:editable="true"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etnegativ4"
+        app:layout_constraintStart_toEndOf="@+id/etnegativ4" />
+
+    <!-- Anger-->
+
+    <TextView
+        android:id="@+id/tvAngerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Anger"
+        android:textSize="@dimen/simple_title_size"
+        app:layout_constraintEnd_toStartOf="@+id/guideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etpositiv1" />
+
+    <EditText
+        android:id="@+id/etangernegat2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etnegativ6"
+        app:layout_constraintEnd_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toTopOf="@+id/etnegativ6" />
+
+    <EditText
+        android:id="@+id/etangerposit2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/etnegativ6"
+        app:layout_constraintTop_toTopOf="@+id/etpositiv6" />
+
+    <EditText
+        android:id="@+id/etnegativ5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:editable="false"
+        android:text="-"
+        app:layout_constraintEnd_toStartOf="@+id/etangernegat1"
+
+        app:layout_constraintTop_toTopOf="@+id/etpositiv5" />
+
+    <EditText
+        android:id="@+id/etangernegat1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etnegativ5"
+        app:layout_constraintEnd_toStartOf="@+id/etpositiv6"
+        app:layout_constraintTop_toTopOf="@+id/etnegativ5" />
+
+    <EditText
+        android:id="@+id/etpositiv6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:editable="false"
+        android:text="+"
+        app:layout_constraintEnd_toStartOf="@+id/etangerposit2"
+        app:layout_constraintTop_toTopOf="@+id/etangernegat1" />
+
+    <EditText
+        android:id="@+id/etnegativ6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:text="-"
+        app:layout_constraintEnd_toStartOf="@id/etangernegat2"
+        app:layout_constraintTop_toTopOf="@+id/etpositiv6" />
+
+    <EditText
+        android:id="@+id/etangerposit1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:editable="true"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etpositiv5"
+        app:layout_constraintEnd_toStartOf="@+id/etnegativ5"
+        app:layout_constraintTop_toTopOf="@+id/etpositiv5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/etpositiv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:editable="false"
+        android:text="+"
+        app:layout_constraintEnd_toStartOf="@+id/etangerposit1"
+        app:layout_constraintTop_toBottomOf="@+id/tvAngerTitle" />
+
+    <!-- Disgust -->
+
+    <TextView
+        android:id="@+id/tvDisgustTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disgust"
+        android:textSize="@dimen/simple_title_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toTopOf="@+id/tvAngerTitle" />
+
+    <EditText
+        android:id="@+id/etpositiv7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:editable="false"
+        android:text="+"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisgustTitle" />
+
+    <EditText
+        android:id="@+id/etdisposit1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:editable="true"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etpositiv7"
+        app:layout_constraintStart_toEndOf="@+id/etpositiv7" />
+
+    <EditText
+        android:id="@+id/etnegativ7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:editable="false"
+        android:text="-"
+        app:layout_constraintStart_toEndOf="@+id/etdisposit1"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisgustTitle" />
+
+    <EditText
+        android:id="@+id/etdisnegat1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:editable="true"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etnegativ7"
+        app:layout_constraintStart_toEndOf="@+id/etnegativ7" />
+
+    <EditText
+        android:id="@+id/etpositiv8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:editable="false"
+        android:text="+"
+        app:layout_constraintStart_toEndOf="@+id/etdisnegat1"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisgustTitle" />
+
+    <EditText
+        android:id="@+id/etdisposit2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:editable="true"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etpositiv8"
+        app:layout_constraintStart_toEndOf="@+id/etpositiv8" />
+
+    <EditText
+        android:id="@+id/etnegativ8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:editable="false"
+        android:text="-"
+        app:layout_constraintStart_toEndOf="@+id/etdisposit2"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisgustTitle" />
+
+    <EditText
+        android:id="@+id/etdisnegat2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:editable="true"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etnegativ8"
+        app:layout_constraintStart_toEndOf="@+id/etnegativ8" />
+
+    <!-- Sadness-->
+
+    <TextView
+        android:id="@+id/tvSadnessTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Sadness"
+        android:textSize="@dimen/simple_title_size"
+        app:layout_constraintEnd_toStartOf="@+id/guideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etpositiv5" />
+
+    <EditText
+        android:id="@+id/etsadposit1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:editable="true"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etpositiv9"
+        app:layout_constraintEnd_toStartOf="@+id/etnegativ9"
+        app:layout_constraintTop_toTopOf="@+id/etpositiv9"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/etpositiv9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:editable="false"
+        android:text="+"
+        app:layout_constraintEnd_toStartOf="@+id/etsadposit1"
+        app:layout_constraintTop_toBottomOf="@+id/tvSadnessTitle" />
+
+    <EditText
+        android:id="@+id/etsadnegat2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etnegativ10"
+        app:layout_constraintEnd_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toTopOf="@+id/etnegativ10" />
+
+    <EditText
+        android:id="@+id/etsadposit2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/etnegativ10"
+        app:layout_constraintTop_toTopOf="@+id/etpositiv10" />
+
+    <EditText
+        android:id="@+id/etnegativ9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:editable="false"
+        android:text="-"
+        app:layout_constraintEnd_toStartOf="@+id/etsadnegat1"
+
+        app:layout_constraintTop_toTopOf="@+id/etpositiv9" />
+
+    <EditText
+        android:id="@+id/etsadnegat1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etnegativ9"
+        app:layout_constraintEnd_toStartOf="@+id/etpositiv10"
+        app:layout_constraintTop_toTopOf="@+id/etnegativ9" />
+
+    <EditText
+        android:id="@+id/etpositiv10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:editable="false"
+        android:text="+"
+        app:layout_constraintEnd_toStartOf="@+id/etsadposit2"
+        app:layout_constraintTop_toTopOf="@+id/etsadnegat1" />
+
+    <EditText
+        android:id="@+id/etnegativ10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:clickable="false"
+        android:editable="false"
+        android:text="-"
+        app:layout_constraintEnd_toStartOf="@id/etsadnegat2"
+        app:layout_constraintTop_toTopOf="@+id/etpositiv10" />
+
+
+    <!-- Comfusion -->
+
+    <TextView
+        android:id="@+id/tvComfusionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comfusion"
+        android:textSize="@dimen/simple_title_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toTopOf="@+id/tvSadnessTitle" />
+
+    <EditText
+        android:id="@+id/etpositiv11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:editable="false"
+        android:text="+"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/tvComfusionTitle" />
+
+    <EditText
+        android:id="@+id/etcomposit1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:editable="true"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etpositiv11"
+        app:layout_constraintStart_toEndOf="@+id/etpositiv11" />
+
+    <EditText
+        android:id="@+id/etnegativ11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:editable="false"
+        android:text="-"
+        app:layout_constraintStart_toEndOf="@+id/etcomposit1"
+        app:layout_constraintTop_toBottomOf="@+id/tvComfusionTitle" />
+
+    <EditText
+        android:id="@+id/etcomnegat1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:editable="true"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etnegativ11"
+        app:layout_constraintStart_toEndOf="@+id/etnegativ11" />
+
+    <EditText
+        android:id="@+id/etpositiv12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:editable="false"
+        android:text="+"
+        app:layout_constraintStart_toEndOf="@+id/etcomnegat1"
+        app:layout_constraintTop_toBottomOf="@+id/tvComfusionTitle" />
+
+    <EditText
+        android:id="@+id/etcomposit2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:editable="true"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etpositiv12"
+        app:layout_constraintStart_toEndOf="@+id/etpositiv12" />
+
+    <EditText
+        android:id="@+id/etnegativ12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:editable="false"
+        android:text="-"
+        app:layout_constraintStart_toEndOf="@+id/etcomposit2"
+        app:layout_constraintTop_toBottomOf="@+id/tvComfusionTitle" />
+
+    <EditText
+        android:id="@+id/etcomnegat2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:editable="true"
+        android:hint="2"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etnegativ12"
+        app:layout_constraintStart_toEndOf="@+id/etnegativ12" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

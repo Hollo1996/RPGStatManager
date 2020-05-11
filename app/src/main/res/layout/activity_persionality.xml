@@ -6,4 +6,223 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.character.PersonalityTypeActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbPersonality"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPersonalityTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Personality"
+        android:textColor="@color/lightpurpule"
+        android:textSize="@dimen/title_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/tbPersonality"
+        app:layout_constraintEnd_toEndOf="@+id/tbPersonality"
+        app:layout_constraintStart_toStartOf="@+id/tbPersonality"
+        app:layout_constraintTop_toTopOf="@+id/tbPersonality" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="200dp" />
+
+    <!-- Introvert-->
+
+    <TextView
+        android:id="@+id/tvIntrovertTitle"
+        android:layout_width="@dimen/personality_title_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="Introvert"
+        android:textSize="@dimen/simple_title_size"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbPersonality" />
+
+    <EditText
+        android:id="@+id/etIntrovert"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="7"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvIntrovertTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvIntrovertTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvIntrovertTitle" />
+
+    <!-- Sense-->
+
+    <TextView
+        android:id="@+id/tvSenseTitle"
+        android:layout_width="@dimen/personality_title_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Sense"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etIntrovert" />
+
+    <EditText
+        android:id="@+id/etPerSense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="7"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvSenseTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvSenseTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvSenseTitle" />
+
+    <!-- Thinking-->
+
+    <TextView
+        android:id="@+id/tvThinkingTitle"
+        android:layout_width="@dimen/personality_title_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Thinking"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPerSense" />
+
+    <EditText
+        android:id="@+id/etThinking"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="7"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvThinkingTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvThinkingTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvThinkingTitle" />
+
+    <!-- Judging-->
+
+    <TextView
+        android:id="@+id/tvJudgingTitle"
+        android:layout_width="@dimen/personality_title_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Judging"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etThinking" />
+
+    <EditText
+        android:id="@+id/etJudging"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="7"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvJudgingTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvJudgingTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvJudgingTitle" />
+
+    <!-- Extroverted-->
+
+    <TextView
+        android:id="@+id/tvExtrovertedTitle"
+        android:layout_width="@dimen/personality_title_width"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Extroverted"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvIntrovertTitle" />
+
+    <EditText
+        android:id="@+id/etExtroverted"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="7"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvExtrovertedTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvExtrovertedTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvExtrovertedTitle" />
+
+    <!-- Intuition-->
+
+    <TextView
+        android:id="@+id/tvIntuitionTitle"
+        android:layout_width="@dimen/personality_title_width"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Intuition"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvSenseTitle" />
+
+    <EditText
+        android:id="@+id/etIntuition"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="7"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvIntuitionTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvIntuitionTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvIntuitionTitle" />
+
+    <!-- Emotion-->
+
+    <TextView
+        android:id="@+id/tvEmotionTitle"
+        android:layout_width="@dimen/personality_title_width"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Emotion"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvThinkingTitle" />
+
+    <EditText
+        android:id="@+id/etEmotion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="7"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvEmotionTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvEmotionTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmotionTitle" />
+
+    <!-- Perceiving-->
+
+    <TextView
+        android:id="@+id/tvPerceivingTitle"
+        android:layout_width="@dimen/personality_title_width"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Perceiving"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvJudgingTitle" />
+
+    <EditText
+        android:id="@+id/etPerceiving"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="7"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvPerceivingTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvPerceivingTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvPerceivingTitle" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

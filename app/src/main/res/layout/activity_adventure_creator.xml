@@ -6,4 +6,105 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.AdventureCreatorActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbAdventureCreator"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/twAdventureCreatorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create new Adventure! :)"
+        app:layout_constraintBottom_toBottomOf="@+id/tbAdventureCreator"
+        app:layout_constraintEnd_toEndOf="@+id/tbAdventureCreator"
+        app:layout_constraintStart_toStartOf="@+id/tbAdventureCreator"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/lightpurpule"
+        android:textSize="@dimen/title_text_size"
+        />
+
+    <Spinner
+        android:id="@+id/spAdventureChoose"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="@+id/etAdventureName"
+        app:layout_constraintStart_toStartOf="@+id/etAdventureName"
+        app:layout_constraintTop_toBottomOf="@+id/tvIconTitle" />
+
+    <TextView
+        android:id="@+id/tvIconTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Icon"
+        android:textSize="@dimen/simple_title_size"
+        app:layout_constraintStart_toStartOf="@+id/spAdventureChoose"
+        app:layout_constraintTop_toBottomOf="@+id/tbAdventureCreator" />
+
+    <TextView
+        android:id="@+id/tvAdventureNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Name of the Adventure"
+        android:textSize="@dimen/simple_title_size"
+        app:layout_constraintStart_toStartOf="@+id/spAdventureChoose"
+        app:layout_constraintTop_toBottomOf="@id/spAdventureChoose" />
+
+    <EditText
+        android:id="@+id/etAdventureName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:editable="true"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAdventureNameTitle"
+        android:hint="Awesome Advnture"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/tvPlayerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Players"
+        app:layout_constraintStart_toStartOf="@+id/etAdventureName"
+        app:layout_constraintTop_toBottomOf="@+id/etAdventureName"
+        android:textSize="@dimen/simple_title_size"/>
+
+    <Button
+        android:id="@+id/btComplete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Complete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAdventureCreatorPlayers"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/btComplete"
+        app:layout_constraintEnd_toEndOf="@+id/etAdventureName"
+        app:layout_constraintStart_toStartOf="@+id/etAdventureName"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlayerTitle"
+        tools:listitem="@layout/row_item_character_name"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

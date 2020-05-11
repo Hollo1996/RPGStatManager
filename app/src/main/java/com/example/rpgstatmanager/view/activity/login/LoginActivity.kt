@@ -3,6 +3,7 @@
 package com.example.rpgstatmanager.view.activity.login
 
 import android.app.Activity
+import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -20,6 +21,7 @@ import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.module.injector
 import com.example.rpgstatmanager.presenter.login.LoginPresenter
 import com.example.rpgstatmanager.screen.login.LoginScreen
+import com.example.rpgstatmanager.view.activity.AdventureChooserActivity
 import javax.inject.Inject
 
 class LoginActivity : AppCompatActivity(), LoginScreen {
@@ -40,6 +42,7 @@ class LoginActivity : AppCompatActivity(), LoginScreen {
         val password = findViewById<EditText>(R.id.password)
         val login = findViewById<Button>(R.id.login)
         val loading = findViewById<ProgressBar>(R.id.loading)
+        val forgotten =findViewById<Button>(R.id.btForgotten)
 
         loginViewModel = ViewModelProviders.of(this,
             LoginViewModelFactory()
@@ -107,6 +110,18 @@ class LoginActivity : AppCompatActivity(), LoginScreen {
                 loginViewModel.login(username.text.toString(), password.text.toString())
             }
         }
+
+        forgotten.setOnClickListener{
+            startActivity(Intent(this,ForgottenPasswordActivity::class.java))
+        }
+
+        login.setOnClickListener {
+            presenter.validate(username.text.toString(),password.text.toString())
+            val i=Intent(this,AdventureChooserActivity::class.java)
+            //i.putExtra(AdventureChooserActivity.PLAYER_ID,)
+            startActivity(i)
+        }
+
     }
 
     override fun onStart() {

@@ -6,4 +6,54 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.AdventureChooserActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbAdventure"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/twToolbarTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose your Adventure! :)"
+        android:textColor="@color/lightpurpule"
+        android:textSize="@dimen/title_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/tbAdventure"
+        app:layout_constraintEnd_toEndOf="@+id/tbAdventure"
+        app:layout_constraintStart_toStartOf="@+id/tbAdventure"
+        app:layout_constraintTop_toTopOf="@+id/tbAdventure" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAdventure"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbAdventure"
+        tools:listitem="@layout/row_item_adventure" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fbAddAdventure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

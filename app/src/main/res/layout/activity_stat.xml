@@ -6,4 +6,223 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.character.StatActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbStat"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stats"
+        app:layout_constraintBottom_toBottomOf="@id/tbStat"
+        app:layout_constraintEnd_toEndOf="@id/tbStat"
+        app:layout_constraintStart_toStartOf="@id/tbStat"
+        app:layout_constraintTop_toTopOf="@+id/tbStat"
+        android:textColor="@color/lightpurpule"
+        android:textSize="@dimen/title_text_size"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="200dp" />
+
+
+    <!-- Strength-->
+
+    <TextView
+        android:id="@+id/tvStrengthTitle"
+        android:layout_width="@dimen/stat_title_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="Strength"
+        android:textSize="@dimen/simple_title_size"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbStat" />
+
+    <EditText
+        android:id="@+id/etStrength"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="7"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvStrengthTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvStrengthTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvStrengthTitle" />
+
+    <!-- Speed-->
+
+    <TextView
+        android:id="@+id/tvSpeedTitle"
+        android:layout_width="@dimen/stat_title_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Speed"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etStrength" />
+
+    <EditText
+        android:id="@+id/etSpeed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="7"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvSpeedTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvSpeedTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvSpeedTitle" />
+
+    <!-- Agility-->
+
+    <TextView
+        android:id="@+id/tvAgilityTitle"
+        android:layout_width="@dimen/stat_title_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Agility"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSpeed" />
+
+    <EditText
+        android:id="@+id/etAgility"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="7"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvAgilityTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvAgilityTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvAgilityTitle" />
+
+    <!-- Judging
+
+    <TextView
+        android:id="@+id/tvJudgingTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Judging"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etThinking" />
+
+    <EditText
+        android:id="@+id/etJudging"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="7"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvJudgingTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvJudgingTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvJudgingTitle" />
+-->
+    <!-- Sense-->
+
+    <TextView
+        android:id="@+id/tvSenseTitle"
+        android:layout_width="@dimen/stat_title_width"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Sense"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvStrengthTitle" />
+
+    <EditText
+        android:id="@+id/etPerSense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="7"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvSenseTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvSenseTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvSenseTitle" />
+
+    <!-- Memory-->
+
+    <TextView
+        android:id="@+id/tvMemoryTitle"
+        android:layout_width="@dimen/stat_title_width"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Memory"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvSpeedTitle" />
+
+    <EditText
+        android:id="@+id/etMemory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="7"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvMemoryTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvMemoryTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvMemoryTitle" />
+
+    <!-- Resistence-->
+
+    <TextView
+        android:id="@+id/tvResistenceTitle"
+        android:layout_width="@dimen/stat_title_width"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Resistence"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvAgilityTitle" />
+
+    <EditText
+        android:id="@+id/etResistence"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="7"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvResistenceTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvResistenceTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvResistenceTitle" />
+
+    <!-- Perceiving
+
+    <TextView
+        android:id="@+id/tvPerceivingTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Perceiving"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvJudgingTitle" />
+
+    <EditText
+        android:id="@+id/etPerceiving"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="7"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvPerceivingTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvPerceivingTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvPerceivingTitle" />
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>

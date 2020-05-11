@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity(), MainScreen {
         super.onCreate(savedInstanceState)
         injector.inject(this)
         setContentView(R.layout.activity_main)
+
     }
 
     override fun onStart() {

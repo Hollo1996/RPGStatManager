@@ -25,7 +25,6 @@ interface RPGStatManagerApplicationComponent{
     fun inject(toolActivity: ToolActivity)
     fun inject(weaponActivity: WeaponActivity)
     fun inject(forgottenPasswordActivity: ForgottenPasswordActivity)
-    
     fun inject(loginActivity: LoginActivity)
     fun inject(adventureCreatorActivity: AdventureCreatorActivity)
     fun inject(adventureChooserActivity: AdventureChooserActivity)

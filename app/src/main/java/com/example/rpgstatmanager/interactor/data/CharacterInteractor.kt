@@ -65,4 +65,5 @@ class CharacterInteractor @Inject constructor(
         }
     }
 
+
 }

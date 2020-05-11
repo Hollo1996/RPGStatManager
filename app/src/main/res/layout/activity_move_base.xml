@@ -6,4 +6,269 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.character.MoveTypeActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbMoveType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMoveType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Move Types"
+        android:textColor="@color/lightpurpule"
+        android:textSize="@dimen/title_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/tbMoveType"
+        app:layout_constraintEnd_toEndOf="@+id/tbMoveType"
+        app:layout_constraintStart_toStartOf="@+id/tbMoveType"
+        app:layout_constraintTop_toTopOf="@+id/tbMoveType" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="200dp" />
+
+    <!-- Lift-->
+
+    <TextView
+        android:id="@+id/tvLiftTitle"
+        android:layout_width="@dimen/personality_title_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Lift"
+        android:textSize="@dimen/simple_title_size"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbMoveType" />
+
+    <EditText
+        android:id="@+id/etLift"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="14"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvLiftTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvLiftTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvLiftTitle" />
+
+    <!-- Strike-->
+
+    <TextView
+        android:id="@+id/tvStrikeTitle"
+        android:layout_width="@dimen/personality_title_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Strike"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etLift" />
+
+    <EditText
+        android:id="@+id/etPerStrike"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="14"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvStrikeTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvStrikeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvStrikeTitle" />
+
+    <!-- Dodge-->
+
+    <TextView
+        android:id="@+id/tvDodgeTitle"
+        android:layout_width="@dimen/personality_title_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Dodge"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPerStrike" />
+
+    <EditText
+        android:id="@+id/etDodge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="14"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvDodgeTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvDodgeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvDodgeTitle" />
+
+    <!-- Move-->
+
+    <TextView
+        android:id="@+id/tvMoveTitle"
+        android:layout_width="@dimen/personality_title_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Move"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDodge" />
+
+    <EditText
+        android:id="@+id/etMove"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="14"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvMoveTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvMoveTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvMoveTitle" />
+
+    <!-- Throw-->
+
+    <TextView
+        android:id="@+id/tvThrowTitle"
+        android:layout_width="@dimen/personality_title_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Throw"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etMove" />
+
+    <EditText
+        android:id="@+id/etThrow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="14"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvThrowTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvThrowTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvThrowTitle" />
+
+    <!-- Disarm-->
+
+    <TextView
+        android:id="@+id/tvDisarmTitle"
+        android:layout_width="@dimen/personality_title_width"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Disarm"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvLiftTitle" />
+
+    <EditText
+        android:id="@+id/etDisarm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="14"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvDisarmTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvDisarmTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisarmTitle" />
+
+    <!-- Block-->
+
+    <TextView
+        android:id="@+id/tvBlockTitle"
+        android:layout_width="@dimen/personality_title_width"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Block"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvStrikeTitle" />
+
+    <EditText
+        android:id="@+id/etBlock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="14"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvBlockTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvBlockTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvBlockTitle" />
+
+    <!-- Target-->
+
+    <TextView
+        android:id="@+id/tvTargetTitle"
+        android:layout_width="@dimen/personality_title_width"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Target"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvDodgeTitle" />
+
+    <EditText
+        android:id="@+id/etTarget"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="14"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvTargetTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvTargetTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTargetTitle" />
+
+    <!-- React-->
+
+    <TextView
+        android:id="@+id/tvReactTitle"
+        android:layout_width="@dimen/personality_title_width"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/simple_title_size"
+        android:text="React"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvMoveTitle" />
+
+    <EditText
+        android:id="@+id/etReact"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="14"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvReactTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvReactTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvReactTitle" />
+
+    <!-- Search-->
+
+    <TextView
+        android:id="@+id/tvSearchTitle"
+        android:layout_width="@dimen/personality_title_width"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/simple_title_size"
+        android:text="Search"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvThrowTitle" />
+
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="14"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/tvSearchTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvSearchTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvSearchTitle" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

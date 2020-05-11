@@ -15,92 +15,82 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <fragment
-        android:id="@+id/move1OfWeapon"
-        android:name="com.example.rpgstatmanager.view.fragment.F_Move"
-
-        android:layout_height="match_parent"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameOfWeapon"
-        />
+        app:layout_constraintTop_toBottomOf="@id/nameOfWeapon">
 
-    <fragment
-        android:id="@+id/move2OfWeapon"
-        android:name="com.example.rpgstatmanager.view.fragment.F_Move"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        android:layout_height="match_parent"
-        android:layout_width="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/move1OfWeapon"
-        />
+            <fragment
+                android:id="@+id/move1OfWeapon"
+                android:name="com.example.rpgstatmanager.view.fragment.F_Move"
 
-    <fragment
-        android:id="@+id/move3OfWeapon"
-        android:name="com.example.rpgstatmanager.view.fragment.F_Move"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
 
-        android:layout_height="match_parent"
-        android:layout_width="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/move2OfWeapon"
-        />
+            <fragment
+                android:id="@+id/move2OfWeapon"
+                android:name="com.example.rpgstatmanager.view.fragment.F_Move"
 
-    <fragment
-        android:id="@+id/move4OfWeapon"
-        android:name="com.example.rpgstatmanager.view.fragment.F_Move"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
 
-        android:layout_height="match_parent"
-        android:layout_width="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/move3OfWeapon"
-        />
+            <fragment
+                android:id="@+id/move3OfWeapon"
+                android:name="com.example.rpgstatmanager.view.fragment.F_Move"
 
-    <fragment
-        android:id="@+id/move5OfWeapon"
-        android:name="com.example.rpgstatmanager.view.fragment.F_Move"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
 
-        android:layout_height="match_parent"
-        android:layout_width="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/move4OfWeapon"
-        />
+            <fragment
+                android:id="@+id/move4OfWeapon"
+                android:name="com.example.rpgstatmanager.view.fragment.F_Move"
 
-    <fragment
-        android:id="@+id/move6OfWeapon"
-        android:name="com.example.rpgstatmanager.view.fragment.F_Move"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
 
-        android:layout_height="match_parent"
-        android:layout_width="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/move5OfWeapon"
-        />
+            <fragment
+                android:id="@+id/move5OfWeapon"
+                android:name="com.example.rpgstatmanager.view.fragment.F_Move"
 
-    <fragment
-        android:id="@+id/move7OfWeapon"
-        android:name="com.example.rpgstatmanager.view.fragment.F_Move"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
 
-        android:layout_height="match_parent"
-        android:layout_width="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/move6OfWeapon"
-        />
+            <fragment
+                android:id="@+id/move6OfWeapon"
+                android:name="com.example.rpgstatmanager.view.fragment.F_Move"
 
-    <fragment
-        android:id="@+id/move8OfWeapon"
-        android:name="com.example.rpgstatmanager.view.fragment.F_Move"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
 
-        android:layout_height="match_parent"
-        android:layout_width="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/move7OfWeapon"
-        />
+            <fragment
+                android:id="@+id/move7OfWeapon"
+                android:name="com.example.rpgstatmanager.view.fragment.F_Move"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <fragment
+                android:id="@+id/move8OfWeapon"
+                android:name="com.example.rpgstatmanager.view.fragment.F_Move"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

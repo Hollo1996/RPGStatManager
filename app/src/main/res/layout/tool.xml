@@ -15,48 +15,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <fragment
         android:id="@+id/move1OfTool"
         android:name="com.example.rpgstatmanager.view.fragment.F_Move"
 
-        android:layout_height="match_parent"
-        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nameOfTool"
+        android:layout_marginTop="8dp"
         />
 
     <fragment
         android:id="@+id/move2OfTool"
         android:name="com.example.rpgstatmanager.view.fragment.F_Move"
 
-        android:layout_height="match_parent"
-        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/move1OfTool"
+        android:layout_marginTop="8dp"
         />
 
     <fragment
         android:id="@+id/move3OfTool"
         android:name="com.example.rpgstatmanager.view.fragment.F_Move"
 
-        android:layout_height="match_parent"
-        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/move2OfTool"
+        android:layout_marginTop="8dp"
         />
 
     <fragment
         android:id="@+id/move4OfTool"
         android:name="com.example.rpgstatmanager.view.fragment.F_Move"
 
-        android:layout_height="match_parent"
-        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/move3OfTool"
+        android:layout_marginTop="8dp"
         />
     
 </androidx.constraintlayout.widget.ConstraintLayout>
