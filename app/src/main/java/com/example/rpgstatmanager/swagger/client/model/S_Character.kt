@@ -11,7 +11,12 @@ data class S_Character (
      */
     @get:ApiModelProperty(value = "")
     @SerializedName("id")
-    var id: String? = null,
+    var id: String,
+    /**
+     */
+    @get:ApiModelProperty(value = "")
+    @SerializedName("id")
+    var adventureId: String,
 
     /**
      */

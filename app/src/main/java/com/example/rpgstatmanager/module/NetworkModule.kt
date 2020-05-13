@@ -11,10 +11,10 @@ import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Module
-class NetworkModule {
+open class NetworkModule {
     @Provides
     @Singleton
-    fun provideOkHttpClient(): OkHttpClient {
+    open fun provideOkHttpClient(): OkHttpClient {
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         return OkHttpClient.Builder().addInterceptor(interceptor).build()
@@ -22,7 +22,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideDataApi(client: OkHttpClient): DataApi{
+    open fun provideDataApi(client: OkHttpClient): DataApi{
         val retrofit = Retrofit.Builder()
             .client(client)
             .baseUrl("rpgmanager.data.io")
@@ -33,7 +33,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideTokenApi(client: OkHttpClient): TokenApi{
+    open fun provideTokenApi(client: OkHttpClient): TokenApi{
         val retrofit = Retrofit.Builder()
             .client(client)
             .baseUrl("rpgmanager.data.io")

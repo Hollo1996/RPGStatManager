@@ -25,7 +25,7 @@ class EmotionModifierPresenter
                         + ( modifier.modifiers[moveType.stat1] ?:throw Error("No stat modifier found by the given stat name") )
                         + ( modifier.modifiers[moveType.stat2] ?:throw Error("No stat modifier found by the given stat name") )
             )
-            moveTypeInteractor.save(moveType,true)
+            moveTypeInteractor.save(newValue,true)
         }
     }
     fun turnOff(emotion:String){
@@ -39,7 +39,7 @@ class EmotionModifierPresenter
                         - ( modifier.modifiers[moveType.stat1] ?:throw Error("No stat modifier found by the given stat name") )
                         - ( modifier.modifiers[moveType.stat2] ?:throw Error("No stat modifier found by the given stat name") )
             )
-            moveTypeInteractor.save(moveType,true)
+            moveTypeInteractor.save(newValue,true)
         }
     }
 }

@@ -9,7 +9,7 @@ import com.example.rpgstatmanager.room.data.E_ToolMoveConnector
 interface DAO_ToolMoveConnector{
     @Query("SELECT * FROM toolMoveConnector")
     fun listAllToolMoveConnectors(): List<E_ToolMoveConnector>
-    @Query("SELECT * FROM toolMoveConnector WHERE toolId = :tool")
+    @Query("SELECT * FROM toolMoveConnector WHERE toolId = :row_item_tool")
     fun listToolMoveConnectorsOfTool(tool: String): List<E_ToolMoveConnector>
     @Query("SELECT * FROM toolMoveConnector WHERE moveId = :move")
     fun listToolMoveConnectorsOfMove(move: String): List<E_ToolMoveConnector>

@@ -11,7 +11,7 @@ data class S_KeyValue (
      */
     @get:ApiModelProperty(value = "")
     @SerializedName("key")
-    var key: String? = null,
+    var key: String,
 
     /**
      */

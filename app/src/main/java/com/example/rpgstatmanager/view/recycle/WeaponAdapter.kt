@@ -8,8 +8,6 @@ import android.widget.EditText
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.model.character.D_Weapon
-import com.example.rpgstatmanager.view.fragment.F_Move
-import kotlinx.android.synthetic.main.fragment_move.*
 
 class WeaponAdapter(
     val context: Context,
@@ -33,7 +31,7 @@ class WeaponAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeaponViewHolder {
         val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.weapon, parent, false)
+        val view = inflater.inflate(R.layout.row_item_weapon, parent, false)
         return WeaponViewHolder(view)
     }
 

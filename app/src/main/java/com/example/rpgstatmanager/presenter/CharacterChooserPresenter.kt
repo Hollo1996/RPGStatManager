@@ -8,28 +8,10 @@ import javax.inject.Inject
 
 class CharacterChooserPresenter
 @Inject constructor(
-    private val characterInteractor: CharacterInteractor,
-    private val abilityInteractor: AbilityInteractor,
-    private val emotionModifierInteractor: EmotionModifierInteractor,
-    private val moveInteractor: MoveInteractor,
-    private val moveTypeInteractor: MoveTypeInteractor,
-    private val personalityTypeInteractor: PersonalityTypeInteractor,
-    private val raceInteractor: RaceInteractor,
-    private val statInteractor: StatInteractor,
-    private val toolInteractor: ToolInteractor,
-    private val weaponInteractor: WeaponInteractor
+    private val characterInteractor: CharacterInteractor
 ) : A_Presenter<CharacterChooserScreen>() {
     fun list() = characterInteractor.list()
     fun choose(id: String) {
-        abilityInteractor.ownerId = id
-        emotionModifierInteractor.ownerId = id
-        moveInteractor.ownerId = id
-        moveTypeInteractor.ownerId = id
-        personalityTypeInteractor.ownerId = id
-        raceInteractor.ownerId = id
-        statInteractor.ownerId = id
-        toolInteractor.ownerId = id
-        weaponInteractor.ownerId = id
         val temp=characterInteractor.getWhen { it.id == id }
         PathTracker.character.id=temp.id
         PathTracker.character.isNpc=temp.is_npc

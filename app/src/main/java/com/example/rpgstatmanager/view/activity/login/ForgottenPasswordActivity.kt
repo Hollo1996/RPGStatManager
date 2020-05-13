@@ -4,10 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.module.injector
 import com.example.rpgstatmanager.presenter.login.ForgottenPasswordPresenter
 import com.example.rpgstatmanager.screen.login.ForgottenPasswordScreen
+import kotlinx.android.synthetic.main.activity_login.*
 import javax.inject.Inject
 
 class ForgottenPasswordActivity : AppCompatActivity(), ForgottenPasswordScreen {
@@ -23,7 +25,11 @@ class ForgottenPasswordActivity : AppCompatActivity(), ForgottenPasswordScreen {
         val sendForgoton=findViewById<Button>(R.id.btForgottenSend)
 
         sendForgoton.setOnClickListener {
-            //Todo send
+            if(!presenter.sendReset(etUsername.text.toString()))
+                Toast.makeText(
+                    this, "Wrong name or password",
+                    Toast.LENGTH_LONG
+                ).show()
             startActivity(Intent(this,LoginActivity::class.java))
         }
     }

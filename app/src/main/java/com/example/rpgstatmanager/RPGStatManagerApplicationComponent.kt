@@ -1,5 +1,6 @@
 package com.example.rpgstatmanager
 
+import com.example.rpgstatmanager.mock.MockNetworkModule
 import com.example.rpgstatmanager.module.InteractorModule
 import com.example.rpgstatmanager.module.NetworkModule
 import com.example.rpgstatmanager.module.UIModule
@@ -14,7 +15,7 @@ import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules= [UIModule::class, InteractorModule::class, NetworkModule::class])
+@Component(modules= [UIModule::class, InteractorModule::class, MockNetworkModule::class])
 interface RPGStatManagerApplicationComponent{
     fun inject(allMovesActivity: AllMovesActivity)
     fun inject(emotionModifierActivity: EmotionModifierActivity)

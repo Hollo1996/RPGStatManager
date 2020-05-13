@@ -9,7 +9,7 @@ import com.example.rpgstatmanager.room.data.E_WeaponMoveConnector
 interface DAO_WeaponMoveConnector{
     @Query("SELECT * FROM weaponMoveConnector")
     fun listAllWeaponMoveConnectors(): List<E_WeaponMoveConnector>
-    @Query("SELECT * FROM weaponMoveConnector WHERE weaponId = :weapon")
+    @Query("SELECT * FROM weaponMoveConnector WHERE weaponId = :row_item_weapon")
     fun listWeaponMoveConnectorsOfWeapon(weapon: String): List<E_WeaponMoveConnector>
     @Query("SELECT * FROM weaponMoveConnector WHERE moveId = :move")
     fun listWeaponMoveConnectorsOfMove(move: String): List<E_WeaponMoveConnector>

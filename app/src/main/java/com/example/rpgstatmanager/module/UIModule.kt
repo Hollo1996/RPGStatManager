@@ -17,7 +17,7 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class UIModule(private val context: Context) {
+class UIModule{
     @Provides
     @Singleton
     fun provideAllMovesPresenter(moveInteractor: MoveInteractor) = AllMovesPresenter(moveInteractor)
@@ -120,27 +120,9 @@ class UIModule(private val context: Context) {
     @Provides
     @Singleton
     fun provideCharacterChooserPresenter(
-        characterInteractor: CharacterInteractor,
-        abilityInteractor: AbilityInteractor,
-        emotionModifierInteractor: EmotionModifierInteractor,
-        moveInteractor: MoveInteractor,
-        moveTypeInteractor: MoveTypeInteractor,
-        personalityTypeInteractor: PersonalityTypeInteractor,
-        raceInteractor: RaceInteractor,
-        statInteractor: StatInteractor,
-        toolInteractor: ToolInteractor,
-        weaponInteractor: WeaponInteractor
+        characterInteractor: CharacterInteractor
     ) = CharacterChooserPresenter(
-        characterInteractor,
-        abilityInteractor,
-        emotionModifierInteractor,
-        moveInteractor,
-        moveTypeInteractor,
-        personalityTypeInteractor,
-        raceInteractor,
-        statInteractor,
-        toolInteractor,
-        weaponInteractor
+        characterInteractor
     )
 
     @Provides

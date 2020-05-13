@@ -33,13 +33,11 @@ class OAuthOkHttpClient : HttpClient {
         var mediaType = MediaType.parse("application/json")
         val requestBuilder =
             Request.Builder().url(request.locationUri)
-        if (headers != null) {
-            for ((key, value) in headers) {
-                if (key.equals("Content-Type", ignoreCase = true)) {
-                    mediaType = MediaType.parse(value)
-                } else {
-                    requestBuilder.addHeader(key, value)
-                }
+        for ((key, value) in headers) {
+            if (key.equals("Content-Type", ignoreCase = true)) {
+                mediaType = MediaType.parse(value)
+            } else {
+                requestBuilder.addHeader(key, value)
             }
         }
         val body = if (request.body != null) RequestBody.create(

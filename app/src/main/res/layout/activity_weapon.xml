@@ -42,7 +42,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/weapon"
+        tools:listitem="@layout/row_item_weapon"
         tools:itemCount="8"/>
 
     

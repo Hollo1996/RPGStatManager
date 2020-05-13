@@ -11,7 +11,7 @@ data class S_Move (
      */
     @get:ApiModelProperty(value = "")
     @SerializedName("id")
-    var id: String? = null,
+    var id: String,
 
     /**
      */
@@ -43,14 +43,14 @@ data class S_Move (
     @SerializedName("effect")
     var effect: String? = null
 ){
-    override fun equals(o: Any?): Boolean {
-        if (this === o) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) {
             return true
         }
-        if (o == null || javaClass != o.javaClass) {
+        if (other == null || javaClass != other.javaClass) {
             return false
         }
-        val move = o as S_Move
+        val move = other as S_Move
         return id == move.id &&
                 moveTypeId == move.moveTypeId &&
                 name == move.name &&

@@ -8,8 +8,6 @@ import android.widget.EditText
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.model.character.D_Tool
-import com.example.rpgstatmanager.view.fragment.F_Move
-import kotlinx.android.synthetic.main.fragment_move.*
 
 class ToolAdapter(
     val context: Context,
@@ -29,7 +27,7 @@ class ToolAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ToolViewHolder {
         val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.weapon, parent, false)
+        val view = inflater.inflate(R.layout.row_item_weapon, parent, false)
         return ToolViewHolder(view)
     }
 

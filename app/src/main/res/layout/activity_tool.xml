@@ -44,7 +44,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/tool"
+        tools:listitem="@layout/row_item_tool"
         tools:itemCount="4"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

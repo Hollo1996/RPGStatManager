@@ -7,11 +7,11 @@ import androidx.room.Update
 import com.example.rpgstatmanager.room.data.E_Weapon
 
 interface DAO_Weapon{
-    @Query("SELECT * FROM weapon")
+    @Query("SELECT * FROM row_item_weapon")
     fun listAllWeapons(): List<E_Weapon>
-    @Query("SELECT * FROM weapon WHERE id = :id")
+    @Query("SELECT * FROM row_item_weapon WHERE id = :id")
     fun getWeaponsById(id: String): List<E_Weapon>
-    @Query("SELECT * FROM weapon WHERE characterId = :characterId")
+    @Query("SELECT * FROM row_item_weapon WHERE characterId = :characterId")
     fun listWeaponsOfCharacter(characterId: String): List<E_Weapon>
     @Insert
     fun insertWeapons(vararg weapon: E_Weapon)

@@ -38,6 +38,7 @@ class MoveTypeActivity : AppCompatActivity(), MoveTypeScreen {
         super.onStart()
         presenter.attachScreen(this)
     }
+
     override fun onStop() {
         super.onStop()
         presenter.detachScreen()

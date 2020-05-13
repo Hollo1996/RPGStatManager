@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.interactor.PathTracker
+import com.example.rpgstatmanager.presenter.CharacterChooserPresenter
 import com.example.rpgstatmanager.view.activity.character.*
 import kotlinx.android.synthetic.main.activity_character.*
+import javax.inject.Inject
 
 class CharacterActivity : AppCompatActivity() {
 
@@ -24,4 +26,5 @@ class CharacterActivity : AppCompatActivity() {
         btAllMove.setOnClickListener { startActivity(Intent(this,AllMovesActivity::class.java)) }
         btTool.setOnClickListener { startActivity(Intent(this,ToolActivity::class.java)) }
     }
+
 }

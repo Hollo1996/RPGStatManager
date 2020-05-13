@@ -1,6 +1,7 @@
 package com.example.rpgstatmanager.room.data
 
 import androidx.room.*
+import com.example.rpgstatmanager.swagger.client.model.S_Ability
 import java.util.*
 
 @Entity(

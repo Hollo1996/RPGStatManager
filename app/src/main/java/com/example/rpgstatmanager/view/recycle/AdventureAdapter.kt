@@ -5,6 +5,7 @@ import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rpgstatmanager.R
@@ -20,15 +21,15 @@ class AdventureAdapter(
 
     inner class AdventureViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvname: TextView = itemView.findViewById(R.id.tvAdventureNameRow)
-        val image: Image = itemView.findViewById(R.id.ivAdventureimageRow)
+        val image: ImageView = itemView.findViewById(R.id.ivAdventureimageRow)
         val tvtype: TextView = itemView.findViewById(R.id.tvAsDmRow)
 
         var adventure: D_Adventure? = null
 
         init {
             itemView.setOnClickListener {
-                adventure?.let { it ->
-                    itemClickListener?.onItemClick(it)
+                adventure?.let { ad ->
+                    itemClickListener?.onItemClick(ad)
 
                 }
             }

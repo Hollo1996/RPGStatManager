@@ -9,8 +9,6 @@ import android.widget.Spinner
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.model.character.D_Move
-import com.example.rpgstatmanager.view.fragment.F_Move
-import kotlinx.android.synthetic.main.fragment_move.*
 
 class MoveAdapter(
     val context: Context,
@@ -28,7 +26,7 @@ class MoveAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoveViewHolder {
         val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.weapon, parent, false)
+        val view = inflater.inflate(R.layout.row_item_weapon, parent, false)
         return MoveViewHolder(view)
     }
 

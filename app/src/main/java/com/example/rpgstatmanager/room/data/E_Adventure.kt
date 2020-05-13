@@ -8,6 +8,8 @@ import androidx.room.PrimaryKey
 data class E_Adventure (
     @PrimaryKey(autoGenerate= true)
     var id: String?,
+    @ColumnInfo(name = "ownerId")
+    var ownerId: String,
     @ColumnInfo(name = "name")
     var name: String,
     @ColumnInfo(name = "isGm")

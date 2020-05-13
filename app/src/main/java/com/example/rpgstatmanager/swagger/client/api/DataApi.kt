@@ -451,98 +451,98 @@ interface DataApi {
     ): Call<Void>
 
     /**
-     * Get all tool.
-     * Returnes all tool of the loged in user.
+     * Get all row_item_tool.
+     * Returnes all row_item_tool of the loged in user.
      * @param token Authentication number
      * @param body Owner object
      * @return Call<List></List><Tool>>
     </Tool> */
-    @GET("data/tool/{token}")
+    @GET("data/row_item_tool/{token}")
     fun listTool(
         @Path("token") token: String?, @Body body: S_Character?
     ): Call<List<S_Tool>>
 
     /**
-     * update existing tool
-     * Updates a newly created tool
+     * update existing row_item_tool
+     * Updates a newly created row_item_tool
      * @param token Authentication number
-     * @param body the tool with updated parameters
+     * @param body the row_item_tool with updated parameters
      * @return Call<Void>
     </Void> */
-    @PUT("data/tool/{token}")
+    @PUT("data/row_item_tool/{token}")
     fun updateTool(
         @Path("token") token: String?, @Body body: S_Tool?
     ): Call<Void>
 
     /**
-     * add new tool
-     * Uploads a newly created tool
+     * add new row_item_tool
+     * Uploads a newly created row_item_tool
      * @param token Authentication number
-     * @param body the uploaded tool
+     * @param body the uploaded row_item_tool
      * @return Call<Void>
     </Void> */
-    @POST("data/tool/{token}")
+    @POST("data/row_item_tool/{token}")
     fun createTool(
         @Path("token") token: String?, @Body body: S_Tool?
     ): Call<Void>
 
     /**
-     * delete tool
-     * Deletes an tool given by id
+     * delete row_item_tool
+     * Deletes an row_item_tool given by id
      * @param token Authentication number
-     * @param body the id of the tool to delete
+     * @param body the id of the row_item_tool to delete
      * @return Call<Void>
     </Void> */
-    @DELETE("data/tool/{token}")
+    @DELETE("data/row_item_tool/{token}")
     fun deleteTool(
         @Path("token") token: String?,
         @Body body: String?
     ): Call<Void>
 
     /**
-     * Get all weapon.
-     * Returnes all weapon of the loged in user.
+     * Get all row_item_weapon.
+     * Returnes all row_item_weapon of the loged in user.
      * @param token Authentication number
      * @param body Owner object
      * @return Call<List></List><Weapon>>
     </Weapon> */
-    @GET("data/weapon/{token}")
+    @GET("data/row_item_weapon/{token}")
     fun listWeapon(
         @Path("token") token: String?, @Body body: S_Character?
     ): Call<List<S_Weapon>>
 
     /**
      * updateWeapon
-     * Updates a newly created weapon
+     * Updates a newly created row_item_weapon
      * @param token Authentication number
-     * @param body the weapon with updated parameters
+     * @param body the row_item_weapon with updated parameters
      * @return Call<Void>
     </Void> */
-    @PUT("data/weapon/{token}")
+    @PUT("data/row_item_weapon/{token}")
     fun updateWeapon(
         @Path("token") token: String?, @Body body: S_Weapon?
     ): Call<Void>
 
     /**
-     * add new weapon
-     * Uploads a newly created weapon
+     * add new row_item_weapon
+     * Uploads a newly created row_item_weapon
      * @param token Authentication number
-     * @param body the uploaded weapon
+     * @param body the uploaded row_item_weapon
      * @return Call<Void>
     </Void> */
-    @POST("data/weapon/{token}")
+    @POST("data/row_item_weapon/{token}")
     fun createWeapon(
         @Path("token") token: String?, @Body body: S_Weapon?
     ): Call<Void>
 
     /**
-     * delete existing weapon
-     * Deletes an weapon given by id
+     * delete existing row_item_weapon
+     * Deletes an row_item_weapon given by id
      * @param token Authentication number
-     * @param body the id of the weapon to delete
+     * @param body the id of the row_item_weapon to delete
      * @return Call<Void>
     </Void> */
-    @DELETE("data/weapon/{token}")
+    @DELETE("data/row_item_weapon/{token}")
     fun deleteWeapon(
         @Path("token") token: String?,
         @Body body: String?

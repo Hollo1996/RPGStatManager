@@ -6,7 +6,7 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import java.util.*
 
-@Entity(tableName= "tool",
+@Entity(tableName= "row_item_tool",
     foreignKeys = [ForeignKey(
         entity = E_Character::class,
         parentColumns = arrayOf("id"),

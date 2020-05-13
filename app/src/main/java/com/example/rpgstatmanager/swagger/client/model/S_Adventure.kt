@@ -11,7 +11,7 @@ data class S_Adventure (
      */
     @get:ApiModelProperty(value = "")
     @SerializedName("id")
-    var id: String? = null,
+    var id : String,
 
     /**
      */

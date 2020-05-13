@@ -4,6 +4,7 @@ import com.example.rpgstatmanager.model.character.*
 
 data class D_Character (
     val id:String,
+    val adventureId:String,
     val name:String,
     val DRace: D_Race,
     val DEmotions: List<D_EmotionModifier>,

@@ -36,6 +36,7 @@ class PersonalityTypeActivity : AppCompatActivity(), PersonalityTypeScreen {
         super.onStart()
         presenter.attachScreen(this)
     }
+
     override fun onStop() {
         super.onStop()
         presenter.detachScreen()

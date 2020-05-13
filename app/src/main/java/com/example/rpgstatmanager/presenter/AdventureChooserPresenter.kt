@@ -15,7 +15,6 @@ class AdventureChooserPresenter
     : A_Presenter<AdventureChooserScreen>() {
     fun list() = adventureInteractor.list()
     fun choose(id:String){
-        characterInteractor.ownerId=id
         val temp=adventureInteractor.getWhen { it.id == id }
         PathTracker.adventure.id=temp.id
         PathTracker.adventure.icon=temp.icon

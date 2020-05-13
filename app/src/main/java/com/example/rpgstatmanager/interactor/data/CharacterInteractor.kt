@@ -25,12 +25,12 @@ class CharacterInteractor @Inject constructor(
         if (exists) {
             dataApi.updateCharacter(
                 AuthInteractor.actualToken,
-                S_Character(d.id, d.name, false)
+                S_Character(d.id, d.adventureId, d.name, false)
             ).execute()
         } else {
             dataApi.createCharacter(
                 AuthInteractor.actualToken,
-                S_Character(d.id, d.name, d.is_npc)
+                S_Character(d.id, d.name,d.adventureId, d.is_npc)
             ).execute()
         }
     }
@@ -53,6 +53,7 @@ class CharacterInteractor @Inject constructor(
             D_Character(
                 it.id ?: throw Error("Id must not be null"),
                 it.name ?: throw Error("Id must not be null"),
+                it.adventureId ?: throw Error("Id must not be null"),
                 raceInteractor.get(),
                 emotionModifierInteractor.list(),
                 moveTypeInteractor.list(),

@@ -12,7 +12,7 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class InteractorModule(private val context: Context) {
+class InteractorModule{
     @Provides
     @Singleton
     fun provideAdventureInteractor(dataApi: DataApi, characterInteractor: CharacterInteractor) =

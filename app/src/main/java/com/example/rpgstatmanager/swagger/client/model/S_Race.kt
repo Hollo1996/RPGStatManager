@@ -11,7 +11,7 @@ data class S_Race (
      */
     @get:ApiModelProperty(value = "")
     @SerializedName("id")
-    var id: String? = null,
+    var id: String,
 
     /**
      */
@@ -37,14 +37,14 @@ data class S_Race (
     @SerializedName("subraceName")
     var subraceName: String? = null
 ){
-    override fun equals(o: Any?): Boolean {
-        if (this === o) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) {
             return true
         }
-        if (o == null || javaClass != o.javaClass) {
+        if (other == null || javaClass != other.javaClass) {
             return false
         }
-        val race = o as S_Race
+        val race = other as S_Race
         return id == race.id &&
                 categoryName == race.categoryName &&
                 familyName == race.familyName &&

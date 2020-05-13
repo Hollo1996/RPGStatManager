@@ -23,8 +23,8 @@ class CharacterChooseAdapter(
 
         init {
             btname.setOnClickListener {
-                character?.let { it ->
-                    itemClickListener?.onItemClick(it)
+                character?.let { ch ->
+                    itemClickListener?.onItemClick(ch)
                 }
             }
         }
@@ -49,7 +49,7 @@ class CharacterChooseAdapter(
     }
 
     interface CharacterChooserClickListener {
-        fun onItemClick(adventure: D_Character)
+        fun onItemClick(character: D_Character)
     }
 
 }

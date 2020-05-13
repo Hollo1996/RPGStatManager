@@ -10,7 +10,7 @@ import com.example.rpgstatmanager.screen.character.ToolScreen
 import com.example.rpgstatmanager.view.recycle.RaceAdapter
 import com.example.rpgstatmanager.view.recycle.ToolAdapter
 import kotlinx.android.synthetic.main.activity_tool.*
-import kotlinx.android.synthetic.main.tool.*
+import kotlinx.android.synthetic.main.row_item_tool.*
 import javax.inject.Inject
 
 class ToolActivity : AppCompatActivity(), ToolScreen {
