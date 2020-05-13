@@ -60,7 +60,7 @@ class EmotionModifierInteractor @Inject constructor(
 
         return data.map { emotionModifier ->
             D_EmotionModifier(
-                emotionModifier.id ?: throw Error(),
+                emotionModifier.id,
                 emotionModifier.name ?: throw Error(),
                 emotionModifier.values.let { values ->
                     mapOf(
