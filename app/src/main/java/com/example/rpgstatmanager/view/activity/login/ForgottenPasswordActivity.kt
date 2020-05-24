@@ -9,6 +9,7 @@ import com.example.rpgstatmanager.R
 import com.example.rpgstatmanager.module.injector
 import com.example.rpgstatmanager.presenter.login.ForgottenPasswordPresenter
 import com.example.rpgstatmanager.screen.login.ForgottenPasswordScreen
+import kotlinx.android.synthetic.main.activity_forgotten_password.*
 import kotlinx.android.synthetic.main.activity_login.*
 import javax.inject.Inject
 
@@ -22,10 +23,8 @@ class ForgottenPasswordActivity : AppCompatActivity(), ForgottenPasswordScreen {
         injector.inject(this)
         setContentView(R.layout.activity_forgotten_password)
 
-        val sendForgoton=findViewById<Button>(R.id.btForgottenSend)
-
-        sendForgoton.setOnClickListener {
-            if(!presenter.sendReset(etUsername.text.toString()))
+        btForgottenSend.setOnClickListener {
+            if(!presenter.sendReset(etUserName.text.toString()))
                 Toast.makeText(
                     this, "Wrong name or password",
                     Toast.LENGTH_LONG

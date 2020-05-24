@@ -12,7 +12,9 @@ class MockTokenApi : TokenApi {
         val password: String
     )
 
-    val users = listOf<User>()
+    val users = listOf<User>(
+        User("0", "Me","Me")
+    )
 
     companion object{
         val activeTokens = mutableMapOf<User, String>()

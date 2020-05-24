@@ -33,7 +33,7 @@ class AdventureInteractor @Inject constructor(
 
     override fun list(): List<D_Adventure> {
         val data: List<S_Adventure>
-        val call = dataApi.listAdventures(AuthInteractor.actualToken, PathTracker.adventure)
+        val call = dataApi.listAdventures(AuthInteractor.actualToken,null)
         val response = call.execute()
         Log.d("Reponse", response.body().toString())
         if (response.code() != 200) {
